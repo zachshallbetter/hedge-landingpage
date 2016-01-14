@@ -1,0 +1,10 @@
+[ignore]
+.*/gulp-tasks/.*
+.*/node-modules/.*
+.*/dist/.*
+
+[include]
+
+[libs]
+
+[options]

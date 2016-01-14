@@ -1,0 +1,37 @@
+.primary-button {
+	display: inline-block;
+	position: relative;
+	padding: 0 20px;
+	height: 62px;
+
+	text-decoration: none;
+	overflow: hidden;
+
+	background: none;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+
+	&__background {
+		@include position(absolute, 0px 0 0 0px);
+		@include size(100% 100%);
+		z-index: -1;
+	}
+
+	&__label {
+		display: block;
+
+		@include font('22fest', #fff, 36);
+		line-height: 62px;
+		text-align: center;
+	}
+
+	&--scheme-blue &__background { fill: #2d4194; }
+	&--scheme-blue &__label { color: #a8ffee; }
+
+	&--scheme-orange &__background { fill: #f87209; }
+	&--scheme-orange &__label { color: #fff; }
+
+	&:hover &__background { fill: #56dbff !important; }
+	&:hover &__label { color: #fff !important; }
+}

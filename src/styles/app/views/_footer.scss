@@ -1,0 +1,19 @@
+.footer {
+    @include size(100% 40px);
+    margin-top: 60px;
+    padding: 5px 15px;
+
+    @include only-responds-to(small) {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__sponsors {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__sponsor:not(:first-child) {
+        margin-left: 30px;
+    }
+}

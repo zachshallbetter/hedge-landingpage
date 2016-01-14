@@ -1,0 +1,11 @@
+.DS_Store
+.sass-cache
+.tmp
+.gulp
+
+dist
+gulp-tasks
+node_modules/*
+!node_modules/app
+
+npm-debug.log

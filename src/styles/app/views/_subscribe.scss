@@ -1,0 +1,50 @@
+.subscribe {
+    margin-top: 30px;
+
+    &__title, &__body {
+        @include font('sketchetik', #fff, 30);
+        line-height: rem(40);
+        text-align: center;
+
+        @include only-responds-to(small) { font-size: rem(26); }
+        @include responds-to(normal) { font-size: rem(30); }
+    }
+
+    &__form {
+        display: flex;
+        margin-top: 10px;
+
+        @include responds-to(small) { flex-direction: column; }
+        @include responds-to(normal) { flex-direction: row; }
+    }
+
+    &__email-container {
+        @include size(295px 62px);
+        position: relative;
+
+        @include only-responds-to(small) { margin-bottom: 3px; }
+        @include responds-to(normal) { margin-left: 3px; }
+    }
+
+    &__input-border {
+        @include position(absolute, 0px 0 0 0px);
+        @include size(100% 100%);
+        fill: #fff;
+    }
+
+    &__email-input {
+        @include position(absolute, 0px 0 0 0px);
+        @include size(100% 100%);
+        @include font('sketchetik', #fff, 30);
+
+        padding: 0 20px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+
+        &::placeholder { color: #fff; }
+
+        @include only-responds-to(small) { font-size: rem(26); }
+        @include responds-to(normal) { font-size: rem(30); }
+    }
+}

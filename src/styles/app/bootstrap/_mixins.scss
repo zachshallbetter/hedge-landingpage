@@ -1,0 +1,51 @@
+@mixin font($name, $color, $size: 15, $weight: 400, $antialiased: true) {
+    font-family: map-get($fonts, $name);
+    font-size: rem($size);
+    font-weight: $weight;
+
+    @if (type_of($color) == 'string') {
+        color: color($color);
+    }
+    @else if (type_of($color) == 'color') {
+        color: $color;
+    }
+
+    @if $antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@mixin clearfix() {
+    overflow: hidden;
+}
+
+@mixin text-replacement {
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin truncate-tail {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin selection($background-color, $color: white) {
+    ::-moz-selection {
+        background-color: $background-color;
+        color: $color;
+        text-shadow: none;
+    }
+
+    ::selection {
+        background-color: $background-color;
+        color: $color;
+        text-shadow: none;
+    }
+}
+
+@function rem($value) {
+    @return ($value / 16) * 1rem;
+}

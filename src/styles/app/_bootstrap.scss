@@ -1,0 +1,23 @@
+@import "bootstrap/reset";
+@import "bootstrap/colors";
+@import "bootstrap/layout";
+@import "bootstrap/mixins";
+@import "bootstrap/mq";
+
+@import "bootstrap/fonts";
+@import "bootstrap/buttons";
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::-moz-selection {
+    background-color: transparent;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: transparent;
+    text-shadow: none;
+}

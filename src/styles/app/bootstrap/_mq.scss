@@ -1,0 +1,50 @@
+$breaks: (
+    "small": (min: 0em, max: 30em),
+    "normal": (min: 30.01em, max: 45em),
+    "wide": (min: 45.01em, max: 60em),
+    "widest": (min: 60.01em, max: null)
+);
+
+@mixin only-responds-to($breakpoint) {
+    $myBreakpoint: map-get($breaks, $breakpoint);
+    $myMin: map-get($myBreakpoint, min);
+    $myMax: map-get($myBreakpoint, max);
+
+    $myQuery: "only screen and (min-width: " + $myMin + ")";
+    @if $myMax { $myQuery: $myQuery + "and (max-width: " + $myMax + ")"; }
+
+    @media #{$myQuery} {
+        @content;
+    }
+}
+
+@mixin responds-to($breakpoints...) {
+    $myQuery: null;
+
+    @if length($breakpoints) == 1 {
+        $myBreakpoint: map-get($breaks, nth($breakpoints, 1));
+        $myWidth: map-get($myBreakpoint, min);
+
+        $myQuery: "only screen and (min-width:" + $myWidth + ")";
+    }
+
+    @else if length($breakpoints) > 1 {
+        @each $breakpoint in $breakpoints {
+            $myBreakpoint: map-get($breaks, $breakpoint);
+
+            $myMin: map-get($myBreakpoint, min);
+            $myMax: map-get($myBreakpoint, max);
+
+            $myCondition: "only screen and (min-width: " + $myMin + ") and (max-width: " + $myMax + ")";
+            @if index($breakpoints, $breakpoint) == 1 {
+                $myQuery: $myCondition;
+            } @else {
+                $myQuery: $myQuery + " , " + $myCondition;
+            }
+        }
+    }
+
+    @media #{$myQuery} {
+        @content;
+    }
+}
