@@ -1,8 +1,9 @@
 .navigation {
     position: fixed;
-    top: 0;
     left: 0;
+    top: 0;
     width: 100%;
+    padding: 33px 75px;
 
     display: flex;
     justify-content: flex-end;
@@ -13,15 +14,19 @@
     }
 
     &__shortcut:not(:first-child) {
-        margin-left: 20px;
+        margin-left: 28px;
     }
 
     &__link {
         @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
-        @mixin antialiased;
         text-decoration: none;
 
-        &--download { color: var(--highlightColorGreen); }
-        &--buy { color: var(--highlightColorBlue); }
+        &--download {
+            color: var(--highlightColorGreen);
+        }
+
+        &--buy {
+            color: var(--highlightColorBlue);
+        }
     }
 }

@@ -69,6 +69,7 @@
     "lodash": "^4.2.1",
     "logdown": "^1.2.4",
     "picturefill": "^3.0.1",
+    "query-function": "^1.0.0",
     "viewport-units-buggyfill": "^0.5.5"
   }
 }

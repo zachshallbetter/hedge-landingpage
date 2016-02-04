@@ -3,24 +3,31 @@
 import assert from 'assert';
 
 /**
- * Adds a shortcut for finding elements on the page using the querySelectorAll method. Returns the object if only one
- * result was found. Otherwise returning an array containing all found elements.
- * @param  {string} selector    String representing the element selector
- * @param  {Element} context 	Element representing the context of the query
+ * Returns a Node object that match a specified group of CSS selectors in the document or specific context.
+ * If there are more than one matches or `returnList` is set to `true`  it will return a NodeList object instead.
+ *
+ * @param  {String} selector    	String representing the specific CSS selector
+ * @param  {Node} context 			Node object on which the `querySelectorAll` function is invoked.
+ * @param  {Boolean} returnList 	If set to true a NodeList object will be returned. Default is `false`
+ * @return {Nodelist|Node|null}
  */
-export default function query(selector, context = null, returnSet = false) {
-	assert(typeof selector === 'string', 'Required argument "selector" is not a String or undefined');
+export default (selectors, context = null, returnList = false) => {
+	if (typeof selectors !== 'string') {
+		throw new Error(`Required argument \`selectors\` is not a String or undefined`);
+	}
 
 	let myResult;
 	if (context instanceof Node) {
-        myResult = context.querySelectorAll(selector);
+        myResult = context.querySelectorAll(selectors);
 	} else {
-		myResult = document.querySelectorAll(selector);
+		myResult = document.querySelectorAll(selectors);
 	}
 
-	if (myResult.length == 0) {
-		return returnSet ? [] : null;
+	if (myResult.length === 0) {
+		return returnList ? myResult : null;
+	} else if (myResult.length === 1) {
+		return returnList ? myResult : myResult[0];
+	} else {
+		return myResult;
 	}
-
-	return myResult.length === 1 && !returnSet ? myResult[0] : myResult;
-}
+};

@@ -9,23 +9,33 @@
 
     &__content {
         width: 100%;
-        max-width: 435px;
+        max-width: 425px;
     }
 
     &__logo {
         @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
 
     &__tagline {
         @mixin font var(--whitney), var(--headerTextColor), 5.0rem, 100;
         @mixin antialiased;
+
         text-align: center;
+        line-height: 6.0rem;
     }
 
     &__short-description {
         @mixin font var(--whitney), var(--bodyTextColor), 1.7rem;
+
+        margin-top: 11px;
+        line-height: 2.5rem;
         text-align: center;
 
-        & > em { font-style: italic; }
+        & > em {
+            font-style: italic;
+        }
     }
 }

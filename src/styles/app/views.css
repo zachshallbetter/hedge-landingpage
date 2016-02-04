@@ -1,5 +1,6 @@
 @import 'views/header';
 @import 'views/navigation';
+@import 'views/how-it-works';
 @import 'views/footer';
 
 html {
@@ -10,5 +11,4 @@ html {
 body {
     overflow-x: hidden;
     background-color: var(--backgroundColor);
-
 }

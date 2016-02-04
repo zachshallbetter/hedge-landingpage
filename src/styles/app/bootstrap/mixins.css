@@ -1,8 +1,16 @@
-@define-mixin font $family, $color, $size, $weight: 100 {
-    font-family: $family;
-    font-size: $size;
-    font-weight: $weight;
-    color: $color;
+@define-mixin retina $image, $retina, $width, $height {
+    background-image: $image;
+    background-size: $width $height;
+
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+            background-image: $retina;
+        }
 }
 
 @define-mixin antialiased {
@@ -14,16 +22,19 @@
     overflow: hidden;
 }
 
-@define-mixin text-replacement {
-    text-indent: 101%;
-    white-space: nowrap;
-    overflow: hidden;
+@define-mixin position $position, $top: initial, $right: initial, $bottom: initial, $left:initial {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
 }
 
-@define-mixin truncate-tail {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+@define-mixin font $family, $color, $size, $weight: 100 {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
 }
 
 @define-mixin selection $backgroundColor $color {
@@ -38,4 +49,21 @@
         color: $color;
         text-shadow: none;
     }
+}
+
+@define-mixin size $width, $height {
+    width: $width;
+    height: $height;
+}
+
+@define-mixin text-replacement {
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@define-mixin truncate-tail {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
