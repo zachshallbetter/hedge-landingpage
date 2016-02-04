@@ -16,7 +16,7 @@ export default class AbstractView {
             this.el = el;
         }
 
-        options = defaults(options, { id: this.constructor.name });
+        options = defaults(options, { cid: this.constructor.name });
 
         this.cid = uniqueId(options.cid);
         this.logger = new Logdown({ prefix: 'Views' });
@@ -30,6 +30,8 @@ export default class AbstractView {
      * @param  {object} options Object representing the options sent to the AbstractView
      */
     initialize(options) {
+        this.logger.log(`Initializing \`${this.cid}\``);
+
         this.enabled = false;
         this.destroyed = false;
 

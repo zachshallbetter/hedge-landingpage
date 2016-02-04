@@ -11,7 +11,7 @@ import { uniqueId, trim } from 'lodash';
 
 class Router {
     constructor() {
-        this.id = uniqueId('Router');
+        this.cid = uniqueId('Router');
         this.logger = new Logdown({ prefix: 'Router' });
 
         this.initialize();
@@ -22,7 +22,7 @@ class Router {
      * Executes when the Router is instantiated
      */
     initialize() {
-        this.logger.log(`Initializing \`${this.id}\``);
+        this.logger.log(`Initializing \`${this.cid}\``);
         this.viewController = new Controller();
 
         this.pushStateEnabled = 'pushState' in window.history;

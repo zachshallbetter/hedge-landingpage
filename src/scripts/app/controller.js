@@ -7,9 +7,12 @@ import $ from 'app/support/query';
 import { autobind, debounce, throttle } from 'core-decorators';
 import { find, findLast, uniqueId } from 'lodash';
 
+import HeaderView from 'app/views/header-view';
+import FooterView from 'app/views/footer-view';
+
 export default class Controller {
     constructor() {
-        this.id = uniqueId('Controller');
+        this.cid = uniqueId('Controller');
         this.logger = new Logdown({ prefix: 'Controller' });
 
         this.initialize();
@@ -20,13 +23,13 @@ export default class Controller {
      * Executes when the Controller is instantiated
      */
     initialize() {
-        this.logger.log(`Initializing \`${this.id}\``);
+        this.logger.log(`Initializing \`${this.cid}\``);
 
         this.scrolling = false;
         this.resizing = false;
 
         this.root = $('main#hedge');
-        this._subviews = [];
+        this._subviews = {};
 
         this.enable();
         document.body.classList.add('ready');
@@ -37,19 +40,34 @@ export default class Controller {
         let myOffset = (window.innerHeight || document.documentElement.clientHeight);
 
         // Get the view which is in the viewport
-        let myChild = findLast(this.root.children, (child) => {
-            let { top } = child.getBoundingClientRect();
+        let myElement = findLast(this.root.children, (element) => {
+            let { top } = element.getBoundingClientRect();
             return top <= myOffset * 0.5;
         });
 
         // Stop here if no element was found
-        if (!myChild) {
+        if (!myElement) {
             return;
         }
+
+        this._initView(myElement);
     }
 
     _initView(element) {
+        let myView = this._subviews[element.id];
+        if (!!myView) {
+            return myView;
+        }
 
+        let myClass = element.classList.item(0);
+        switch (myClass) {
+            case 'header': myView = new HeaderView(element); break;
+            case 'footer': myView = new FooterView(element); break;
+        }
+
+        this._subviews[element.id] = myView;
+
+        return myView;
     }
 
     _replaceState() {
