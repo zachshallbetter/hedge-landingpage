@@ -18,6 +18,7 @@
   "devDependencies": {
     "babel-plugin-dead-code-elimination": "1.0.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-node-env-inline": "^6.3.13",
     "babel-plugin-transform-object-assign": "^6.3.13",
     "babel-preset-es2015": "6.3.13",
     "babelify": "7.2.0",

@@ -42,12 +42,14 @@ export default class Controller {
             return top <= myOffset * 0.5;
         });
 
-        // Stop here if no view was found
+        // Stop here if no element was found
         if (!myChild) {
             return;
         }
+    }
 
-        console.log(myChild);
+    _initView(element) {
+
     }
 
     _replaceState() {
@@ -66,7 +68,12 @@ export default class Controller {
         }
 
         this._currentView = myView;
-        this._currentView.el.scrollIntoView(animate);
+
+        if (animate) {
+        }
+        else {
+            this._currentView.el.scrollIntoView();
+        }
     }
 
     /**

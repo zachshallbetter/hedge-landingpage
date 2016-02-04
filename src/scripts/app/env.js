@@ -1,24 +1,28 @@
 'use strict';
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const PROCESS = process;
 
-let myEndpoint;
+let myDebug = PROCESS.env.NODE_ENV === 'development',
+    myBaseUrl;
 
-// Set endpoint according development enviroment
-switch (process.env.NODE_ENV) {
-    case 'development':
+switch (PROCESS.env.NODE_ENV) {
+    case 'production':
+        myBaseUrl = 'http:/www.hedgeformac.com';
         break;
 
     case 'staging':
+        myBaseUrl = 'http://staging.hedgeformac.com';
         break;
 
-    case 'production':
+    default:
+    case 'development':
+        myBaseUrl = 'http://hedgeformac.dev';
         break;
 }
 
-// Create enviroment properties
-const env = {
-    debug: process.env.NODE_ENV === 'development',
+const ENV = {
+    debug: myDebug,
+    baseUrl: myBaseUrl,
 };
 
-export default env;
+export default ENV;

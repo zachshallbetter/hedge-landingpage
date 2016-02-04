@@ -1,26 +1,27 @@
 'use strict';
 
 import Logdown from 'logdown';
-import $ from 'app/support/query';
+import QueryMixin from 'app/mixins/query-mixin';
 
-import { autobind } from 'core-decorators';
+import assert from 'assert';
+import { autobind, mixin } from 'core-decorators';
 import { extend, uniqueId, defaults, pick } from 'lodash';
 
-import * as ColorSchemes from 'app/constants/colorschemes';
-
+@mixin(QueryMixin)
 export default class AbstractView {
     constructor(el, options = {}) {
-        options = defaults(options, { id: this.constructor.name });
-
-        this.id = uniqueId(options.id);
-        this.logger = new Logdown({ prefix: 'Views' });
+        assert(el instanceof Node, `Required argument \`el\` is not a Node or undefined`);
 
         if (el instanceof Node) {
             this.el = el;
         }
 
+        options = defaults(options, { id: this.constructor.name });
+
+        this.cid = uniqueId(options.cid);
+        this.logger = new Logdown({ prefix: 'Views' });
+
         this.initialize(options);
-        this.lazyload(true);
         this.enable();
     }
 
@@ -29,13 +30,13 @@ export default class AbstractView {
      * @param  {object} options Object representing the options sent to the AbstractView
      */
     initialize(options) {
+        this.enabled = false;
+        this.destroyed = false;
+
         options = defaults(options, { path: this.el.id, });
 
         let myViewOptions = pick(options, ['path']);
         extend(this, myViewOptions);
-
-        this.enabled = false;
-        this.destroyed = false;
     }
 
     /**
@@ -54,18 +55,6 @@ export default class AbstractView {
         if (this.enabled) {
             this.enabled = false;
         }
-    }
-
-    /**
-     * Helper function to query for elements within this views
-     * @param  {String} selector String representing the selector
-     */
-    $(selector, returnSet = false) {
-        if (!this.el) {
-            return alwaysReturnAsSet ? [] : null;
-        }
-
-        return $(selector, this.el, returnSet);
     }
 
     /**

@@ -1,9 +1,12 @@
 'use strict';
 
+import ENV from 'app/env';
+
+import Url from 'url';
 import Logdown from 'logdown';
 import Controller from 'app/controller';
 
-import { autobind } from 'core-decorators';
+import $ from 'app/support/query';
 import { uniqueId, trim } from 'lodash';
 
 class Router {
@@ -44,16 +47,15 @@ class Router {
      * we use the history object instead of hardlinking.
      * @param  {Event} event Event which triggers the handler
      */
-     @autobind;
     _onInternalLink(event) {
         if (this.pushStateEnabled && !event.metaKey) {
             event.preventDefault();
 
-            let myLink = $(event.currentTarget).attr('href'),
-                myEvent = new CustomEvent('pushstate', { detail: myLink });
+            let myUrl = Url.parse(event.srcElement.getAttribute('href')),
+                myEvent = new CustomEvent('pushstate', { detail: myUrl.path });
 
             window.dispatchEvent(myEvent);
-            this.navigate(myLink);
+            this.navigate(myUrl.path);
         }
     }
 
@@ -61,15 +63,14 @@ class Router {
      * Executes when a new state is pushed to the history object
      * @param  {Event} event Event which triggers the handler
      */
-     @autobind;
     _onPushstate(event) {
         let myPath = trim(event.detail, '/');
         this.viewController.showView(path, true);
     }
 
     enable() {
-        // $(window).on('pushstate', this._onPushstate);
-        // $('html').on(`click.${this.id}`, 'a:not([target])', this._onInternalLink);
+        window.on('pushstate', this._onPushstate);
+        $(`a[href*='${ENV.baseUrl}']:not([target])`).on('click', this._onInternalLink.bind(this));
     }
 }
 
