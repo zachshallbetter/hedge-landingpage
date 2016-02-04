@@ -1,4 +1,31 @@
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     height: 100vh;
-    background: linear-gradient(var(--backgroundColor2), var(--backgroundColor));
+    background-image: url('../images/background-gradient.png');
+    background-size: 1px 100%;
+
+    &__content {
+        width: 100%;
+        max-width: 435px;
+    }
+
+    &__logo {
+        @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
+    }
+
+    &__tagline {
+        @mixin font var(--whitney), var(--headerTextColor), 5.0rem, 100;
+        @mixin antialiased;
+        text-align: center;
+    }
+
+    &__short-description {
+        @mixin font var(--whitney), var(--bodyTextColor), 1.7rem;
+        text-align: center;
+
+        & > em { font-style: italic; }
+    }
 }

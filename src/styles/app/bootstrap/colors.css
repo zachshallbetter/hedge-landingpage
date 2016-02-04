@@ -1,7 +1,10 @@
 :root {
-	--backgroundColor: #282828;
+	--backgroundColor: #1b1d22;
 	--backgroundColor2: #31353e;
 
 	--highlightColorGreen: #15c550;
 	--highlightColorBlue: #4b9cff;
+
+	--headerTextColor: #fff;
+	--bodyTextColor: #848fa8;
 }

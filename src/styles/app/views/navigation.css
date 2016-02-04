@@ -1,0 +1,27 @@
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    &__shortcuts {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__shortcut:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    &__link {
+        @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
+        @mixin antialiased;
+        text-decoration: none;
+
+        &--download { color: var(--highlightColorGreen); }
+        &--buy { color: var(--highlightColorBlue); }
+    }
+}

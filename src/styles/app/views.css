@@ -1,4 +1,5 @@
 @import 'views/header';
+@import 'views/navigation';
 @import 'views/footer';
 
 html {

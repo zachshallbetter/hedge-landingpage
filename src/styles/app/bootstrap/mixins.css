@@ -1,5 +1,5 @@
-@define-mixin font $name, $color, $size: 15, $weight: 400) {
-    font-family: $font;
+@define-mixin font $family, $color, $size, $weight: 100 {
+    font-family: $family;
     font-size: $size;
     font-weight: $weight;
     color: $color;
@@ -26,7 +26,7 @@
     text-overflow: ellipsis;
 }
 
-@define-mixin selection $backgroundColor, $color {
+@define-mixin selection $backgroundColor $color {
     ::-moz-selection {
         background-color: $background-color;
         color: $color;
