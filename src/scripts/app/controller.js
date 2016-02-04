@@ -28,46 +28,55 @@ export default class Controller {
         this.scrolling = false;
         this.resizing = false;
 
-        this.root = $('main#hedge');
-        this._subviews = {};
+        this.root = $('#hedge');
+        this._subviews = new Map();
 
         this.enable();
         document.body.classList.add('ready');
     }
 
-    _setCurrentView(pushState = false) {
-        // Find the currently active view
-        let myOffset = (window.innerHeight || document.documentElement.clientHeight);
-
-        // Get the view which is in the viewport
-        let myElement = findLast(this.root.children, (element) => {
-            let { top } = element.getBoundingClientRect();
-            return top <= myOffset * 0.5;
-        });
-
-        // Stop here if no element was found
-        if (!myElement) {
-            return;
-        }
-
-        this._initView(myElement);
-    }
-
     _initView(element) {
-        let myView = this._subviews[element.id];
+        // Return a previous instantiated view when found
+        let myView = this._subviews.get(element);
         if (!!myView) {
             return myView;
         }
 
+        // Otherwise instantiate a new view using the element its classname
         let myClass = element.classList.item(0);
         switch (myClass) {
             case 'header': myView = new HeaderView(element); break;
             case 'footer': myView = new FooterView(element); break;
         }
 
-        this._subviews[element.id] = myView;
+        // Do nothing when no view was instantiated
+        if (!myView) {
+            return;
+        }
+
+        // Store the view
+        this._subviews.set(element, myView);
 
         return myView;
+    }
+
+    _setCurrentView() {
+        // Get the height of the document/window
+        let myOffset = (window.innerHeight || document.documentElement.clientHeight);
+
+        // Get the view which most visible in the viewport
+        let myElement = findLast(this.root.children, (element) => {
+            let { top } = element.getBoundingClientRect();
+            return top <= myOffset * 0.5;
+        });
+
+        // Nothing was found
+        if (!myElement) {
+            return;
+        }
+
+        // Get the current view
+        this._currentView = this._initView(myElement);
     }
 
     _replaceState() {
@@ -75,7 +84,7 @@ export default class Controller {
             return;
         }
 
-        var Router = require('app/router');
+        const Router = require('app/router');
         Router.default.navigate(this._currentView.path);
     }
 

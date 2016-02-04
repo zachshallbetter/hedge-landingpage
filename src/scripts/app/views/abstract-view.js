@@ -35,7 +35,7 @@ export default class AbstractView {
         this.enabled = false;
         this.destroyed = false;
 
-        options = defaults(options, { path: this.el.id, });
+        options = defaults(options, { path: this.el.id || '/', });
 
         let myViewOptions = pick(options, ['path']);
         extend(this, myViewOptions);
