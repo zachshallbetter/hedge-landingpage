@@ -31,7 +31,9 @@ export default class Controller {
         this.root = $('#hedge');
         this._subviews = new Map();
 
+        this._setCurrentView();
         this.enable();
+
         document.body.classList.add('ready');
     }
 
