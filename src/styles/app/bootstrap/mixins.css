@@ -1,0 +1,41 @@
+@define-mixin font $name, $color, $size: 15, $weight: 400) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@define-mixin antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@define-mixin clearfix {
+    overflow: hidden;
+}
+
+@define-mixin text-replacement {
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@define-mixin truncate-tail {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@define-mixin selection $backgroundColor, $color {
+    ::-moz-selection {
+        background-color: $background-color;
+        color: $color;
+        text-shadow: none;
+    }
+
+    ::selection {
+        background-color: $background-color;
+        color: $color;
+        text-shadow: none;
+    }
+}

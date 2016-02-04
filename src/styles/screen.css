@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "bourbon/bourbon";
+/*@import "bourbon/bourbon";*/
 
 @import "app/bootstrap";
 @import "app/views";
