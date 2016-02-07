@@ -4,9 +4,9 @@ import ENV from 'app/env';
 
 import Url from 'url';
 import Logdown from 'logdown';
+import $ from 'selectjs';
 import Controller from 'app/controller';
 
-import $ from 'app/support/query';
 import { uniqueId, trim } from 'lodash';
 
 class Router {

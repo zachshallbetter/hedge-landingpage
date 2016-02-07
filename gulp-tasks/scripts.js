@@ -25,7 +25,7 @@ gulp.task('scripts', () => {
         fullPaths: !myProduction,
     });
 
-    let bundle = function() {
+    let bundle = () => {
         return myBundler.bundle().on('error', errors)
             .pipe(source('main.js'))
             .pipe(buffer())

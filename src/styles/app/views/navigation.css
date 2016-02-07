@@ -20,6 +20,12 @@
     &__link {
         @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
         text-decoration: none;
+        transition: color 200ms;
+
+        &:hover {
+            color: var(--bodyTextColor);
+            transition: none;
+        }
 
         &--download {
             color: var(--highlightColorGreen);

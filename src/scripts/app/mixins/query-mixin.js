@@ -1,6 +1,6 @@
 'use strict';
 
-import $ from 'app/support/query';
+import $$ from 'selectjs';
 
 const QueryMixin = {
     /**
@@ -12,7 +12,7 @@ const QueryMixin = {
             return alwaysReturnAsSet ? [] : null;
         }
 
-        return $(selector, this.el, returnSet);
+        return $$(selector, this.el, returnSet);
     },
 };
 

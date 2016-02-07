@@ -1,4 +1,5 @@
 @import "bootstrap/reset";
+@import "bootstrap/buttons";
 @import "bootstrap/colors";
 @import "bootstrap/fonts";
 @import "bootstrap/mixins";
@@ -10,11 +11,13 @@
 }
 
 ::-moz-selection {
-    background-color: transparent;
+    background-color: var(--highlightColorBlue);
+    color: #fff;
     text-shadow: none;
 }
 
 ::selection {
-    background-color: transparent;
+    background-color: var(--highlightColorBlue);
+    color: #fff;
     text-shadow: none;
 }

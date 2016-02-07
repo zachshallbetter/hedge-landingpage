@@ -25,7 +25,7 @@ gulp.task('styles', () => {
 
     return gulp.src(mySource)
         .pipe(gulpif(!myProduction, sourcemaps.init()))
-        .pipe(postcss(myProcessors))
+        .pipe(postcss(myProcessors)).on('error', errors)
         .pipe(gulpif(myProduction, cssnano())).on('error', errors)
         .pipe(gulpif(!myProduction, sourcemaps.write()))
         .pipe(gulp.dest(myDestination))

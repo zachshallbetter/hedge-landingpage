@@ -1,7 +1,7 @@
+@import 'views/benifits';
+@import 'views/footer';
 @import 'views/header';
 @import 'views/navigation';
-@import 'views/how-it-works';
-@import 'views/footer';
 
 html {
     height: 100%;
@@ -9,6 +9,6 @@ html {
 }
 
 body {
-    overflow-x: hidden;
     background-color: var(--backgroundColor);
+    overflow-x: hidden;
 }

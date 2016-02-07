@@ -2,7 +2,7 @@
 
 import Logdown from 'logdown';
 import Jump from 'jump.js';
-import $ from 'app/support/query';
+import $$ from 'selectjs';
 
 import { autobind, debounce, throttle } from 'core-decorators';
 import { find, findLast, uniqueId } from 'lodash';
@@ -28,7 +28,7 @@ export default class Controller {
         this.scrolling = false;
         this.resizing = false;
 
-        this.root = $('#hedge');
+        this.root = $$('#hedge');
         this._subviews = new Map();
 
         this._setCurrentView();

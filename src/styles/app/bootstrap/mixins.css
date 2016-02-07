@@ -1,6 +1,5 @@
-@define-mixin retina $image, $retina, $width, $height {
+@define-mixin retina $image, $retina {
     background-image: $image;
-    background-size: $width $height;
 
     @media
         only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -37,17 +36,15 @@
     color: $color;
 }
 
-@define-mixin selection $backgroundColor $color {
+@define-mixin selection $backgroundColor, $color {
     ::-moz-selection {
-        background-color: $background-color;
+        background-color: $backgroundColor;
         color: $color;
-        text-shadow: none;
     }
 
     ::selection {
-        background-color: $background-color;
+        background-color: $backgroundColor;
         color: $color;
-        text-shadow: none;
     }
 }
 

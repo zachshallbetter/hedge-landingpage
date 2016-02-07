@@ -8,6 +8,8 @@
     background-size: 1px 100%;
 
     &__content {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         max-width: 425px;
     }
@@ -15,14 +17,20 @@
     &__logo {
         @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 17px; left: 17px;
+        height: 43px;
+
+        padding: 15px 0 0 57px;
+        @mixin retina '../images/hedge-logo.png', '../images/hedge-logo@2x.png';
+        background-repeat: no-repeat;
+        background-size: 47px 43px;
     }
 
     &__tagline {
         @mixin font var(--whitney), var(--headerTextColor), 5.0rem, 100;
         @mixin antialiased;
 
+        margin-bottom: 11px;
         text-align: center;
         line-height: 6.0rem;
     }
@@ -30,12 +38,22 @@
     &__short-description {
         @mixin font var(--whitney), var(--bodyTextColor), 1.7rem;
 
-        margin-top: 11px;
+        margin-bottom: 34px;
         line-height: 2.5rem;
         text-align: center;
 
         & > em {
             font-style: italic;
         }
+    }
+
+    &__button-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &__buy-button {
+        margin-left: 3px;
     }
 }
