@@ -2,7 +2,7 @@
 
 import Logdown from 'logdown';
 import QueryMixin from 'app/mixins/query-mixin';
-import inViewport from 'visiblejs';
+import isVisible from 'visiblejs';
 
 import assert from 'assert';
 import { autobind, mixin } from 'core-decorators';

@@ -99,8 +99,8 @@ export default class Controller {
         this._currentView = myView;
 
         if (animate) {
-        }
-        else {
+            //
+        } else {
             this._currentView.el.scrollIntoView();
         }
     }

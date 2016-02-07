@@ -4,7 +4,7 @@ import ENV from 'app/env';
 
 import Url from 'url';
 import Logdown from 'logdown';
-import $ from 'selectjs';
+import $$ from 'selectjs';
 import Controller from 'app/controller';
 
 import { uniqueId, trim } from 'lodash';
@@ -70,7 +70,7 @@ class Router {
 
     enable() {
         window.on('pushstate', this._onPushstate);
-        $(`a[href*='${ENV.baseUrl}']:not([target])`).on('click', this._onInternalLink.bind(this));
+        $$(`a[href*='${ENV.baseUrl}']:not([target])`).on('click', this._onInternalLink.bind(this));
     }
 }
 

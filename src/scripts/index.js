@@ -1,9 +1,10 @@
 'use strict';
 
+// Polyfills
 import ViewportUnits from 'viewport-units-buggyfill';
 import Picturefill from 'picturefill';
-
-import Arrays from 'app/support/polyfills/array';
+import Array from 'arrayjs';
 import Listen from 'listenjs';
 
+// Initialize Router
 import Router from 'app/router';
