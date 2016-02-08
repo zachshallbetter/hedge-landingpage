@@ -4,7 +4,7 @@ import Logdown from 'logdown';
 import Jump from 'jump.js';
 import $$ from 'selectjs';
 
-import { autobind, debounce, throttle } from 'core-decorators';
+import { debounce, throttle } from 'core-decorators';
 import { find, findLast, trim, uniqueId } from 'lodash';
 
 import BenefitsView from 'app/views/benefits-view';
@@ -78,12 +78,12 @@ export default class Controller {
      */
     _setCurrentView() {
         // Get the height of the document/window
-        let myOffset = (window.innerHeight || document.documentElement.clientHeight);
+        let myOffset = (window.innerHeight || document.documentElement.clientHeight) * 0.5;
 
         // Get the view which most visible in the viewport
         let myElement = findLast(this.root.children, (element) => {
             let { top } = element.getBoundingClientRect();
-            return top <= myOffset * 0.5;
+            return top <= myOffset;
         });
 
         // Nothing was found

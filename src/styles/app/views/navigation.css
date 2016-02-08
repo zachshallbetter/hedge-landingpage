@@ -3,12 +3,16 @@
     justify-content: flex-end;
 
     position: fixed;
-    left: 0;
-    top: 0;
-
+    top: 0; left: 0;
     width: 100%;
     padding: 34px 75px;
+
+    transition: background 200ms;
     z-index: var(--navigationIndex);
+
+    &--activated {
+        background-color: color(var(--backgroundColor) alpha(100%));
+    }
 
     &__shortcuts {
         display: flex;

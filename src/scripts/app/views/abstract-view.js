@@ -5,7 +5,7 @@ import QueryMixin from 'app/mixins/query-mixin';
 import isVisible from 'visiblejs';
 
 import assert from 'assert';
-import { autobind, mixin } from 'core-decorators';
+import { mixin } from 'core-decorators';
 import { extend, uniqueId, defaults, pick } from 'lodash';
 
 @mixin(QueryMixin)
