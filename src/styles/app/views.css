@@ -4,6 +4,7 @@
 @import 'views/footer';
 @import 'views/header';
 @import 'views/navigation';
+@import 'views/pricing';
 
 html {
     height: 100%;

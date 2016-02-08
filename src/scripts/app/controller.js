@@ -131,7 +131,7 @@ export default class Controller {
         } else {
             const Scroller = new Jump();
             Scroller.jump(mySelector, {
-                duration: (distance) => Math.abs(distance * 0.35),
+                duration: 500,
                 easing: (t, b, c, d) => c * ((t = t / d - 1) * t * t + 1) + b,
                 offset: myOffset,
             });

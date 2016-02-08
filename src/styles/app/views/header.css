@@ -4,7 +4,7 @@
     justify-content: center;
 
     height: 100vh;
-    background: linear-gradient(var(--backgroundColor2), var(--backgroundColor));
+    background-image: linear-gradient(var(--backgroundColor2), var(--backgroundColor));
 
     &__content {
         display: flex;

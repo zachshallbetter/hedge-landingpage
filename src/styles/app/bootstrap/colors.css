@@ -10,5 +10,6 @@
 	--highlightColorBlue: #4b9cff;
 
 	--defaultIconColor: #848fa8;
-	--defaultBorderColor: #30333c;
+	--defaultStrokeColor: #30333c;
+	--defaultPlaceholderColor: #000;
 }

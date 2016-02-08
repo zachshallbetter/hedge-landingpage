@@ -1,12 +1,14 @@
 .case {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
-    &__content {
+    &__header {
         width: 100%;
         max-width: 960px;
+
         padding-top: 125px;
-        border-top: 1px solid var(--defaultBorderColor);
+        border-top: 1px solid var(--defaultStrokeColor);
     }
 
     &__title {
@@ -19,5 +21,66 @@
         margin: 24px auto 0 auto;
         max-width: 640px;
         text-align: center;
+    }
+
+    &__testimonal-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 80px;
+    }
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: 625px;
+    padding: 25px;
+
+    background-color: var(--defaultPlaceholderColor);
+    background-position: center;
+    background-size: cover;
+
+    &__header {
+        margin: 0 auto;
+    }
+
+    &__title {
+        @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
+        display: inline-block;
+    }
+
+    &__subtitle {
+        @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
+        display: inline-block;
+        position: relative;
+        
+        margin-left: 3px;
+        padding-left: 20px;
+
+        &:before {
+            position: absolute; left: 0;
+            content: '—';
+        }
+    }
+
+    &__description {
+        @mixin default-body-text;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    &--mark {
+        background-image: linear-gradient(color(var(--backgroundColor) alpha(0)) 50%, var(--backgroundColor)), url('../images/case__photo-01.jpg');
+    }
+
+    &--ties {
+        background-image: linear-gradient(color(var(--backgroundColor) alpha(0)), var(--backgroundColor)), url('../images/case__photo-02.jpg');
+    }
+
+    &--niek {
+        background-image: linear-gradient(color(var(--backgroundColor) alpha(0)), var(--backgroundColor)), url('../images/case__photo-03.jpg');
     }
 }
