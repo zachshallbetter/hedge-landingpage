@@ -20,12 +20,12 @@
     }
 
     &__link {
-        @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
+        @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
         text-decoration: none;
         transition: color 200ms;
 
         &:hover {
-            color: var(--bodyTextColor);
+            color: var(--defaultBodyColor);
             transition: none;
         }
 

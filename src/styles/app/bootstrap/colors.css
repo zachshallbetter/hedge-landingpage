@@ -2,11 +2,13 @@
 	--backgroundColor: #1b1d22;
 	--backgroundColor2: #31353e;
 
+	--defaultHeaderColor: #fff;
+	--defaultBodyColor: #848fa8;
+	--dimmedHeaderColor: color(var(--defaultBodyColor) alpha(-50%));
+
 	--highlightColorGreen: #15c550;
 	--highlightColorBlue: #4b9cff;
 
-	--headerTextColor: #fff;
-	--bodyTextColor: #848fa8;
-
-	--iconColor: #848fa8;
+	--defaultIconColor: #848fa8;
+	--defaultBorderColor: #30333c;
 }

@@ -40,7 +40,7 @@
     padding: 0 20px;
 
     &__title {
-        @mixin font var(--whitney), var(--headerTextColor), 3.0rem;
+        @mixin font var(--whitney), var(--defaultHeaderColor), 3.0rem;
         @mixin antialiased;
 
         margin-top: 5px;
@@ -49,18 +49,18 @@
     }
 
     &__description {
-        @mixin font var(--whitney), var(--bodyTextColor), 1.7rem;
+        @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
 
         margin-top: 20px;
         order: 3;
         text-align: center;
-        line-height: 2.5rem;
+        line-height: 2.4rem;
     }
 
     &__icon {
         width: 50px;
         height: 50px;
-        fill: var(--iconColor);
+        fill: var(--defaultIconColor);
         order: 1;
     }
 }
