@@ -1,0 +1,66 @@
+.benefits {
+    display: flex;
+    justify-content: center;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: -125px;
+        width: 100%;
+        max-width: 960px;
+    }
+
+    &__screenshot {
+        position: relative;
+        padding-bottom: 55%;
+
+        & > img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__benefit-container {
+        display: flex;
+        flex-direction: row;
+
+        margin-top: 74px;
+        width: 100%;
+    }
+}
+
+.benefit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+
+    padding: 0 20px;
+
+    &__title {
+        @mixin font var(--whitney), var(--headerTextColor), 3.0rem;
+        @mixin antialiased;
+
+        margin-top: 5px;
+        order: 2;
+        text-align: center;
+    }
+
+    &__description {
+        @mixin font var(--whitney), var(--bodyTextColor), 1.7rem;
+
+        margin-top: 20px;
+        order: 3;
+        text-align: center;
+        line-height: 2.5rem;
+    }
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        fill: var(--iconColor);
+        order: 1;
+    }
+}

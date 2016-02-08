@@ -13,13 +13,18 @@ gulp.task('html', () => {
     let mySource = 'src/**/*.html',
         myDestination = 'dist';
 
-    let myOptions = {
+    let myIncludeOptions = {
+        prefix: '@@',
+        basepath: './dist/',
+    };
+
+    let myHtmlMinOptions = {
         collapseWhitespace: true,
     };
 
     gulp.src(mySource)
-        .pipe(fileinclude())
-        .pipe(gulpif(myProduction, htmlmin(myOptions)))
+        .pipe(fileinclude(myIncludeOptions)).on('error', errors)
+        .pipe(gulpif(myProduction, htmlmin(myHtmlMinOptions))).on('error', errors)
         .pipe(gulp.dest(myDestination))
         .pipe(livereload());
 });

@@ -4,26 +4,33 @@
     justify-content: center;
 
     height: 100vh;
-    background-image: url('../images/background-gradient.png');
-    background-size: 1px 100%;
+    background: linear-gradient(var(--backgroundColor2), var(--backgroundColor));
 
     &__content {
         display: flex;
         flex-direction: column;
+
         width: 100%;
         max-width: 425px;
+        padding-bottom: 62px;
     }
 
     &__logo {
         @mixin font var(--whitney), var(--headerTextColor), 1.7rem, 100;
         position: fixed;
-        top: 17px; left: 17px;
+        top: 21px; left: 71px;
         height: 43px;
 
-        padding: 15px 0 0 57px;
-        @mixin retina '../images/hedge-logo.png', '../images/hedge-logo@2x.png';
+        padding: 13px 0 0 62px;
+        z-index: var(--navigationIndex);
+
+        background-image: url('../images/hedge__logo.png');
         background-repeat: no-repeat;
         background-size: 47px 43px;
+
+        @media (--retina) {
+            background-image: url('../images/hedge__logo@2x.png');
+        }
     }
 
     &__tagline {

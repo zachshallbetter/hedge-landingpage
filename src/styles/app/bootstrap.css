@@ -1,9 +1,11 @@
 @import "bootstrap/reset";
-@import "bootstrap/buttons";
 @import "bootstrap/colors";
 @import "bootstrap/fonts";
 @import "bootstrap/mixins";
 @import "bootstrap/mq";
+@import "bootstrap/zindices";
+
+@import "bootstrap/buttons";
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -11,13 +13,13 @@
 }
 
 ::-moz-selection {
-    background-color: var(--highlightColorBlue);
+    background-color: var(--highlightColorGreen);
     color: #fff;
     text-shadow: none;
 }
 
 ::selection {
-    background-color: var(--highlightColorBlue);
+    background-color: var(--highlightColorGreen);
     color: #fff;
     text-shadow: none;
 }

@@ -25,6 +25,8 @@
     </head>
 
     <body>
+        @@include('images/spritesheet.svg')
+
         <main id='hedge'>
             <header class='header'>
                 <div class='header__content'>
@@ -61,26 +63,32 @@
                 <ol>
             </nav>
 
-            <section id='how-it-works' class='benifits'>
-                <img srcset='images/screenshot.jpg 1x, images/screenshot-2x.jpg 2x' alt='Hedge for Mac app' class='benifits__screenshot'>
+            <section id='how-it-works' class='benefits'>
+                <div class='benefits__content'>
+                    <figure class='benefits__screenshot'>
+                        <img srcset='images/hedge__screenshot.png 1x, images/hedge__screenshot@2x.png 2x' alt='Hedge for Mac app'>
+                    </figure>
 
-                <article class='benifits__benifit benifit benifit--peace-of-mind'>
-                    <h1 class='benifit__title'>Piece of mind</h1>
-                    <p class='benifit__body'>Ever lost a shot due to an import gone wrong? Got incomplete backups? Stop worrying and let Hedge handle it.</p>
-                    <svg class='benifit__icon'></svg>
-                </article>
+                    <div class='benefits__benefit-container'>
+                        <article class='benefits__benefit benefit benefit--peace-of-mind'>
+                            <h1 class='benefit__title'>Piece of mind</h1>
+                            <p class='benefit__description'>Ever lost a shot due to an import gone wrong? Got incomplete backups? Stop worrying and let Hedge handle it.</p>
+                            <svg class='benefit__icon'><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#peace-of-mind__icon"></use></svg>
+                        </article>
 
-                <article class='benifits__benifit benifit benifit--save-time'>
-                    <h1 class='benifit__title'>Save time</h1>
-                    <p class='benifit__body'>Reduce the time spent on data handling to near zero, and focus on the important stuff, like getting great shots.</p>
-                    <svg class='benifit__icon'></svg>
-                </article>
+                        <article class='benefits__benefit benefit benefit--save-time'>
+                            <h1 class='benefit__title'>Save time</h1>
+                            <p class='benefit__description'>Reduce the time spent on data handling to near zero, and focus on the important stuff, like getting great shots.</p>
+                            <svg class='benefit__icon'><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#save-time__icon"></use></svg>
+                        </article>
 
-                <article class='benifits__benifit benifit benifit--peace-of-mind'>
-                    <h1 class='benifit__title'>No shackles</h1>
-                    <p class='benifit__body'>Use <strong>Hedge™</strong> whenever you like: every day or just once a year. Only pay for what you need, no strings attached.</p>
-                    <svg class='benifit__icon'></svg>
-                </article>
+                        <article class='benefits__benefit benefit benefit--peace-of-mind'>
+                            <h1 class='benefit__title'>No shackles</h1>
+                            <p class='benefit__description'>Use <strong>Hedge™</strong> whenever you like: every day or just once a year. Only pay for what you need, no strings attached.</p>
+                            <svg class='benefit__icon'><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no-shackles__icon"></use></svg>
+                        </article>
+                    </div>
+                </div>
             </section>
 
             <section id='features' class='features'>

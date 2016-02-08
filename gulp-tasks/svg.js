@@ -3,9 +3,10 @@
 var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     svgsprite = require('gulp-svg-sprite'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    errors = require('../gulperrors');
 
-gulp.task('svg', function() {
+gulp.task('svg', () => {
     let myProduction = process.env.NODE_ENV !== 'development';
 
     let mySource = './src/images/*.svg',
@@ -17,6 +18,7 @@ gulp.task('svg', function() {
                 dest: '.',
                 sprite: 'spritesheet.svg',
                 example: false,
+                inline: true,
             },
         },
     };
@@ -26,8 +28,8 @@ gulp.task('svg', function() {
     ];
 
     return gulp.src(mySource)
-        .pipe(svgmin({ plugins: [myPlugins] }))
-        .pipe(svgsprite(myOptions))
+        .pipe(svgmin({ plugins: [myPlugins] })).on('error', errors)
+        .pipe(svgsprite(myOptions)).on('error', errors)
         .pipe(gulp.dest(myDestination))
         .pipe(livereload());
 });

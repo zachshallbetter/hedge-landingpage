@@ -11,15 +11,8 @@ button {
     border: 1px solid;
     border-radius: 3px;
 
-    &:hover {
-
-        &__label {
-            color: var(--bodyTextColor) !important;
-        }
-    }
-
     &__label {
-        /*@mixin font var(--whitney), #fff;*/
+        @mixin font var(--whitney), #fff;
         display: block;
         text-align: left;
 

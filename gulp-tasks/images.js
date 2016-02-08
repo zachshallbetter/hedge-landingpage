@@ -15,7 +15,7 @@ gulp.task('images', () => {
     const mySecret = 'A-AVymCOwXuxvG1aWrjQL6MzuAkM99TG';
 
     gulp.src(mySource)
-        .pipe(changed(myDestination)) // Only apply to new files
+        // .pipe(changed(myDestination)) // Only apply to new files
         .pipe(gulpif(myProduction, tinypng(mySecret))) // Run through tinypng for small filesizes
         .pipe(gulp.dest(myDestination))
         .pipe(livereload());
