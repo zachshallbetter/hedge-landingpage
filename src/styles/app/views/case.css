@@ -1,0 +1,23 @@
+.case {
+    display: flex;
+    justify-content: center;
+
+    &__content {
+        width: 100%;
+        max-width: 960px;
+        padding-top: 125px;
+        border-top: 1px solid var(--defaultBorderColor);
+    }
+
+    &__title {
+        @mixin default-header;
+        text-align: center;
+    }
+
+    &__description {
+        @mixin default-body-text;
+        margin: 24px auto 0 auto;
+        max-width: 640px;
+        text-align: center;
+    }
+}

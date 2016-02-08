@@ -6,6 +6,7 @@
 @import "bootstrap/zindices";
 
 @import "bootstrap/buttons";
+@import "bootstrap/styles";
 
 *, *:before, *:after {
     box-sizing: border-box;

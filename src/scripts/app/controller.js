@@ -5,10 +5,13 @@ import Jump from 'jump.js';
 import $$ from 'selectjs';
 
 import { autobind, debounce, throttle } from 'core-decorators';
-import { find, findLast, uniqueId } from 'lodash';
+import { find, findLast, trim, uniqueId } from 'lodash';
 
+import BenefitsView from 'app/views/benefits-view';
 import HeaderView from 'app/views/header-view';
+import FeaturesView from 'app/views/features-view';
 import FooterView from 'app/views/footer-view';
+import NavigationView from 'app/views/navigation-view';
 
 export default class Controller {
     constructor() {
@@ -31,12 +34,17 @@ export default class Controller {
         this.root = $$('#hedge');
         this._subviews = new Map();
 
+        let myNavigation = $$('.navigation');
+        this._initView(myNavigation);
+
         this._setCurrentView();
         this.enable();
-
-        document.body.classList.add('ready');
     }
 
+    /**
+     * Initializes a View class specific for a DOM element
+     * @param  {node} element Node object represnting the element
+     */
     _initView(element) {
         // Return a previous instantiated view when found
         let myView = this._subviews.get(element);
@@ -47,8 +55,11 @@ export default class Controller {
         // Otherwise instantiate a new view using the element its classname
         let myClass = element.classList.item(0);
         switch (myClass) {
+            case 'benefits': myView = new BenefitsView(element); break;
             case 'header': myView = new HeaderView(element); break;
+            case 'features': myView = new FeaturesView(element); break;
             case 'footer': myView = new FooterView(element); break;
+            case 'navigation': myView = new NavigationView(element); break;
         }
 
         // Do nothing when no view was instantiated
@@ -62,6 +73,9 @@ export default class Controller {
         return myView;
     }
 
+    /**
+     * Sets the currentview while scrolling through the page
+     */
     _setCurrentView() {
         // Get the height of the document/window
         let myOffset = (window.innerHeight || document.documentElement.clientHeight);
@@ -81,6 +95,9 @@ export default class Controller {
         this._currentView = this._initView(myElement);
     }
 
+    /**
+     * Invoked when the user stops scrolling. It sets the state of the History according the current view.
+     */
     _replaceState() {
         if (!this._currentView) {
             return;
@@ -90,18 +107,34 @@ export default class Controller {
         Router.default.navigate(this._currentView.path);
     }
 
-    showView(path, animate = true) {
-        let myView = find(this._subviews, (view) => view.path === path);
-        if (!myView) {
-            return;
+    /**
+     * Jumps to a view on the page
+     */
+    showElement(path, animate = false) {
+        let mySelector = `#${trim(path, '/')}`,
+            myOffset = 0,
+            myElement = this.root;
+
+        if (mySelector !== '#') {
+            myElement = $$(mySelector, this.root);
+        } else {
+            mySelector = '#hedge';
         }
 
-        this._currentView = myView;
+        if (!!myElement) {
+            this._currentView = this._initView(myElement);
+            myOffset = !!this._currentView ? this._currentView.jumpOffset : 0;
+        }
 
-        if (animate) {
-            //
+        if (!animate) {
+            myElement.scrollIntoView();
         } else {
-            this._currentView.el.scrollIntoView();
+            const Scroller = new Jump();
+            Scroller.jump(mySelector, {
+                duration: (distance) => Math.abs(distance * 0.35),
+                easing: (t, b, c, d) => c * ((t = t / d - 1) * t * t + 1) + b,
+                offset: myOffset,
+            });
         }
     }
 

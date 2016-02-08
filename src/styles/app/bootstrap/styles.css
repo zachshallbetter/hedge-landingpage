@@ -1,0 +1,26 @@
+@define-mixin default-header {
+    @mixin font var(--whitney), var(--defaultHeaderColor), 5.0rem, 100;
+    @mixin antialiased;
+}
+
+@define-mixin small-header {
+    @mixin font var(--whitney), var(--defaultHeaderColor), 3.0rem;
+    @mixin antialiased;
+}
+
+@define-mixin default-body-text {
+    @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
+    line-height: 2.4rem;
+
+    & > a {
+        color: white;
+        text-decoration: none;
+        transition: color 200ms;
+        border-bottom: 1px solid;
+
+        &:hover {
+            transition: none;
+            color: var(--highlightColorGreen);
+        }
+    }
+}

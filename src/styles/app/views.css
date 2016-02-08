@@ -1,4 +1,5 @@
 @import 'views/benefits';
+@import 'views/case';
 @import 'views/features';
 @import 'views/footer';
 @import 'views/header';
@@ -12,4 +13,13 @@ html {
 body {
     background-color: var(--backgroundColor);
     overflow-x: hidden;
+}
+
+main {
+    opacity: 0.0;
+    transition: opacity 500ms;
+
+    @nest body.ready & {
+        opacity: 1.0;
+    }
 }

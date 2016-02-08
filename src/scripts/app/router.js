@@ -23,13 +23,13 @@ class Router {
      */
     initialize() {
         this.logger.log(`Initializing \`${this.cid}\``);
-        this.viewController = new Controller();
+        this.controller = new Controller();
 
         this.pushStateEnabled = 'pushState' in window.history;
 
         // Set initial view
         let myPath = window.location.href.replace('http://hedgeformac.dev/', '');
-        this.viewController.showView(myPath);
+        this.controller.showElement(myPath, false);
     }
 
     /**
@@ -51,7 +51,7 @@ class Router {
         if (this.pushStateEnabled && !event.metaKey) {
             event.preventDefault();
 
-            let myUrl = Url.parse(event.srcElement.getAttribute('href')),
+            let myUrl = Url.parse(event.currentTarget.getAttribute('href')),
                 myEvent = new CustomEvent('pushstate', { detail: myUrl.path });
 
             window.dispatchEvent(myEvent);
@@ -65,11 +65,11 @@ class Router {
      */
     _onPushstate(event) {
         let myPath = trim(event.detail, '/');
-        this.viewController.showView(path, true);
+        this.controller.showElement(myPath, true);
     }
 
     enable() {
-        window.on('pushstate', this._onPushstate);
+        window.on('pushstate', this._onPushstate.bind(this));
         $$(`a[href*='${ENV.baseUrl}']:not([target])`).on('click', this._onInternalLink.bind(this));
     }
 }

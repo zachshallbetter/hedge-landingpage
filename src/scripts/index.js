@@ -8,3 +8,6 @@ import Listen from 'listenjs';
 
 // Initialize Router
 import Router from 'app/router';
+
+// Make the website visible
+document.body.classList.add('ready');

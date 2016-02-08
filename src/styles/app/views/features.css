@@ -1,7 +1,7 @@
 .features {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    padding: 142px 0;
 
     &__content {
         width: 100%;
@@ -9,7 +9,6 @@
     }
 
     &__header {
-        margin-top: 142px;
         padding-bottom: 13px;
         border-bottom: 1px solid var(--defaultBorderColor);
     }
@@ -46,13 +45,11 @@
     }
 
     &__title {
-        @mixin font var(--whitney), var(--defaultHeaderColor), 3.0rem;
-        @mixin antialiased;
+        @mixin small-header;
     }
 
     &__description {
-        @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
-
+        @mixin default-body-text;
         margin-top: 20px;
         line-height: 2.4rem;
     }

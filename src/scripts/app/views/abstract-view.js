@@ -36,9 +36,12 @@ export default class AbstractView {
         this.enabled = false;
         this.destroyed = false;
 
-        options = defaults(options, { path: this.el.id || '/', });
+        options = defaults(options, {
+            path: this.el.id || '/',
+            jumpOffset: 0,
+        });
 
-        let myViewOptions = pick(options, ['path']);
+        let myViewOptions = pick(options, ['path', 'jumpOffset']);
         extend(this, myViewOptions);
     }
 
