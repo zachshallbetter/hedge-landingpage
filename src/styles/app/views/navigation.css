@@ -7,7 +7,7 @@
     width: 100%;
     padding: 34px 75px;
 
-    transition: background 200ms;
+    transition: background 300ms;
     z-index: var(--navigationIndex);
 
     &--activated {

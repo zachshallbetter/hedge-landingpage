@@ -1,3 +1,39 @@
 .footer {
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 34px 75px;
+    margin-top: -109px;
+
+    &__items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__item {
+        @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
+
+        &:not(:first-child) {
+            margin-left: 23px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        transition: color 200ms;
+
+        &:hover {
+            transition: none;
+            color: #fff;
+        }
+    }
+}
+
+.newsletter-form {
+    &__input {
+        margin-left: 13px;
+        width: 250px;
+    }
 }

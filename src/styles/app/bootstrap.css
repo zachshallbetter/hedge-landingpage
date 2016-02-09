@@ -3,10 +3,11 @@
 @import "bootstrap/fonts";
 @import "bootstrap/mixins";
 @import "bootstrap/mq";
+@import "bootstrap/styles";
 @import "bootstrap/zindices";
 
 @import "bootstrap/buttons";
-@import "bootstrap/styles";
+@import "bootstrap/forms";
 
 *, *:before, *:after {
     box-sizing: border-box;

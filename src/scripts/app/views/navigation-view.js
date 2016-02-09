@@ -3,7 +3,6 @@
 import AbstractView from 'app/views/abstract-view';
 import { throttle } from 'core-decorators';
 
-
 export default class NavigationView extends AbstractView {
 
     _invalidateBackground() {
