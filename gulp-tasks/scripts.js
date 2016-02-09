@@ -4,6 +4,7 @@ var browserify = require('browserify'),
     buffer = require('vinyl-buffer'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
+    envify = require('envify/custom'),
     livereload = require('gulp-livereload'),
     source = require('vinyl-source-stream'),
     uglify = require('gulp-uglify'),
@@ -24,6 +25,11 @@ gulp.task('scripts', () => {
         packageCache: {},
         fullPaths: !myProduction,
     });
+
+    myBundler.transform(envify({
+        _: 'purge',
+        NODE_ENV: process.env.NODE_ENV,
+    }));
 
     let bundle = () => {
         return myBundler.bundle().on('error', errors)

@@ -12,7 +12,7 @@ gulp.task('test', () => {
     let myProduction = process.env.NODE_ENV !== 'development';
 
     if (myProduction) {
-        gulp.src('src/scripts/**/*.js')
+        return gulp.src('src/scripts/**/*.js')
             .pipe(jshint()) // Check js with linter
             .pipe(jshint.reporter('jshint-stylish')) // Pretty output
             .pipe(flow()) // Check js with Facebook Flow

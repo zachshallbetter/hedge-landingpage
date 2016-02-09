@@ -6,10 +6,10 @@ var gulp = require('gulp'),
 gulp.task('default', (callback) => {
     runSequence(
         'clean',
+        'svg',
+        'images',
         'scripts',
         'styles',
-        'images',
-        'svg',
         'html',
         'copy',
         'watch'

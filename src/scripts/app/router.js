@@ -28,8 +28,8 @@ class Router {
         this.pushStateEnabled = 'pushState' in window.history;
 
         // Set initial view
-        let myPath = window.location.href.replace('http://hedgeformac.dev/', '');
-        this.controller.showElement(myPath, false);
+        let myUrl = Url.parse(window.location.href);
+        this.controller.showElement(myUrl.path, false);
     }
 
     /**
@@ -70,7 +70,7 @@ class Router {
 
     enable() {
         window.on('pushstate', this._onPushstate.bind(this));
-        $$(`a[href*='${ENV.baseUrl}']:not([target])`).on('click', this._onInternalLink.bind(this));
+        $$(`a:not([target])`).on('click', this._onInternalLink.bind(this));
     }
 }
 

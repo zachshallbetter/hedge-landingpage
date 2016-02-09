@@ -22,7 +22,7 @@ gulp.task('html', () => {
         collapseWhitespace: true,
     };
 
-    gulp.src(mySource)
+    return gulp.src(mySource)
         .pipe(fileinclude(myIncludeOptions)).on('error', errors)
         .pipe(gulpif(myProduction, htmlmin(myHtmlMinOptions))).on('error', errors)
         .pipe(gulp.dest(myDestination))

@@ -13,10 +13,12 @@ Install
 
 Development
 -----------
-1. `$ gulp` from main project directory
-2. `gulp` will automatically update and refresh the browser during development
+`$ npm run development`
 
-Deployment
+Staging
 ----------
-1. `$ NODE_ENV=production gulp` from main project directory
-2. `gulp` will build a minified version of the website for production
+`$ npm run staging`
+
+Production
+----------
+`$ npm run production`

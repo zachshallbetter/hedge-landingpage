@@ -1,21 +1,19 @@
 'use strict';
 
-const PROCESS = process;
-
-let myDebug = PROCESS.env.NODE_ENV === 'development',
+let myDebug = process.env.NODE_ENV === 'development',
     myBaseUrl;
 
-switch (PROCESS.env.NODE_ENV) {
+switch (process.env.NODE_ENV) {
     case 'production':
-        myBaseUrl = 'http:/www.hedgeformac.com';
+        myBaseUrl = 'https:/www.hedgeformac.com';
         break;
 
     case 'staging':
-        myBaseUrl = 'http://staging.hedgeformac.com';
+        myBaseUrl = 'https://staging.hedgeformac.com';
         break;
 
-    default:
     case 'development':
+    default:
         myBaseUrl = 'http://hedgeformac.dev';
         break;
 }

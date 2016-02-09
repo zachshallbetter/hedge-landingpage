@@ -11,6 +11,7 @@
     z-index: var(--navigationIndex);
 
     &--activated {
+        transition: background 900ms;
         background-color: color(var(--backgroundColor) alpha(100%));
     }
 
