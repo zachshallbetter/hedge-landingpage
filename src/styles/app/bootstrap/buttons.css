@@ -8,13 +8,16 @@ button {
 .primary-button {
     width: 165px;
     padding: 9px 13px 13px 13px;
+
     border: 1px solid;
     border-radius: 3px;
+    transition: border 200ms;
 
     &__label {
         @mixin font var(--whitney), #fff;
         display: block;
         text-align: left;
+        transition: color 200ms;
 
         &--bigger {
             margin-bottom: 3px;
@@ -24,6 +27,21 @@ button {
         &--smaller {
             font-size: 1.3rem;
         }
+    }
+
+    &:hover {
+        transition: none;
+        border-color: #fff;
+    }
+
+    @nest &:hover &__label--bigger {
+        transition: none;
+        color: #fff;
+    }
+
+    @nest &:hover &__label--smaller {
+        transition: none;
+        color: var(--defaultBodyColor);
     }
 
     &--download {
