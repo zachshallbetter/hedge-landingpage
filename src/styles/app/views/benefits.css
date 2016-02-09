@@ -10,7 +10,12 @@
 
     &__screenshot {
         position: relative;
-        padding-bottom: 55%;
+
+        &:after {
+            display: block;
+            padding-bottom: 55%;
+            content: '';
+        }
 
         & > img {
             position: absolute;
