@@ -8,12 +8,9 @@
     background-image: linear-gradient(var(--backgroundColor2), var(--backgroundColor));
 
     &__content {
-        display: flex;
-        flex-direction: column;
-
         padding-bottom: 62px;
         width: 100%;
-        max-width: 425px;
+        max-width: 640px;
     }
 
     &__home-link {
@@ -43,9 +40,9 @@
         line-height: 6.0rem;
     }
 
-    &__short-description {
+    &__description {
         @mixin default-body-text;
-        margin-top: 11px;
+        margin-top: 22px;
         text-align: center;
 
         & > em {
@@ -55,9 +52,8 @@
 
     &__button-group {
         display: flex;
-        flex-direction: row;
         justify-content: center;
-        margin-top: 34px;
+        margin-top: 55px;
     }
 
     &__buy-button {

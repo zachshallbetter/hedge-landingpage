@@ -1,5 +1,36 @@
 .reminder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     height: 100vh;
     min-height: 640px;
     background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor2));
+
+    &__content {
+        width: 100%;
+        max-width: 640px;
+    }
+
+    &__title {
+        @mixin default-header;
+        text-align: center;
+        line-height: 6.0rem;
+    }
+
+    &__subtitle {
+        @mixin default-body-text;
+        margin-top: 22px;
+        text-align: center;
+    }
+
+    &__button-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 55px;
+    }
+
+    &__buy-button {
+        margin-left: 3px;
+    }
 }
