@@ -1,0 +1,5 @@
+.reminder {
+    height: 100vh;
+    min-height: 640px;
+    background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor2));
+}

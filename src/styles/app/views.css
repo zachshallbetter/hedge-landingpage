@@ -5,6 +5,7 @@
 @import 'views/header';
 @import 'views/navigation';
 @import 'views/pricing';
+@import 'views/reminder';
 
 html {
     height: 100%;

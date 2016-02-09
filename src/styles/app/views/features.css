@@ -1,10 +1,8 @@
 .features {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 142px 0;
-
     &__content {
+        margin: 0 auto;
+        padding: 142px 0;
+
         width: 100%;
         max-width: 960px;
     }

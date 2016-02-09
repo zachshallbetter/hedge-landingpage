@@ -15,7 +15,7 @@
     left: $left;
 }
 
-@define-mixin font $family, $color, $size, $weight: 100 {
+@define-mixin font $family, $color, $size, $weight: 400 {
     font-family: $family;
     font-size: $size;
     font-weight: $weight;
