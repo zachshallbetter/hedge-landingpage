@@ -12,6 +12,7 @@ import HeaderView from 'app/views/header-view';
 import FeaturesView from 'app/views/features-view';
 import FooterView from 'app/views/footer-view';
 import NavigationView from 'app/views/navigation-view';
+import ReminderView from 'app/views/reminder-view';
 
 export default class Controller {
     constructor() {
@@ -60,6 +61,7 @@ export default class Controller {
             case 'features': myView = new FeaturesView(element); break;
             case 'footer': myView = new FooterView(element); break;
             case 'navigation': myView = new NavigationView(element); break;
+            case 'reminder': myView = new ReminderView(element); break;
         }
 
         // Do nothing when no view was instantiated

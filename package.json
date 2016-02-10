@@ -8,9 +8,9 @@
     "url": "https://github.com/patrickpietens/"
   },
   "scripts": {
-      "development": "NODE_ENV=development gulp",
-      "staging": "NODE_ENV=staging gulp && rsync -avzq --del --exclude '.DS_Store' dist/ deployer@drive.syncfactory.nl:/usr/share/nginx/public_html/staging.hedgeformac.com",
-      "production": "NODE_ENV=production gulp && rsync -avzq --del --exclude '.DS_Store' dist/ deployer@drive.syncfactory.nl:/usr/share/nginx/public_html/www.hedgeformac.com"
+    "development": "NODE_ENV=development gulp",
+    "staging": "NODE_ENV=staging gulp && rsync -avzq --del --exclude '.DS_Store' dist/ deployer@drive.syncfactory.nl:/usr/share/nginx/public_html/staging.hedgeformac.com",
+    "production": "NODE_ENV=production gulp && rsync -avzq --del --exclude '.DS_Store' dist/ deployer@drive.syncfactory.nl:/usr/share/nginx/public_html/www.hedgeformac.com"
   },
   "browser": {},
   "browserify": {

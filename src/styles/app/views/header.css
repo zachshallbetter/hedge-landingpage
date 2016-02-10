@@ -3,14 +3,18 @@
     align-items: center;
     justify-content: center;
 
+    position: relative;
     height: 100vh;
     min-height: 640px;
+
     background-image: linear-gradient(var(--backgroundColor2), var(--backgroundColor));
+    z-index: 0;
 
     &__content {
         padding-bottom: 62px;
         width: 100%;
         max-width: 640px;
+        z-index: 1;
     }
 
     &__home-link {
