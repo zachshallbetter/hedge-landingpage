@@ -1,4 +1,6 @@
 .features {
+    padding: 0 20px;
+
     &__content {
         margin: 0 auto;
         padding: 142px 0;
@@ -27,11 +29,16 @@
 
 .feature {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
 
-    padding: 0 2px;
+    @media (--normal), (--wide) {
+        flex-direction: column;
+    }
+
+    @media (--wider), (--widest) {
+        justify-content: space-between;
+        padding: 0 2px;
+    }
 
     &:not(:first-child) {
         margin-top: 112px;
@@ -39,16 +46,45 @@
 
     &__content {
         width: 100%;
-        max-width: 350px;
+        max-width: 360px;
+
+        @media (--normal), (--wide) {
+            margin-top: 50px;
+            order: 2;
+        }
+
+        @media (--wider), (--widest) {
+            padding-right: 20px;
+        }
     }
 
     &__title {
         @mixin small-header;
+
+        @media (--normal), (--wide) {
+            text-align: center;
+        }
     }
 
     &__description {
         @mixin default-body-text;
         margin-top: 20px;
         line-height: 2.4rem;
+
+        @media (--normal), (--wide) {
+            text-align: center;
+        }
+    }
+
+    &__animation {
+        flex: 0 0 auto;
+
+        @media (--normal), (--wide) {
+            order: 1;
+
+            & img {
+                width: 100%;
+            }
+        }
     }
 }

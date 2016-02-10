@@ -7,7 +7,7 @@ export default class NavigationView extends AbstractView {
 
     _invalidateBackground() {
         let myPosition = window.pageYOffset;
-        if (myPosition > 250) {
+        if (myPosition >= 250) {
             this.el.classList.add('navigation--activated');
         } else {
             this.el.classList.remove('navigation--activated');

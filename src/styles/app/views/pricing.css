@@ -4,7 +4,6 @@
 }
 
 .pricing {
-
     background-color: #fff;
 
     &__content {
@@ -13,7 +12,7 @@
         align-items: center;
 
         margin: 0 auto;
-        padding: 128px 0;
+        padding: 128px 20px;
 
         width: 100%;
         max-width: 960px;
@@ -36,7 +35,6 @@
 
     &__price-option-container {
         display: flex;
-        flex-direction: row;
         justify-content: center;
 
         margin-top: 82px;

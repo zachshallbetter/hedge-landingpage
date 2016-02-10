@@ -16,8 +16,11 @@
     }
 
     &__shortcuts {
-        display: flex;
-        flex-direction: row;
+        display: none;
+
+        @media (--wider), (--widest) {
+            display: flex;
+        }
     }
 
     &__shortcut:not(:first-child) {

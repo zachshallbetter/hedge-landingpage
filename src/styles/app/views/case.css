@@ -4,7 +4,7 @@
         max-width: 960px;
 
         margin: 0 auto;
-        padding: 125px 0 80px 0;
+        padding: 125px 20px 80px 20px;
         border-top: 1px solid var(--defaultStrokeColor);
     }
 
@@ -16,13 +16,18 @@
     &__description {
         @mixin default-body-text;
         margin: 24px auto 0 auto;
+
+        width: 100%;
         max-width: 640px;
         text-align: center;
     }
 
     &__testimonal-container {
         display: flex;
-        flex-direction: row;
+
+        @media (--normal), (--wide) {
+            flex-direction: column;
+        }
     }
 }
 
@@ -30,42 +35,37 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
 
     width: 100%;
-    height: 625px;
     padding: 25px;
 
     background-color: var(--defaultPlaceholderColor);
-    background-position: center;
     background-size: cover;
 
-    &__header {
-        margin: 0 auto;
+    @media (--normal), (--wide) {
+        height: 325px;
+        background-position: center 25%;
+    }
+
+    @media (--wider), (--widest) {
+        height: 625px;
+        background-position: center;
     }
 
     &__title {
         @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
-        display: inline-block;
-    }
-
-    &__subtitle {
-        @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
-        display: inline-block;
-        position: relative;
-
-        margin-left: 3px;
-        padding-left: 20px;
-
-        &:before {
-            position: absolute; left: 0;
-            content: '—';
-        }
+        text-align: center;
+        line-height: 2.4rem;
     }
 
     &__description {
         @mixin default-body-text;
         margin-top: 10px;
         text-align: center;
+
+        width: 100%;
+        max-width: 360px;
     }
 
     &--mark {

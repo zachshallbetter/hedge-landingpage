@@ -1,4 +1,6 @@
 .benefits {
+    padding: 0 20px;
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -26,10 +28,13 @@
 
     &__benefit-container {
         display: flex;
-        flex-direction: row;
-
         margin-top: 74px;
         width: 100%;
+
+        @media (--normal), (--wide) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 
@@ -37,9 +42,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 200px;
 
-    padding: 0 20px;
+    width: 100%;
+    max-width: 360px;
+
+    @media (--normal), (--wide) {
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+    }
+
+    @media (--wider), (--widest) {
+        padding: 0 20px;
+    }
 
     &__title {
         @mixin small-header;

@@ -1,7 +1,8 @@
 @custom-media --small only screen and (width <= 30em);
 @custom-media --normal only screen and (width >= 30.01em) and (width <= 45em);
-@custom-media --wide only screen and (width >= 45.01em) and (width <= 60em);
-@custom-media --wider only screen and (width >= 60.01em);
+@custom-media --wide only screen and (width >= 45.01em) and (width <= 55em);
+@custom-media --wider only screen and (width >= 55.01em) and (width <= 72.5em);
+@custom-media --widest only screen and (width >= 72.51em);
 
 @custom-media --retina  only screen and (-webkit-min-device-pixel-ratio: 1.3),
                         only screen and (-o-min-device-pixel-ratio: 13/10),

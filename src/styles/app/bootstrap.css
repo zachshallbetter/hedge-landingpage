@@ -27,5 +27,7 @@
 }
 
 .no-br {
-    display: inline-block;
+    @media (--wide), (--wider), (--widest) {
+        display: inline-block;
+    }
 }
