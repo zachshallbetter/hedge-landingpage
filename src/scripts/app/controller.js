@@ -8,10 +8,12 @@ import { debounce, throttle } from 'core-decorators';
 import { find, findLast, trim, uniqueId } from 'lodash';
 
 import BenefitsView from 'app/views/benefits-view';
+import CaseView from 'app/views/case-view';
 import HeaderView from 'app/views/header-view';
 import FeaturesView from 'app/views/features-view';
 import FooterView from 'app/views/footer-view';
 import NavigationView from 'app/views/navigation-view';
+import PricingView from 'app/views/pricing-view';
 import ReminderView from 'app/views/reminder-view';
 
 export default class Controller {
@@ -57,10 +59,12 @@ export default class Controller {
         let myClass = element.classList.item(0);
         switch (myClass) {
             case 'benefits': myView = new BenefitsView(element); break;
+            case 'case': myView = new CaseView(element); break;
             case 'header': myView = new HeaderView(element); break;
             case 'features': myView = new FeaturesView(element); break;
             case 'footer': myView = new FooterView(element); break;
             case 'navigation': myView = new NavigationView(element); break;
+            case 'pricing': myView = new PricingView(element); break;
             case 'reminder': myView = new ReminderView(element); break;
         }
 

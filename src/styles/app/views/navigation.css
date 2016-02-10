@@ -16,15 +16,17 @@
     }
 
     &__shortcuts {
-        display: none;
-
-        @media (--wider), (--widest) {
-            display: flex;
-        }
+        display: flex;
     }
 
     &__shortcut:not(:first-child) {
         margin-left: 28px;
+    }
+
+    @nest &__shortcut:not(&__shortcut--highlight) {
+        @media (--normal), (--wide) {
+            display: none;
+        }
     }
 
     &__link {

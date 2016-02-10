@@ -27,7 +27,5 @@
 }
 
 .no-br {
-    @media (--wide), (--wider), (--widest) {
-        display: inline-block;
-    }
+    display: inline-block;
 }

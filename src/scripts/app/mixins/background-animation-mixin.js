@@ -23,10 +23,6 @@ class ParticleEmitter {
 
         this.emitInterval = options.emitInterval || 100;
         this.maxParticleCount = options.maxParticleCount || 10;
-
-        this.container = document.createElement('div');
-        this.container.classList.add('particle-container');
-        this.root.appendChild(this.container);
     }
 
     emit(continuously = true) {
@@ -51,6 +47,8 @@ class ParticleEmitter {
     stop() {
         clearTimeout(this._emitId);
         raf.cancel(this._updateId);
+
+        this._removeAll();
     }
 
     _update() {
@@ -70,14 +68,18 @@ class ParticleEmitter {
         let myParticle = new this.Particle();
 
         this._particles.push(myParticle);
-        this.container.appendChild(myParticle.el);
+        this.root.insertBefore(myParticle.el, this.root.firstChild);
 
         return myParticle;
     }
 
+    _removeAll() {
+
+    }
+
     _destroyParticle(particle) {
         remove(this._particles, particle);
-        this.container.removeChild(particle.el);
+        this.root.removeChild(particle.el);
 
         particle.destroy();
     }
@@ -85,7 +87,6 @@ class ParticleEmitter {
     destroy() {
         if (!this.destroyed) {
             this.stop();
-            this.el.removeChild(this.container);
         }
     }
 }
@@ -136,13 +137,10 @@ class GlitterParticle extends AbstractParticle {
         let myColor = sample(['blue', 'green', 'white']),
             mySize = ['small', 'normal', 'big'][this.depth];
 
-        this.el.className = `glitter-particle
-            glitter-particle--color-${myColor}
-            glitter-particle--size-${mySize}`;
-
         let myTop = (Math.random() * 0.7 + 0.15) * 100,
             myLeft = Math.random() * 75;
 
+        this.el.className = `glitter-particle glitter-particle--color-${myColor} glitter-particle--size-${mySize}`;
         this.el.style.cssText = `left: ${myLeft}%; top: ${myTop}%`;
     }
 

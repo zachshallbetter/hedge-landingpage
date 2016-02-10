@@ -12,7 +12,7 @@
     @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
     line-height: 2.4rem;
 
-    & > a {
+    & a {
         color: white;
         text-decoration: none;
         transition: color 200ms;
@@ -22,5 +22,9 @@
             transition: none;
             color: var(--highlightColorGreen);
         }
+    }
+
+    & em {
+        font-style: italic;
     }
 }
