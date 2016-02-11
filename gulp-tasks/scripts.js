@@ -28,8 +28,8 @@ gulp.task('scripts', () => {
 
     myBundler.transform(envify({
         _: 'purge',
-        NODE_ENV: process.env.NODE_ENV,
-    }));
+        NODE_ENV: 'production',
+    }), { global: true });
 
     let bundle = () => {
         return myBundler.bundle().on('error', errors)
