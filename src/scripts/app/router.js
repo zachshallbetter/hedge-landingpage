@@ -1,10 +1,10 @@
 'use strict';
 
-import ENV from 'app/env';
-
+import $$ from 'selectjs';
 import Url from 'url';
 import Logdown from 'logdown';
-import $$ from 'selectjs';
+
+import config from 'app/config';
 import Controller from 'app/controller';
 
 import { uniqueId, trim } from 'lodash';

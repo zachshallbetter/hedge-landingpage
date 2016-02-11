@@ -16,7 +16,7 @@ gulp.task('images', () => {
 
     return gulp.src(mySource)
         // .pipe(changed(myDestination)) // Only apply to new files
-        .pipe(gulpif(myProduction, tinypng(mySecret))) // Run through tinypng for small filesizes
+        // .pipe(gulpif(myProduction, tinypng(mySecret))) // Run through tinypng for small filesizes
         .pipe(gulp.dest(myDestination))
         .pipe(livereload());
 });

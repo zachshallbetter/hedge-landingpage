@@ -15,7 +15,8 @@
   "browser": {},
   "browserify": {
     "transform": [
-      "babelify"
+      "babelify",
+      "yamlify"
     ]
   },
   "devDependencies": {
@@ -64,7 +65,8 @@
     "run-sequence": "1.1.5",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
-    "watchify": "3.7.0"
+    "watchify": "3.7.0",
+    "yamlify": "^0.1.2"
   },
   "dependencies": {
     "arrayjs": "^1.0.0",
