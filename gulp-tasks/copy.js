@@ -12,8 +12,8 @@ gulp.task('copy', () => {
     let mySource = [
         'src/**/*',
         'src/.htaccess',
-        'src/scripts/modernizr.js',
-        'src/images/checkered-bg.svg',
+        '!src/.env.json',
+        '!src/.env.example.json',
         '!src/scripts/index.js',
         '!src/scripts/app/**/*',
         '!src/styles/**/*',
