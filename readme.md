@@ -13,8 +13,8 @@ Install
 
 Setup
 -----
-1. Copy `src/.env.example.json` to `src/.env.json`
-2. Edit `src/.env.json` to match your local server settings
+1. Duplicate `src/config-example.yml` to `src/config.yml`
+2. Edit `src/config.yml` to match your local settings
 
 Development
 -----------

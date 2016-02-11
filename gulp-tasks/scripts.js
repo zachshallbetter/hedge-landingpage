@@ -26,10 +26,11 @@ gulp.task('scripts', () => {
         fullPaths: !myProduction,
     });
 
-    myBundler.transform(envify({
+    myBundler.transform('envify', {
         _: 'purge',
+        global: true,
         NODE_ENV: process.env.NODE_ENV,
-    }), { global: true });
+    });
 
     let bundle = () => {
         return myBundler.bundle().on('error', errors)
