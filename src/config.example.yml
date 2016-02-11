@@ -1,5 +1,3 @@
-version: 1.0
-
 development:
     baseUrl: 'http://hedgeformac.dev'
     debug: true

@@ -31,17 +31,17 @@
     }
 
     &--size-small:after {
-        width: 125px;
+        width: 150px;
         background-image: linear-gradient(to right, color(#fff alpha(0%)), color(#fff alpha(5%)));
     }
 
     &--size-normal:after {
-        width: 175px;
+        width: 225px;
         background-image: linear-gradient(to right, color(#fff alpha(0%)), color(#fff alpha(7%)));
     }
 
     &--size-big:after {
-        width: 225px;
+        width: 300px;
         background-image: linear-gradient(to right, color(#fff alpha(0%)), color(#fff alpha(9%)));
     }
 }

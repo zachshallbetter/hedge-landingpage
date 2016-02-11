@@ -131,7 +131,7 @@ class GlitterParticle extends AbstractParticle {
 
         this.lifetime = 250;
         this.depth = parseInt(Math.random() * 3);
-        this.speed = (this.depth + 1) + Math.random();
+        this.speed = (this.depth + 1) * 1.5 + Math.random() * 2;
         this.translation = 0;
 
         let myColor = sample(['blue', 'green', 'white']),
