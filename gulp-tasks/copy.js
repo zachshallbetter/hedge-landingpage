@@ -13,7 +13,7 @@ gulp.task('copy', () => {
         'src/**/*',
         'src/.htaccess',
         '!src/config.yml',
-        '!src/config.example.yml',
+        '!src/config-example.yml',
         '!src/scripts/index.js',
         '!src/scripts/app/**/*',
         '!src/styles/**/*',
