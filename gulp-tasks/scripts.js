@@ -28,7 +28,7 @@ gulp.task('scripts', () => {
 
     myBundler.transform(envify({
         _: 'purge',
-        NODE_ENV: 'production',
+        NODE_ENV: process.env.NODE_ENV,
     }), { global: true });
 
     let bundle = () => {
