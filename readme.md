@@ -9,7 +9,12 @@ Requirements (need to be callable on your path)
 Install
 -------
 1. `$ git clone https://github.com/TheSyncFactory/hedge-landingpage.git`
-2. `$ npm install` to install all dependencies
+2. `$ npm install`
+
+Setup
+-----
+1. Copy `src/.env.example.json` to `src/.env.json`
+2. Edit `src/.env.json` to match your local server settings
 
 Development
 -----------
