@@ -88,8 +88,8 @@ export default class Controller {
 
         // Get the view which most visible in the viewport
         let myElement = findLast(this.root.children, (element) => {
-            let { top } = element.getBoundingClientRect();
-            return top <= myOffset;
+            let { top, width, height } = element.getBoundingClientRect();
+            return width > 0 && height > 0 && top <= myOffset;
         });
 
         // Nothing was found
