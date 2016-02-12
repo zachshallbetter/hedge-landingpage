@@ -89,6 +89,10 @@
 
         @media (--small) {
             margin-top: 39px;
+
+            & img {
+                width: 160px;
+            }
         }
 
         @media (--normal), (--wide) {

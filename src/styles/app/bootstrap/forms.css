@@ -13,12 +13,21 @@
         border-radius: 4px;
         outline: 0;
 
+        transition: border 200ms;
+
         &::placeholder {
             color: color(var(--defaultBodyColor) alpha(50%));
+            transition: color 200ms;
         }
 
         &:focus {
-            border-color: red;
+            transition: none;
+            border-color: #fff;
+
+            &::placeholder {
+                color: #fff;
+                transition: none;
+            }
         }
     }
 }
