@@ -12,10 +12,11 @@
         align-items: center;
 
         margin: 0 auto;
-        padding: 128px 20px;
-
         width: 100%;
         max-width: 960px;
+
+        @media (--small) { padding: 58px 10px; }
+        @media (--normal), (--wide), (--wider), (--widest) { padding: 128px 20px; }
     }
 
     &__title {
@@ -25,20 +26,42 @@
     }
 
     &__description {
-        @mixin font var(--whitney), var(--lightHeaderColor), 3.0rem, 100;
         @mixin antialiased;
-
-        margin-top: 20px;
         text-align: center;
-        line-height: 4.2rem;
+
+        @media (--small) {
+            @mixin font var(--whitney), var(--lightHeaderColor), 2.3rem, 100;
+
+            margin-top: 23px;
+            line-height: 3.2rem;
+        }
+
+        @media (--normal), (--wide), (--wider), (--widest) {
+            @mixin font var(--whitney), var(--lightHeaderColor), 3.0rem, 100;
+
+            margin-top: 20px;
+            line-height: 4.2rem;
+        }
     }
 
     &__price-option-container {
         display: flex;
         justify-content: center;
 
-        margin-top: 82px;
         width: 100%;
+
+        @media (--small), (--normal), (--wide) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (--small) {
+            margin-top: 43px;
+        }
+
+        @media (--normal), (--wide), (--wider), (--widest) {
+            margin-top: 82px;
+        }
     }
 }
 
@@ -47,7 +70,13 @@
     max-width: 280px;
 
     &:not(:first-child) {
-        margin-left: 40px;
+        @media (--small), (--normal), (--wide) {
+            margin-top: 61px;
+        }
+
+        @media (--wider), (--widest) {
+            margin-left: 40px;
+        }
     }
 
     &__title {
@@ -66,9 +95,16 @@
     &__pricing {
         @mixin font var(--whitney), var(--lightHeaderColor), 5.0rem, 100;
         display: block;
-        padding: 43px 0 25px 0;
         text-align: center;
         line-height: 4.2rem;
+
+        @media (--small) {
+            padding: 33px 0 12px 0;
+        }
+
+        @media (--normal), (--wide), (--wider), (--widest) {
+            padding: 43px 0 25px 0;
+        }
 
         &--per-month {
             @mixin antialiased;
@@ -86,6 +122,10 @@
         padding: 0 50px;
         line-height: 2.4rem;
         text-align: center;
+    }
+
+    @nest &--trial &__title {
+        color: var(--defaultBodyColor);
     }
 
     @nest &--per-month &__title {

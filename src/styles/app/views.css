@@ -12,7 +12,8 @@ html {
 	font-size: 62.5%;
 }
 
-body.scrolling * {
+body.scrolling *,
+body.resizing * {
     pointer-events: none;
 }
 

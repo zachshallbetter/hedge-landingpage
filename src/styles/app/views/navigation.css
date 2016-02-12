@@ -15,6 +15,10 @@
         background-color: color(var(--backgroundColor) alpha(100%));
     }
 
+    @media (--small) {
+        display: none;
+    }
+
     &__shortcuts {
         display: flex;
     }

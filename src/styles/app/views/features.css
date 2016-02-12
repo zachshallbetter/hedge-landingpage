@@ -1,12 +1,12 @@
 .features {
-    padding: 0 20px;
-
     &__content {
         margin: 0 auto;
-        padding: 142px 0;
 
         width: 100%;
         max-width: 960px;
+
+        @media (--small) { padding: 50px 10px 83px 10px; }
+        @media (--normal), (--wide), (--wider), (--widest) { padding: 142px 20px; }
     }
 
     &__header {
@@ -23,7 +23,9 @@
     &__container {
         display: flex;
         flex-direction: column;
-        margin-top: 115px;
+
+        @media (--small) { margin-top: 53px; }
+        @media (--normal), (--wide), (--wider), (--widest) { margin-top: 115px; }
     }
 }
 
@@ -31,7 +33,7 @@
     display: flex;
     align-items: center;
 
-    @media (--normal), (--wide) {
+    @media (--small), (--normal), (--wide) {
         flex-direction: column;
     }
 
@@ -41,7 +43,13 @@
     }
 
     &:not(:first-child) {
-        margin-top: 112px;
+        @media (--small) {
+            margin-top: 71px;
+        }
+
+        @media (--normal), (--wide), (--wider), (--widest) {
+            margin-top: 112px;
+        }
     }
 
     &__content {
@@ -61,7 +69,7 @@
     &__title {
         @mixin small-header;
 
-        @media (--normal), (--wide) {
+        @media (--small), (--normal), (--wide) {
             text-align: center;
         }
     }
@@ -71,13 +79,17 @@
         margin-top: 20px;
         line-height: 2.4rem;
 
-        @media (--normal), (--wide) {
+        @media (--small), (--normal), (--wide) {
             text-align: center;
         }
     }
 
     &__animation {
         flex: 0 0 auto;
+
+        @media (--small) {
+            margin-top: 39px;
+        }
 
         @media (--normal), (--wide) {
             order: 1;

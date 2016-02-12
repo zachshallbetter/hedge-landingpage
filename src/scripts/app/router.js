@@ -4,7 +4,7 @@ import $$ from 'selectjs';
 import Url from 'url';
 import Logdown from 'logdown';
 
-import config from 'app/config';
+import Config from 'app/config';
 import Controller from 'app/controller';
 
 import { uniqueId, trim } from 'lodash';

@@ -1,45 +1,60 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     position: relative;
-    height: 100vh;
-    min-height: 640px;
-
     background-image: linear-gradient(var(--backgroundColor2), var(--backgroundColor));
 
+    @media (--normal), (--wide), (--wider), (--widest) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100vh;
+        min-height: 640px;
+    }
+
     &__content {
-        padding-bottom: 62px;
         width: 100%;
         max-width: 640px;
+
+        @media (--small) { padding: 75px 10px; }
+        @media (--normal), (--wide), (--wider), (--widest) { padding: 0 20px 62px 20px; }
     }
 
     &__home-link {
-        position: fixed;
-        top: 21px; left: 71px;
-        z-index: var(--homeLinkIndex);
+        display: flex;
+        align-items: center;
         text-decoration: none;
-    }
 
-    &__logo {
-        @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
-        height: 43px;
-        padding: 13px 0 0 62px;
+        @media (--small) {
+            flex-direction: column;
+        }
 
-        background-image: url('../images/hedge__logo.png');
-        background-repeat: no-repeat;
-        background-size: 47px 43px;
-
-        @media (--retina) {
-            background-image: url('../images/hedge__logo@2x.png');
+        @media (--normal), (--wide), (--wider), (--widest) {
+            position: fixed;
+            top: 20px; left: 71px;
+            z-index: var(--homeLinkIndex);
         }
     }
 
-    &__tagline {
+    &__logo {
+        order: 1;
+    }
+
+    &__title {
+        @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
+        text-align: center;
+        order: 2;
+
+        @media (--small) { margin-top: 12px; }
+        @media (--normal), (--wide), (--wider), (--widest) { margin-left: 16px; }
+    }
+
+    &__subtitle {
         @mixin default-header;
         text-align: center;
-        line-height: 6.0rem;
+
+        @media (--small) {
+            margin-top: 54px;
+        }
     }
 
     &__description {
@@ -49,9 +64,15 @@
     }
 
     &__button-group {
-        display: flex;
-        justify-content: center;
-        margin-top: 55px;
+        @media (--small) {
+            display: none;
+        }
+
+        @media (--normal), (--wide), (--wider), (--widest) {
+            display: flex;
+            justify-content: center;
+            margin-top: 55px;
+        }
     }
 
     &__buy-button {

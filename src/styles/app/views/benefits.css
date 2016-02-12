@@ -1,6 +1,10 @@
 .benefits {
     padding: 0 20px;
 
+    @media (--small) {
+        display: none;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;

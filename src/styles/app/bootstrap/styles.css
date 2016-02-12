@@ -1,6 +1,15 @@
 @define-mixin default-header {
-    @mixin font var(--whitney), var(--defaultHeaderColor), 5.0rem, 100;
     @mixin antialiased;
+
+    @media (--small) {
+        @mixin font var(--whitney), var(--defaultHeaderColor), 4.0rem, 100;
+        line-height: 4.8rem;
+    }
+
+    @media (--normal), (--wide), (--wider), (--widest) {
+        @mixin font var(--whitney), var(--defaultHeaderColor), 5.0rem, 100;
+        line-height: 6.0rem;
+    }
 }
 
 @define-mixin small-header {

@@ -50,8 +50,16 @@
             <header class='header'>
                 <div class='header__content'>
                     <hgroup>
-                        <a href='/' class='header__home-link'><h1 class='header__logo'>Hedge for Mac</h1></a>
-                        <h2 class='header__tagline'><span class='no-br'>Handle your footage</span> <span class='no-br'>with peace of mind.</span></h2>
+                        <a href='/' class='header__home-link'>
+                            <h1 class='header__title'>Hedge for Mac</h1>
+
+                            <picture class='header__logo'>
+                                <source srcset='images/hedge__logo.png 1x, images/hedge__logo@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/hedge__logo--big.png 1x, images/hedge__logo--big@2x.png 2x' alt='Safety in numbers'>
+                            </picture>
+                        </a>
+
+                        <h2 class='header__subtitle'><span class='no-br'>Handle your footage</span> <span class='no-br'>with peace of mind.</span></h2>
                     </hgroup>
 
                     <p class='header__description'><span class='no-br'><strong>Hedge™</strong> is a lightweight <em>data handling app</em> that makes</span> <span class='no-br'>sure your filesand backups are always safe.</span></p>
@@ -111,9 +119,10 @@
                                 <p class='feature__description'>Easily create copies for yourself, post-production, the director and others.  Always make sure your files are safely stored.</p>
                             </div>
 
-                            <div class='feature__animation'>
-                                <img srcset='images/multiple-backups__animation.png 1x, images/multiple-backups__animation@2x.png 2x' alt='Multiple backups'>
-                            </div>
+                            <picture class='feature__animation'>
+                                <source srcset='images/multiple-backups__animation.png 1x, images/multiple-backups__animation@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/multiple-backups__animation--mobile.png 1x, images/multiple-backups__animation--mobile@2x.png 2x' alt='Multiple backups'>
+                            </picture>
                         </article>
 
                         <article class='features__feature feature feature--file-verification'>
@@ -122,9 +131,10 @@
                                 <p class='feature__description'>Every copy made by <strong>Hedge™</strong> is made from the source material, and cross-referenced with other copies to ensure a perfect bit-for-bit copy.</p>
                             </div>
 
-                            <div class='feature__animation'>
-                                <img srcset='images/file-verification__animation.png 1x, images/file-verification__animation@2x.png 2x' alt='File verification'>
-                            </div>
+                            <picture class='feature__animation'>
+                                <source srcset='images/file-verification__animation.png 1x, images/file-verification__animation@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/file-verification__animation--mobile.png 1x, images/file-verification__animation--mobile@2x.png 2x' alt='File verification'>
+                            </picture>
                         </article>
 
                         <article class='features__feature feature feature--safety-in-numbers'>
@@ -133,9 +143,10 @@
                                 <p class='feature__description'>Every card added to <strong>Hedge™</strong> is guaranteed to have been copied to all the drives you specified. That way you won’t erase footage that hasn’t been ingested yet.</p>
                             </div>
 
-                            <div class='feature__animation'>
-                                <img srcset='images/safety-in-number__animation.png 1x, images/safety-in-number__animation@2x.png 2x' alt='Safety in numbers'>
-                            </div>
+                            <picture class='feature__animation'>
+                                <source srcset='images/safety-in-number__animation.png 1x, images/safety-in-number__animation@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/safety-in-number__animation--mobile.png 1x, images/safety-in-number__animation--mobile@2x.png 2x' alt='Safety in numbers'>
+                            </picture>
                         </article>
                     </div>
                 </div>
@@ -173,6 +184,12 @@
                     </header>
 
                     <div class='pricing__price-option-container'>
+                        <article class='pricing__price-option price-option price-option--trial'>
+                            <h1 class='price-option__title'>Trial</h1>
+                            <span class='price-option__pricing'>Free <span class='price-option__pricing--per-month'>Full access</span></span>
+                            <p class='price-option__description'>Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.</p>
+                        </article>
+
                         <article class='pricing__price-option price-option price-option--per-month'>
                             <h1 class='price-option__title'>Monthly Plan</h1>
                             <span class='price-option__pricing'>$15 <span class='price-option__pricing--per-month'>per month</span></span>
