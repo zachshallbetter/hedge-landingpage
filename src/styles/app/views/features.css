@@ -87,20 +87,32 @@
     &__animation {
         flex: 0 0 auto;
 
+        & img {
+            width: 100%;
+            height: auto;
+        }
+
         @media (--small) {
             margin-top: 39px;
-
-            & img {
-                width: 160px;
-            }
         }
 
         @media (--normal), (--wide) {
             order: 1;
-
-            & img {
-                width: 100%;
-            }
         }
+    }
+
+    @nest &--multiple-backups &__animation img {
+        @media (--small) { max-width: 155px; }
+        @media (--normal), (--wide), (--wider), (--widest) { max-width: 554px; }
+    }
+
+    @nest &--file-verification &__animation img {
+        @media (--small) { max-width: 202px; }
+        @media (--normal), (--wide), (--wider), (--widest) { max-width: 554px; }
+    }
+
+    @nest &--safety-in-numbers &__animation img {
+        @media (--small) { max-width: 120px; }
+        @media (--normal), (--wide), (--wider), (--widest) { max-width: 554px; }
     }
 }

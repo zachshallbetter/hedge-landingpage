@@ -37,6 +37,14 @@
 
     &__logo {
         order: 1;
+
+        & img {
+            width: 100%;
+            height: auto;
+            
+            @media (--small) { max-width: 90px; }
+            @media (--normal), (--wide), (--wider), (--widest) { width: 47px; }
+        }
     }
 
     &__title {
