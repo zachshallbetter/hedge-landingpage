@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Niek Dekker -- Designer -- @niekdekker
+	Patrick Pietens -- Developer -- @patrickpietens
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Lodash, Jump.js, Logdown, Picturefill, raf
