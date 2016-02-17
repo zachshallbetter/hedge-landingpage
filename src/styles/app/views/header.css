@@ -32,6 +32,9 @@
             position: fixed;
             top: 20px; left: 71px;
             z-index: var(--homeLinkIndex);
+
+            @nest body.has-notification & { position: absolute; }
+            @nest body.has-notification &--fixed { position: fixed; }
         }
     }
 
@@ -41,7 +44,7 @@
         & img {
             width: 100%;
             height: auto;
-            
+
             @media (--small) { max-width: 90px; }
             @media (--normal), (--wide), (--wider), (--widest) { width: 47px; }
         }

@@ -4,6 +4,7 @@
 @import 'views/footer';
 @import 'views/header';
 @import 'views/navigation';
+@import 'views/notification';
 @import 'views/pricing';
 @import 'views/reminder';
 
@@ -18,6 +19,7 @@ body.resizing * {
 }
 
 main {
+    position: relative;
     opacity: 0.0;
     transition: opacity 500ms;
     overflow-x: hidden;

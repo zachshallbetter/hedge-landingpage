@@ -96,7 +96,7 @@ export default class Controller {
         }
 
         const Router = require('app/router');
-        Router.default.navigate(this._currentView.path);
+        Router.default.navigate(`${this._currentView.path}${window.location.search}`);
     }
 
     /**
@@ -128,6 +128,10 @@ export default class Controller {
                 offset: myOffset,
             });
         }
+    }
+
+    showNotification() {
+        document.body.classList.add('has-notification');
     }
 
     /**
