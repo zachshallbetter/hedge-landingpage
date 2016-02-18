@@ -13,7 +13,12 @@
 
     &__body-text {
         @mixin font var(--whitney), var(--lightBodyColor), 1.7rem;
+        display: none;
         margin: auto;
+
+        &--visible {
+            display: inline;
+        }
 
         & a {
             color: #000;

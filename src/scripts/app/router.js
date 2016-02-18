@@ -33,8 +33,8 @@ class Router {
         this.controller.showElement(myUrl.path, false);
 
         let myQueryString = QueryString.parse(window.location.search);
-        if (myQueryString.ref === 'beta') {
-            this.controller.showNotification();
+        if (!!myQueryString.ref) {
+            this.controller.showNotification(myQueryString.ref);
         }
     }
 
