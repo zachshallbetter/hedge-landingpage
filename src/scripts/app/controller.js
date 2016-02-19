@@ -119,7 +119,8 @@ export default class Controller {
         }
 
         if (!animate) {
-            myElement.scrollIntoView();
+            myOffset -= myElement.offsetTop;
+            window.scrollBy(0, Math.abs(myOffset));
         } else {
             const Scroller = new Jump();
             Scroller.jump(mySelector, {
