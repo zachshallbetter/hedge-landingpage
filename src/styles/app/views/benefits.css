@@ -91,15 +91,15 @@
     cursor: pointer;
 
     &--instant-transfer {
-        top: 70px; left: 80px;
+        top: 13%; left: 8%;
     }
 
     &--hedge-recognizes {
-        top: 295px; left: 440px;
+        top: 56%; left: 45%;
     }
 
     &--multiple-destinations {
-        top: 170px; right: 25px;
+        top: 34%; right: 3%;
     }
 
     &:before {
