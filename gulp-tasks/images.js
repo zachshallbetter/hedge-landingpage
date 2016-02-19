@@ -4,7 +4,8 @@ var changed = require('gulp-changed'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
     livereload = require('gulp-livereload'),
-    tinypng = require('gulp-tinypng');
+    tinypng = require('gulp-tinypng'),
+    plumber = require('gulp-plumber');
 
 gulp.task('images', () => {
     let myProduction = process.env.NODE_ENV !== 'development';
@@ -15,6 +16,7 @@ gulp.task('images', () => {
     const mySecret = 'A-AVymCOwXuxvG1aWrjQL6MzuAkM99TG';
 
     return gulp.src(mySource)
+        .pipe(plumber())
         // .pipe(changed(myDestination)) // Only apply to new files
         .pipe(gulpif(myProduction, tinypng(mySecret))) // Run through tinypng for small filesizes
         .pipe(gulp.dest(myDestination))

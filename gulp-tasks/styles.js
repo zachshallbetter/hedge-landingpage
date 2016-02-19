@@ -6,8 +6,9 @@ var atImport = require('postcss-import'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
     livereload = require('gulp-livereload'),
-    postcss = require('gulp-postcss'),
     mixins = require('postcss-mixins'),
+    plumber = require('gulp-plumber'),
+    postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
     errors = require('../gulperrors');
 
@@ -24,6 +25,7 @@ gulp.task('styles', () => {
     ];
 
     return gulp.src(mySource)
+        .pipe(plumber())
         .pipe(gulpif(!myProduction, sourcemaps.init()))
         .pipe(postcss(myProcessors)).on('error', errors)
         .pipe(gulpif(myProduction, cssnano())).on('error', errors)

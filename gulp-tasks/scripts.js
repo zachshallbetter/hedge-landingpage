@@ -6,6 +6,7 @@ var browserify = require('browserify'),
     gulpif = require('gulp-if'),
     envify = require('envify/custom'),
     livereload = require('gulp-livereload'),
+    plumber = require('gulp-plumber'),
     source = require('vinyl-source-stream'),
     uglify = require('gulp-uglify'),
     watchify = require('watchify'),
@@ -34,6 +35,7 @@ gulp.task('scripts', () => {
 
     let bundle = () => {
         return myBundler.bundle().on('error', errors)
+            .pipe(plumber())
             .pipe(source('main.js'))
             .pipe(buffer())
             .pipe(gulpif(myProduction, uglify()))

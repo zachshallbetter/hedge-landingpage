@@ -4,7 +4,8 @@ var changed = require('gulp-changed'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
     gulpIgnore = require('gulp-ignore'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    plumber = require('gulp-plumber');
 
 gulp.task('copy', () => {
     let myProduction = process.env.NODE_ENV !== 'development';
@@ -22,6 +23,7 @@ gulp.task('copy', () => {
     let myDestination = 'dist';
 
     return gulp.src(mySource)
+        .pipe(plumber())
         .pipe(changed(myDestination)) // Only copy changed files
         .pipe(gulp.dest(myDestination))
         .pipe(gulpif(!myProduction, livereload({ silent: true })));
