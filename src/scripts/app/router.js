@@ -1,13 +1,14 @@
 'use strict';
 
-import ENV from 'app/env';
-
-import Url from 'url';
-import Logdown from 'logdown';
 import $$ from 'selectjs';
+import Url from 'url';
+import QueryString from 'query-string';
+import Logdown from 'logdown';
+
+import Config from 'app/config';
 import Controller from 'app/controller';
 
-import { uniqueId, trim } from 'lodash';
+import { first, uniqueId, trim } from 'lodash';
 
 class Router {
     constructor() {
@@ -28,8 +29,13 @@ class Router {
         this.pushStateEnabled = 'pushState' in window.history;
 
         // Set initial view
-        let myUrl = Url.parse(window.location.href);
+        let myUrl = Url.parse(first(window.location.href.split(/[?#]/)));
         this.controller.showElement(myUrl.path, false);
+
+        let myQueryString = QueryString.parse(window.location.search);
+        if (!!myQueryString.ref) {
+            this.controller.showNotification(myQueryString.ref);
+        }
     }
 
     /**
@@ -55,7 +61,7 @@ class Router {
                 myEvent = new CustomEvent('pushstate', { detail: myUrl.path });
 
             window.dispatchEvent(myEvent);
-            this.navigate(myUrl.path);
+            this.navigate(`${myUrl.path}${window.location.search}`);
         }
     }
 

@@ -7,14 +7,7 @@ import $$ from 'selectjs';
 import { debounce, throttle } from 'core-decorators';
 import { find, findLast, trim, uniqueId } from 'lodash';
 
-import BenefitsView from 'app/views/benefits-view';
-import CaseView from 'app/views/case-view';
-import HeaderView from 'app/views/header-view';
-import FeaturesView from 'app/views/features-view';
-import FooterView from 'app/views/footer-view';
-import NavigationView from 'app/views/navigation-view';
-import PricingView from 'app/views/pricing-view';
-import ReminderView from 'app/views/reminder-view';
+const Views = require('./views/*.js', { mode: 'hash' });
 
 export default class Controller {
     constructor() {
@@ -38,7 +31,7 @@ export default class Controller {
         this._subviews = new Map();
 
         let myNavigation = $$('.navigation');
-        this._initView(myNavigation);
+        this._lazyInitView(myNavigation);
 
         this._setCurrentView();
         this.enable();
@@ -48,32 +41,25 @@ export default class Controller {
      * Initializes a View class specific for a DOM element
      * @param  {node} element Node object represnting the element
      */
-    _initView(element) {
-        // Return a previous instantiated view when found
+    _lazyInitView(element) {
         let myView = this._subviews.get(element);
+
+        // Return view when it was already instantiated
         if (!!myView) {
             return myView;
         }
 
-        // Otherwise instantiate a new view using the element its classname
+        // Otherwise get the View Class using the classname of the element
         let myClass = element.classList.item(0);
-        switch (myClass) {
-            case 'benefits': myView = new BenefitsView(element); break;
-            case 'case': myView = new CaseView(element); break;
-            case 'header': myView = new HeaderView(element); break;
-            case 'features': myView = new FeaturesView(element); break;
-            case 'footer': myView = new FooterView(element); break;
-            case 'navigation': myView = new NavigationView(element); break;
-            case 'pricing': myView = new PricingView(element); break;
-            case 'reminder': myView = new ReminderView(element); break;
-        }
+        const View = Views[`${myClass}-view`];
 
-        // Do nothing when no view was instantiated
-        if (!myView) {
+        // Stop when no Class was found
+        if (!View) {
             return;
         }
 
-        // Store the view
+        // Instantiate and store the View object
+        myView = new View.default(element);
         this._subviews.set(element, myView);
 
         return myView;
@@ -88,8 +74,8 @@ export default class Controller {
 
         // Get the view which most visible in the viewport
         let myElement = findLast(this.root.children, (element) => {
-            let { top } = element.getBoundingClientRect();
-            return top <= myOffset;
+            let { top, width, height } = element.getBoundingClientRect();
+            return width > 0 && height > 0 && top <= myOffset;
         });
 
         // Nothing was found
@@ -98,7 +84,7 @@ export default class Controller {
         }
 
         // Get the current view
-        this._currentView = this._initView(myElement);
+        this._currentView = this._lazyInitView(myElement);
     }
 
     /**
@@ -110,7 +96,7 @@ export default class Controller {
         }
 
         const Router = require('app/router');
-        Router.default.navigate(this._currentView.path);
+        Router.default.navigate(`${this._currentView.path}${window.location.search}`);
     }
 
     /**
@@ -128,12 +114,13 @@ export default class Controller {
         }
 
         if (!!myElement) {
-            this._currentView = this._initView(myElement);
+            this._currentView = this._lazyInitView(myElement);
             myOffset = !!this._currentView ? this._currentView.jumpOffset : 0;
         }
 
         if (!animate) {
-            myElement.scrollIntoView();
+            myOffset -= myElement.offsetTop;
+            window.scrollBy(0, Math.abs(myOffset));
         } else {
             const Scroller = new Jump();
             Scroller.jump(mySelector, {
@@ -142,6 +129,20 @@ export default class Controller {
                 offset: myOffset,
             });
         }
+    }
+
+    showNotification(ref) {
+        document.body.classList.add('has-notification');
+
+        let myElement = $$('.notification', this.root);
+        if (!myElement) {
+            return;
+        }
+
+        const View = Views['notification-view'];
+        let myView = new View.default(myElement, { ref: ref });
+
+        this._subviews.set(myElement, myView);
     }
 
     /**

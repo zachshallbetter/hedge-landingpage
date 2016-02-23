@@ -36,12 +36,18 @@
         @@include('images/spritesheet.svg')
 
         <main id='hedge'>
+                <aside class='notification'>
+                <span class='notification__body-text' data-ref='beta'>Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. <a href='#'>Download</a></span>
+                <span class='notification__body-text' data-ref='subscription'>Thanks</span>
+            </aside>
+
             <nav class='navigation'>
                 <ol class='navigation__shortcuts'>
                     <li class='navigation__shortcut'><a href='/how-it-works' class='navigation__link'>How it works</a></li>
                     <li class='navigation__shortcut'><a href='/features' class='navigation__link'>Features</a></li>
                     <li class='navigation__shortcut'><a href='/case' class='navigation__link'>Showcase</a></li>
                     <li class='navigation__shortcut'><a href='/pricing' class='navigation__link'>Pricing</a></li>
+
                     <li class='navigation__shortcut navigation__shortcut--highlight'><a href='' class='navigation__link navigation__link--download'>Download</a></li>
                     <li class='navigation__shortcut navigation__shortcut--highlight'><a href='' class='navigation__link navigation__link--buy'>Buy</a></li>
                 <ol>
@@ -50,8 +56,16 @@
             <header class='header'>
                 <div class='header__content'>
                     <hgroup>
-                        <a href='/' class='header__home-link'><h1 class='header__logo'>Hedge for Mac</h1></a>
-                        <h2 class='header__tagline'><span class='no-br'>Handle your footage</span> <span class='no-br'>with peace of mind.</span></h2>
+                        <a href='/' class='header__home-link'>
+                            <h1 class='header__title'>Hedge for Mac</h1>
+
+                            <picture class='header__logo'>
+                                <source srcset='images/hedge__logo.png 1x, images/hedge__logo@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/hedge__logo--big.png 1x, images/hedge__logo--big@2x.png 2x' alt='Safety in numbers'>
+                            </picture>
+                        </a>
+
+                        <h2 class='header__subtitle'><span class='no-br'>Handle your footage</span> <span class='no-br'>with peace of mind.</span></h2>
                     </hgroup>
 
                     <p class='header__description'><span class='no-br'><strong>Hedge</strong> is a lightweight <em>data handling app</em> that makes</span> <span class='no-br'>sure your footage is always safely backed up.</span></p>
@@ -74,7 +88,12 @@
                 <div class='benefits__content'>
                     <figure class='benefits__screenshot'>
                         <img srcset='images/hedge__screenshot.png 1x, images/hedge__screenshot@2x.png 2x' alt='Hedge for Mac app'>
+
+                        <div class='benefit-bullet benefit-bullet--instant-transfer' data-text='Instantly transfer all your data' data-position='bottom-right'></div>
+                        <div class='benefit-bullet benefit-bullet--hedge-recognizes' data-text='Hedge recognizes your media sources' data-position='top-right'></div>
+                        <div class='benefit-bullet benefit-bullet--multiple-destinations' data-text='Select multiple destinations' data-position='bottom-left'></div>
                     </figure>
+
 
                     <div class='benefits__benefit-container'>
                         <article class='benefits__benefit benefit benefit--peace-of-mind'>
@@ -111,9 +130,10 @@
                                 <p class='feature__description'>Easily create backups for yourself, post-production, the director, whoever wants a copy. Hedge makes sure your footage is safe and complete.</p>
                             </div>
 
-                            <div class='feature__animation'>
-                                <img srcset='images/multiple-backups__animation.png 1x, images/multiple-backups__animation@2x.png 2x' alt='Multiple backups'>
-                            </div>
+                            <picture class='feature__animation'>
+                                <source srcset='images/multiple-backups__animation.png 1x, images/multiple-backups__animation@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/multiple-backups__animation--mobile.png 1x, images/multiple-backups__animation--mobile@2x.png 2x' alt='Multiple backups'>
+                            </picture>
                         </article>
 
                         <article class='features__feature feature feature--file-verification'>
@@ -122,9 +142,10 @@
                                 <p class='feature__description'>Every file imported by <strong>Hedge</strong> is created from the source material, and cross-referenced with other copies to ensure a perfect bit-for-bit copy.</p>
                             </div>
 
-                            <div class='feature__animation'>
-                                <img srcset='images/file-verification__animation.png 1x, images/file-verification__animation@2x.png 2x' alt='File verification'>
-                            </div>
+                            <picture class='feature__animation'>
+                                <source srcset='images/file-verification__animation.png 1x, images/file-verification__animation@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/file-verification__animation--mobile.png 1x, images/file-verification__animation--mobile@2x.png 2x' alt='File verification'>
+                            </picture>
                         </article>
 
                         <article class='features__feature feature feature--safety-in-numbers'>
@@ -133,9 +154,10 @@
                                 <p class='feature__description'><strong>Hedge's</strong> import engine is very strict and precise. That way you won’t erase footage that hasn’t been ingested yet.</p>
                             </div>
 
-                            <div class='feature__animation'>
-                                <img srcset='images/safety-in-number__animation.png 1x, images/safety-in-number__animation@2x.png 2x' alt='Safety in numbers'>
-                            </div>
+                            <picture class='feature__animation'>
+                                <source srcset='images/safety-in-number__animation.png 1x, images/safety-in-number__animation@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/safety-in-number__animation--mobile.png 1x, images/safety-in-number__animation--mobile@2x.png 2x' alt='Safety in numbers'>
+                            </picture>
                         </article>
                     </div>
                 </div>
@@ -149,11 +171,13 @@
 
                     <div class='case__testimonal-container'>
                         <article class='case__testimonial testimonial testimonial--mark'>
+                            <div class='testimonial__background'></div>
                             <h1 class='testimonial__title'>Mark IJkelenstam — Director / Editor</h1>
                             <p class='testimonial__description'>Whenever I receive footage imported with <strong>Hedge</strong>, I know it’s all there and verified. It doesn’t matter how many disks, reel or cams: everything is accounted for.</p>
                         </article>
 
                         <article class='case__testimonial testimonial testimonial--ties'>
+                            <div class='testimonial__background'></div>
                             <h1 class='testimonial__title'>Ties Versteegh — DOP</h1>
                             <p class='testimonial__description'>With <strong>Hedge</strong>, there are no more excuses not to make enough backups. It gives me a very safe feeling.</p>
                         </article>
@@ -175,6 +199,12 @@
                     
                     
                     <div class='pricing__price-option-container'>
+                        <article class='pricing__price-option price-option price-option--trial'>
+                            <h1 class='price-option__title'>Trial</h1>
+                            <span class='price-option__pricing'>Free <span class='price-option__pricing--per-month'>Full access</span></span>
+                            <p class='price-option__description'>Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.</p>
+                        </article>
+
                         <article class='pricing__price-option price-option price-option--per-month'>
                             <h1 class='price-option__title'>Monthly Plan</h1>
                             <span class='price-option__pricing'>$15 <span class='price-option__pricing--per-month'>per month</span></span>

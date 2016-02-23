@@ -27,5 +27,11 @@
 }
 
 .no-br {
-    display: inline-block;
+    @media (--small) {
+        display: inline;
+    }
+
+    @media (--normal), (--wide), (--wider), (--widest) {
+        display: inline-block;
+    }
 }

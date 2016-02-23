@@ -1,0 +1,11 @@
+development:
+    baseUrl: 'http://hedgeformac.dev'
+    debug: true
+
+staging:
+    baseUrl: 'http://staging.hedgeformac.com'
+    debug: true
+
+production:
+    baseUrl: 'http://www.hedgeformac.com'
+    debug: false

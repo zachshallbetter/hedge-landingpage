@@ -4,6 +4,7 @@
 @import 'views/footer';
 @import 'views/header';
 @import 'views/navigation';
+@import 'views/notification';
 @import 'views/pricing';
 @import 'views/reminder';
 
@@ -12,13 +13,16 @@ html {
 	font-size: 62.5%;
 }
 
-body.scrolling * {
+body.scrolling *,
+body.resizing * {
     pointer-events: none;
 }
 
 main {
+    position: relative;
     opacity: 0.0;
     transition: opacity 500ms;
+    overflow-x: hidden;
 
     @nest body.ready & {
         opacity: 1.0;

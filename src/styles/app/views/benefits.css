@@ -1,6 +1,10 @@
 .benefits {
     padding: 0 20px;
 
+    @media (--small) {
+        display: none;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -76,4 +80,101 @@
         fill: var(--defaultIconColor);
         order: 1;
     }
+}
+
+.benefit-bullet {
+    position: absolute;
+    width: 12px; height: 12px;
+
+    border: 2px solid var(--highlightColorGreen);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--instant-transfer {
+        top: 13%; left: 8%;
+    }
+
+    &--hedge-recognizes {
+        top: 56%; left: 45%;
+    }
+
+    &--multiple-destinations {
+        top: 34%; right: 3%;
+    }
+
+    &:before {
+        position: absolute;
+        top: -2px; left: -2px;
+        width: 12px; height: 12px;
+
+        background-color: #fff;
+        border-radius: 50%;
+        content: '';
+
+        animation: pulse-bullet-animation 1500ms infinite;
+        opacity: 0.75;
+    }
+
+    &:after {
+        position: absolute;
+        padding: 10px 15px;
+        width: 175px;
+        visibility: hidden;
+
+        content: attr(data-text);
+        background-color: #fff;
+        border-radius: 2px;
+
+        transition: opacity 200ms, transform 200ms;
+        opacity: 0.0;
+
+        @mixin font var(--whitney), #1a1c21, 1.5rem;
+        line-height: 2.0rem;
+    }
+
+    &--instant-transfer:before {
+        animation-delay: 0;
+    }
+
+    &--hedge-recognizes:before {
+        animation-delay: 500ms;
+    }
+
+    &--multiple-destinations:before {
+        animation-delay: 1000ms;
+    }
+
+    &:hover:after {
+        transform: translate3d(0, 0, 0) !important;
+        visibility: visible;
+        opacity: 1.0;
+    }
+
+    &[data-position='top-left']:after {
+        transform: translate3d(3px, 0, 0);
+        bottom: 5px; right: 5px;
+    }
+
+    &[data-position='top-right']:after {
+        transform: translate3d(-3px, 0, 0);
+        bottom: 5px; left: 5px;
+    }
+
+    &[data-position='bottom-right']:after {
+        transform: translate3d(-3px, 0, 0);
+        top: 5px; left: 5px;
+    }
+
+    &[data-position='bottom-left']:after {
+        transform: translate3d(3px, 0, 0);
+        top: 5px; right: 5px;
+    }
+}
+
+@keyframes pulse-bullet-animation {
+    50%, 100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+
 }

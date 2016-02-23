@@ -4,13 +4,22 @@ import AbstractView from 'app/views/abstract-view';
 import { throttle } from 'core-decorators';
 
 export default class NavigationView extends AbstractView {
+    _invalidate() {
+        let myPosition = window.pageYOffset,
+            myClassName;
 
-    _invalidateBackground() {
-        let myPosition = window.pageYOffset;
-        if (myPosition >= 250) {
-            this.el.classList.add('navigation--activated');
+        myClassName = 'navigation--fixed';
+        if (myPosition >= 70) {
+            this.el.classList.add(myClassName);
         } else {
-            this.el.classList.remove('navigation--activated');
+            this.el.classList.remove(myClassName);
+        }
+
+        myClassName = 'navigation--activated';
+        if (myPosition >= 250) {
+            this.el.classList.add(myClassName);
+        } else {
+            this.el.classList.remove(myClassName);
         }
     }
 
@@ -18,9 +27,9 @@ export default class NavigationView extends AbstractView {
      * Executes while the user scrolls the pages
      * @param  {event} event Event which triggers the handler
      */
-     @throttle(300)
+     @throttle(50)
     _onScroll(event) {
-        this._invalidateBackground();
+        this._invalidate();
     }
 
     enable() {

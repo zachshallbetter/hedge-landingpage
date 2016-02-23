@@ -1,129 +1,7 @@
 'use strict';
 
-import $$ from 'selectjs';
-import assert from 'assert';
-import raf from 'raf';
-
-import { readonly } from 'core-decorators';
-import { remove, sample } from 'lodash';
-
-class ParticleEmitter {
-    constructor(root, Particle, options = {}) {
-        this.root = root;
-        this.Particle = Particle;
-
-        this.initialize(options);
-    }
-
-    initialize(options) {
-        this._particles = [];
-
-        this.destroyed = false;
-        this.running = false;
-
-        this.emitInterval = options.emitInterval || 100;
-        this.maxParticleCount = options.maxParticleCount || 10;
-    }
-
-    emit(continuously = true) {
-        if (this._particles.length >= this.maxParticleCount) {
-            return;
-        }
-
-        this._createParticle();
-
-        if (!this.running) {
-            this._update();
-        }
-
-        if (continuously) {
-            this._emitId = setTimeout(() => this.emit(continuously), this.emitInterval);
-        }
-    }
-
-    burst(numberOfParticles = 10) {
-    }
-
-    stop() {
-        clearTimeout(this._emitId);
-        raf.cancel(this._updateId);
-
-        this._removeAll();
-    }
-
-    _update() {
-        this._particles.forEach((particle) => {
-            particle.update();
-
-            if (particle.died()) {
-                this._destroyParticle(particle);
-            }
-        });
-
-        this.running = true;
-        this._updateId = raf(() => this._update());
-    }
-
-    _createParticle() {
-        let myParticle = new this.Particle();
-
-        this._particles.push(myParticle);
-        this.root.insertBefore(myParticle.el, this.root.firstChild);
-
-        return myParticle;
-    }
-
-    _removeAll() {
-
-    }
-
-    _destroyParticle(particle) {
-        remove(this._particles, particle);
-        this.root.removeChild(particle.el);
-
-        particle.destroy();
-    }
-
-    destroy() {
-        if (!this.destroyed) {
-            this.stop();
-        }
-    }
-}
-
-class AbstractParticle {
-    constructor(options = {}) {
-        this.initialize(options);
-    }
-
-    initialize(options) {
-        this.el = document.createElement('div');
-        this.el.classList.add('particle');
-
-        this.age = 0;
-        this.lifetime = 100;
-    }
-
-    update() {
-        this.age = this.age + 1;
-
-        if (this.age === this.lifetime) {
-            this.el.classList.add('particle--died');
-        }
-    }
-
-    @readonly
-    died() {
-        return this.age >= this.lifetime;
-    }
-
-    destroy() {
-        if (!this.destroyed) {
-            this.destroyed = true;
-            this.el = null;
-        }
-    }
-}
+import { ParticleEmitter, AbstractParticle } from 'app/particles';
+import { sample } from 'lodash';
 
 class GlitterParticle extends AbstractParticle {
     initialize(options) {
@@ -131,7 +9,7 @@ class GlitterParticle extends AbstractParticle {
 
         this.lifetime = 250;
         this.depth = parseInt(Math.random() * 3);
-        this.speed = (this.depth + 1) + Math.random();
+        this.speed = (this.depth + 1) * 1.5 + Math.random() * 2;
         this.translation = 0;
 
         let myColor = sample(['blue', 'green', 'white']),
@@ -158,7 +36,7 @@ class GlitterParticle extends AbstractParticle {
 const BackgroundAnimMixin = {
     initBackgroundAnimation: function () {
         let myOptions = {
-            emitInterval: Math.random() * 500 + 2000,
+            emitInterval: Math.random() * 500 + 500,
         };
 
         this.emitter = new ParticleEmitter(this.el, GlitterParticle, myOptions);

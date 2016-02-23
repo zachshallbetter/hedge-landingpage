@@ -9,7 +9,12 @@ Requirements (need to be callable on your path)
 Install
 -------
 1. `$ git clone https://github.com/TheSyncFactory/hedge-landingpage.git`
-2. `$ npm install` to install all dependencies
+2. `$ npm install`
+
+Setup
+-----
+1. Duplicate `src/config-example.yml` to `src/config.yml`
+2. Edit `src/config.yml` to match your local settings
 
 Development
 -----------

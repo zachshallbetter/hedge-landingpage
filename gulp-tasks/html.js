@@ -5,6 +5,7 @@ var fileinclude = require('gulp-file-include'),
     gulpif = require('gulp-if'),
     htmlmin = require('gulp-htmlmin'),
     livereload = require('gulp-livereload'),
+    plumber = require('gulp-plumber'),
     errors = require('../gulperrors');
 
 gulp.task('html', () => {
@@ -23,6 +24,7 @@ gulp.task('html', () => {
     };
 
     return gulp.src(mySource)
+        .pipe(plumber())
         .pipe(fileinclude(myIncludeOptions)).on('error', errors)
         .pipe(gulpif(myProduction, htmlmin(myHtmlMinOptions))).on('error', errors)
         .pipe(gulp.dest(myDestination))

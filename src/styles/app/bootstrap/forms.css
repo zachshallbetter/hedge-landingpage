@@ -1,5 +1,4 @@
 .form {
-
     &__label {
         @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
     }
@@ -14,8 +13,21 @@
         border-radius: 4px;
         outline: 0;
 
+        transition: border 200ms;
+
         &::placeholder {
             color: color(var(--defaultBodyColor) alpha(50%));
+            transition: color 200ms;
+        }
+
+        &:focus {
+            transition: none;
+            border-color: #fff;
+
+            &::placeholder {
+                color: #fff;
+                transition: none;
+            }
         }
     }
 }

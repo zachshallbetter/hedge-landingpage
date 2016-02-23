@@ -1,17 +1,22 @@
 .reminder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     position: relative;
-    height: 100vh;
-    min-height: 640px;
     background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor2));
+
+    @media (--normal), (--wide), (--widest), (--wider) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100vh;
+        min-height: 640px;
+    }
 
     &__content {
         width: 100%;
         max-width: 640px;
-        padding: 0 20px;
+
+        @media (--small) { padding: 51px 10px 334px 10px; }
+        @media (--normal), (--wide), (--wider), (--widest) { padding: 0 20px; }
     }
 
     &__title {
@@ -27,9 +32,15 @@
     }
 
     &__button-group {
-        display: flex;
-        justify-content: center;
-        margin-top: 55px;
+        @media (--small) {
+            display: none;
+        }
+
+        @media (--normal), (--wide), (--wider), (--widest) {
+            display: flex;
+            justify-content: center;
+            margin-top: 55px;
+        }
     }
 
     &__buy-button {

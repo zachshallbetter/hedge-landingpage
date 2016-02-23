@@ -6,6 +6,7 @@ var browserify = require('browserify'),
     gulpif = require('gulp-if'),
     envify = require('envify/custom'),
     livereload = require('gulp-livereload'),
+    plumber = require('gulp-plumber'),
     source = require('vinyl-source-stream'),
     uglify = require('gulp-uglify'),
     watchify = require('watchify'),
@@ -26,13 +27,15 @@ gulp.task('scripts', () => {
         fullPaths: !myProduction,
     });
 
-    myBundler.transform(envify({
+    myBundler.transform('envify', {
         _: 'purge',
+        global: true,
         NODE_ENV: process.env.NODE_ENV,
-    }));
+    });
 
     let bundle = () => {
         return myBundler.bundle().on('error', errors)
+            .pipe(plumber())
             .pipe(source('main.js'))
             .pipe(buffer())
             .pipe(gulpif(myProduction, uglify()))

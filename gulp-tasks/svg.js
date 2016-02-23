@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    plumber = require('gulp-plumber'),
     svgmin = require('gulp-svgmin'),
     svgsprite = require('gulp-svg-sprite'),
     livereload = require('gulp-livereload'),
@@ -28,6 +29,7 @@ gulp.task('svg', () => {
     ];
 
     return gulp.src(mySource)
+        .pipe(plumber())
         .pipe(svgmin({ plugins: [myPlugins] })).on('error', errors)
         .pipe(svgsprite(myOptions)).on('error', errors)
         .pipe(gulp.dest(myDestination))
