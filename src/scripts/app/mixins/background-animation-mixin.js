@@ -34,16 +34,13 @@ class GlitterParticle extends AbstractParticle {
 }
 
 const BackgroundAnimMixin = {
-    initBackgroundAnimation: function () {
-        let myOptions = {
-            emitInterval: Math.random() * 500 + 500,
-        };
-
-        this.emitter = new ParticleEmitter(this.el, GlitterParticle, myOptions);
-        this.emitter.emit();
+    initBackgroundAnimMixin: function () {
+        this.emitter = new ParticleEmitter(this.el, GlitterParticle);
+        this.emitter.burst(5);
+        this.emitter.emit(Math.random() * 500 + 500);
     },
 
-    destroyBackgroundAnimation: function () {
+    destroyBackgroundAnimMixin: function () {
         this.emitter.destroy();
     },
 };

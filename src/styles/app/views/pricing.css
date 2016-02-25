@@ -22,6 +22,8 @@
     &__title {
         @mixin font var(--whitney), var(--lightBodyColor), 1.7rem;
         @mixin antialiased;
+
+        display: none;
         text-align: center;
     }
 
@@ -34,6 +36,12 @@
 
             margin-top: 23px;
             line-height: 3.2rem;
+        }
+
+        @media (--small), (--normal), (--wide), (--wider) {
+            & .no-br {
+                display: inline;
+            }
         }
 
         @media (--normal), (--wide), (--wider), (--widest) {
@@ -119,9 +127,14 @@
         @mixin font var(--whitney), var(--lightBodyColor), 1.7rem;
         @mixin antialiased;
 
-        padding: 0 50px;
+        padding: 0 35px;
         line-height: 2.4rem;
         text-align: center;
+
+        & em,
+        & strong {
+            font-style: italic;
+        }
     }
 
     @nest &--trial &__title {

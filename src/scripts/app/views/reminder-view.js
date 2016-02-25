@@ -9,6 +9,13 @@ import { mixin } from 'core-decorators';
 export default class ReminderView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
-        this.initBackgroundAnimation();
+        this.initBackgroundAnimMixin();
+    }
+
+    destroy() {
+        if (!this.destroyed) {
+            super.destroy();
+            this.destroyBackgroundAnimMixin();
+        }
     }
 }

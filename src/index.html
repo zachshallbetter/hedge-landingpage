@@ -36,9 +36,9 @@
         @@include('images/spritesheet.svg')
 
         <main id='hedge'>
-                <aside class='notification'>
-                <span class='notification__body-text' data-ref='beta'>Thanks for checking out Hedge for Mac. <a href='#'>Download the pre-release now.</a></span>
-                <span class='notification__body-text' data-ref='subscription'>Thanks for signing up for the newsletter. You'll receive a confirmation shortly!</span>
+            <aside class='notification'>
+                <p class='notification__body-text' data-ref='beta'>Thanks for checking out Hedge for Mac. <a href='#'>Download the pre-release now.</a></p>
+                <p class='notification__body-text' data-ref='subscription'>Thanks for signing up for the newsletter. You'll receive a confirmation shortly!</p>
             </aside>
 
             <nav class='navigation'>
@@ -48,8 +48,8 @@
                     <li class='navigation__shortcut'><a href='/case' class='navigation__link'>Hedge in action</a></li>
                     <li class='navigation__shortcut'><a href='/pricing' class='navigation__link'>Pricing</a></li>
 
-                    <li class='navigation__shortcut navigation__shortcut--highlight'><a href='' class='navigation__link navigation__link--download'>Get Hedge</a></li>
-                    <li class='navigation__shortcut navigation__shortcut--highlight'><a href='' class='navigation__link navigation__link--buy'>Buy 15/mo</a></li>
+                    <li class='navigation__shortcut navigation__shortcut--highlight'><a href='#' class='navigation__link navigation__link--download'>Get Hedge</a></li>
+                    <li class='navigation__shortcut navigation__shortcut--highlight'><a href='#' class='navigation__link navigation__link--buy'>Buy $15/mo</a></li>
                 <ol>
             </nav>
 
@@ -65,25 +65,22 @@
                             </picture>
                         </a>
 
-                        <h2 class='header__subtitle'><span class='no-br'>Backed up, shipshape </span> <span class='no-br'>and bit-for-bit perfect.</span></h2>
+                        <h2 class='header__subtitle'>
+                            <span class='no-br'>Backed up, shipshape </span>
+                            <span class='no-br'>and bit-for-bit perfect.</span>
+                        </h2>
                     </hgroup>
 
                     <p class='header__description'>
-                        <span class='no-br'><strong>Hedge</strong> is the stress-free way to import video.</span> 
+                        <span class='no-br'><strong>Hedge</strong> is the stress-free way to import video.</span>
                         <span class='no-br'>No more corrupt files, incomplete backups or lost footage.</span>
-                        <span class='no-br'>Leave the offload to Hedge and use your brain for more</span>
+                        <span class='no-br'>Leave the offload to <strong>Hedge</strong> and use your brain for more</span>
                         <span class='no-br'>important things—like crafting great shots.</span>
                     </p>
 
                     <div class='header__button-group'>
                         <button class='header__download-button primary-button primary-button--download'>
-                            <span class='primary-button__label primary-button__label--bigger'>Get Hedge</span>
-                            <span class='primary-button__label primary-button__label--smaller'>for free.</span>
-                        </button>
-
-                        <button class='header__buy-button primary-button primary-button--buy'>
-                            <span class='primary-button__label primary-button__label--bigger'>Deze</span>
-                            <span class='primary-button__label primary-button__label--smaller'>gaat eruit.</span>
+                            <span class='primary-button__label'>Get Hedge for free</span>
                         </button>
                     </div>
                 </div>
@@ -94,28 +91,40 @@
                     <figure class='benefits__screenshot'>
                         <img srcset='images/hedge__screenshot.png 1x, images/hedge__screenshot@2x.png 2x' alt='Hedge for Mac app'>
 
-                        <div class='benefit-bullet benefit-bullet--instant-transfer' data-text='Instantly transfer multiple sources' data-position='bottom-right'></div>
-                        <div class='benefit-bullet benefit-bullet--hedge-recognizes' data-text='Queue backups, or run them simultaneous' data-position='top-right'></div>
-                        <div class='benefit-bullet benefit-bullet--multiple-destinations' data-text='Keep your backups complete' data-position='bottom-left'></div>
+                        <div class='benefit-bullet benefit-bullet--instant-transfer'><span class='benefit-bullet__label benefit-bullet__label--bottom-right'>Instantly transfer multiple sources</span></div>
+                        <div class='benefit-bullet benefit-bullet--hedge-recognizes'><span class='benefit-bullet__label benefit-bullet__label--top-right'>Queue backups, or run them simultaneous</span></div>
+                        <div class='benefit-bullet benefit-bullet--multiple-destinations'><span class='benefit-bullet__label benefit-bullet__label--bottom-left'>Keep your backups complete</span></div>
                     </figure>
-
 
                     <div class='benefits__benefit-container'>
                         <article class='benefits__benefit benefit benefit--peace-of-mind'>
                             <h1 class='benefit__title'>Breathe easy</h1>
-                            <p class='benefit__description'>Missing footage means lost time, money and trust. Even lost jobs. <strong>Hedge</strong> guarantees errorless transfers and multiple back-ups, so you can sleep like a baby tiger.</p>
+                            <p class='benefit__description'>
+                                Missing footage means lost time, money and trust. Even lost jobs.
+                                <strong>Hedge</strong> guarantees errorless transfers and multiple back-ups, so you can sleep like a baby tiger.
+                            </p>
+
                             <svg class='benefit__icon'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#peace-of-mind__icon'></use></svg>
                         </article>
 
                         <article class='benefits__benefit benefit benefit--save-time'>
                             <h1 class='benefit__title'>Kick the boredom</h1>
-                            <p class='benefit__description'>Let’s be honest: data handling is about as exciting as decaf coffee. <strong>Hedge</strong> automates the no-brainer tasks, vastly reducing time spent staring and swearing.</p>
+                            <p class='benefit__description'>
+                                Let’s be honest: data handling is about as exciting as decaf coffee.
+                                strong>Hedge</strong> automates the no-brainer tasks, vastly reducing time spent staring and swearing.
+                            </p>
+
                             <svg class='benefit__icon'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#save-time__icon'></use></svg>
                         </article>
 
                         <article class='benefits__benefit benefit benefit--peace-of-mind'>
                             <h1 class='benefit__title'>Go your own way</h1>
-                            <p class='benefit__description'>With our flexible subscriptions, you only pay for what you need. Use <strong>Hedge</strong> all year round, on a project-by-project basis, or just once on your birthday. No lock-in, no shackles.</p>
+                            <p class='benefit__description'>
+                                With our flexible subscriptions, you only pay for what you need.
+                                Use <strong>Hedge</strong> all year round, on a project-by-project basis, or just once on your birthday.
+                                No lock-in, no shackles.
+                            </p>
+
                             <svg class='benefit__icon'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#no-shackles__icon'></use></svg>
                         </article>
                     </div>
@@ -132,7 +141,10 @@
                         <article class='features__feature feature feature--multiple-backups'>
                             <div class='feature__content'>
                                 <h1 class='feature__title'>Multiple backups</h1>
-                                <p class='feature__description'>Create backups for yourself, post-production, the director, your mum. <strong>Hedge</strong> imports files while verifying others, optimising your bandwidth and saving precious hours.</p>
+                                <p class='feature__description'>
+                                    Create backups for yourself, post-production, the director, your mum.
+                                    <strong>Hedge</strong> imports files while verifying others, optimising your bandwidth and saving precious hours.
+                                </p>
                             </div>
 
                             <picture class='feature__animation'>
@@ -144,7 +156,9 @@
                         <article class='features__feature feature feature--file-verification'>
                             <div class='feature__content'>
                                 <h1 class='feature__title'>File validation</h1>
-                                <p class='feature__description'>Say adiós to corruption. Unlike with the Finder, every file imported by <strong>Hedge</strong> is cross-referenced with other copies to ensure it’s bit-for-bit perfect.</p>
+                                <p class='feature__description'>
+                                    Say adiós to corruption. Unlike with the Finder, every file imported by <strong>Hedge</strong> is cross-referenced with other copies to ensure it’s bit-for-bit perfect.
+                                </p>
                             </div>
 
                             <picture class='feature__animation'>
@@ -156,7 +170,9 @@
                         <article class='features__feature feature feature--safety-in-numbers'>
                             <div class='feature__content'>
                                 <h1 class='feature__title'>Extendable workflows</h1>
-                                <p class='feature__description'>Want to go further? <strong>Hedge</strong> integrates AppleScript, so you can use our and your own scripts to sort, process, transcode or sync to your heart’s content.</p>
+                                <p class='feature__description'>
+                                    Want to go further? <strong>Hedge</strong> integrates AppleScript, so you can use our and your own scripts to sort, process, transcode or sync to your heart’s content.
+                                </p>
                             </div>
 
                             <picture class='feature__animation'>
@@ -171,26 +187,35 @@
             <section id='case' class='case'>
                     <header class='case__header'>
                         <h1 class='case__title'><strong>Hedge</strong> in action</h1>
-                        <p class='case__description'>Over the course of two weeks, Dutch TV show <i>Als Je Me Echt Zou Kennen...</i> ("<a href='http://www.challengeday.org/overdestreep/s4-episodes.php' target='_blank'>Challenge Day</a>") shot 9 new episodes with 13 cams and 50 audio channels. The crew used <strong>Hedge</strong> to import, backup, sync and transcode over 65 terabytes of footage.</p>
+                        <p class='case__description'>
+                            Over the course of two weeks, Dutch TV show <em>Als Je Me Echt Zou Kennen...</em> (<a href='http://www.challengeday.org/overdestreep/s4-episodes.php' target='_blank'>Challenge Day</a>) shot 9 new episodes with 13 cams and 50 audio channels.
+                            The crew used <strong>Hedge</strong> to import, backup, sync and transcode over 65 terabytes of footage.
+                        </p>
                     </header>
 
                     <div class='case__testimonal-container'>
                         <article class='case__testimonial testimonial testimonial--ties'>
                             <div class='testimonial__background'></div>
                             <h1 class='testimonial__title'>Ties Versteegh — Camera</h1>
-                            <p class='testimonial__description'>"With <strong>Hedge</strong>, there were no more excuses not to make enough backups. It gave me a very safe feeling, and I continue to use it for every shoot since.”</p>
+                            <p class='testimonial__description'>
+                                “With <strong>Hedge</strong>, there were no more excuses not to make enough backups. It gave me a very safe feeling, and I continue to use it for every shoot since.”
+                            </p>
                         </article>
 
                         <article class='case__testimonial testimonial testimonial--mark'>
                             <div class='testimonial__background'></div>
                             <h1 class='testimonial__title'>Mark IJkelenstam — Editor</h1>
-                            <p class='testimonial__description'>“Whenever I get footage imported with <strong>Hedge</strong>, I know it’s all there and verified. It doesn’t matter how many disks, reel or cams: everything is accounted for.”</p>
+                            <p class='testimonial__description'>
+                                “Whenever I get footage imported with <strong>Hedge</strong>, I know it’s all there and verified. It doesn’t matter how many disks, reel or cams: everything is accounted for.”
+                            </p>
                         </article>
 
                         <article class='case__testimonial testimonial testimonial--niek'>
                             <div class='testimonial__background'></div>
                             <h1 class='testimonial__title'>Eussein Oukoums - Producer</h1>
-                            <p class='testimonial__description'>“When we started using <strong>Hedge</strong> to handle data I was amazed at how relaxed everyone suddenly became. <strong>Hedge</strong> and the team behind it really brought peace of mind to the set.”</p>
+                            <p class='testimonial__description'>
+                                “When we started using <strong>Hedge</strong> to handle data I was amazed at how relaxed everyone suddenly became. <strong>Hedge</strong> and the team behind it really brought peace of mind to the set.”
+                            </p>
                         </article>
                     </div>
             </section>
@@ -199,28 +224,28 @@
                 <div class='pricing__content'>
                     <header class='pricing__header'>
                         <h1 class='pricing__title'>Pricing</h1>
-                        <p class='pricing__description'><span class='no-br'>Choose the plan that works best for you. If you’re happy, we are too.</span> <span class='no-br'>Pause or cancel your subscription at any time, with no hidden fees.</span></p>
+                        <p class='pricing__description'>
+                            <span class='no-br'>Choose the plan that works best for you. If you’re happy, we are too.</span>
+                            <span class='no-br'>Pause or cancel your subscription at any time, with no hidden fees.</span>
+                        </p>
                     </header>
 
-                    
-                    
                     <div class='pricing__price-option-container'>
                         <article class='pricing__price-option price-option price-option--trial'>
                             <h1 class='price-option__title'>...</h1>
                             <span class='price-option__pricing'>Free <span class='price-option__pricing--per-month'>all features</span></span>
-                            <p class='price-option__description'>Use Hedge whenever you want for as long as you wish, with up to two simultaneous transfers. Enjoy for free what others charge you for.</p>
+                            <p class='price-option__description'>
+                                Use <strong>Hedge</strong> whenever you want for as long as you wish, with up to two simultaneous transfers.
+                                Enjoy for free what others charge you for.
+                            </p>
                         </article>
 
                         <article class='pricing__price-option price-option price-option--per-month'>
                             <h1 class='price-option__title'>Subscription</h1>
                             <span class='price-option__pricing'>$15 <span class='price-option__pricing--per-month'>per month</span></span>
-                            <p class='price-option__description'>More footage than you can handle? Monthly sign-up brings you the full Hedge, with unlimited simultaneous and automatic transfers.</p>
-                        </article>
-
-                        <article class='pricing__price-option price-option price-option--per-year'>
-                            <h1 class='price-option__title'>Deze gaat weg. <span class='price-option__title--discount'>17% discount!</span></h1>
-                            <span class='price-option__pricing'>$12 <span class='price-option__pricing--per-month'>per month</span></span>
-                            <p class='price-option__description'>Receive a big discount.</p>
+                            <p class='price-option__description'>
+                                More footage than you can handle? Monthly sign-up brings you the full <strong>Hedge</strong>, with unlimited simultaneous and automatic transfers.
+                            </p>
                         </article>
                     </div>
                 </div>
@@ -231,19 +256,13 @@
                     <hgroup class='reminder__header'>
                         <h1 class='reminder__title'><span class='no-br'>Your time is too valuable</span> <span class='no-br'>to be fixing problems</span></h1>
                         <h2 class='reminder__subtitle'>
-                            <span class='no-br'>One-man band or full-blown crew, Hedge guarantees safe and sound footage all day, every day. </span> 
+                            <span class='no-br'>One-man band or full-blown crew,</span> <span class='no-br'><strong>Hedge</strong> guarantees safe and sound footage all day, every day. </span>
                             <span class='no-br'>So quit the monkeying and start enjoying peace of mind.</span></h2>
                     </hgroup>
 
                     <div class='reminder__button-group'>
                         <button class='reminder__download-button primary-button primary-button--download'>
-                            <span class='primary-button__label primary-button__label--bigger'>Get Hedge</span>
-                            <span class='primary-button__label primary-button__label--smaller'>Free as long as you like.</span>
-                        </button>
-
-                        <button class='reminder__buy-button primary-button primary-button--buy'>
-                            <span class='primary-button__label primary-button__label--bigger'>----</span>
-                            <span class='primary-button__label primary-button__label--smaller'>----</span>
+                            <span class='primary-button__label primary-button__label--bigger'>Get Hedge for free</span>
                         </button>
                     </div>
                 </div>

@@ -30,11 +30,8 @@ export default class Controller {
         this.root = $$('#hedge');
         this._subviews = new Map();
 
-        let myNavigation = $$('.navigation');
-        this._lazyInitView(myNavigation);
-
+        this._lazyInitView($$('.navigation'));
         this._setCurrentView();
-        this.enable();
     }
 
     /**
@@ -99,36 +96,49 @@ export default class Controller {
         Router.default.navigate(`${this._currentView.path}${window.location.search}`);
     }
 
-    /**
-     * Jumps to a view on the page
-     */
-    showElement(path, animate = false) {
+    scrollToElementAtPath(path, animate = false) {
         let mySelector = `#${trim(path, '/')}`,
-            myOffset = 0,
             myElement = this.root;
 
         if (mySelector !== '#') {
             myElement = $$(mySelector, this.root);
-        } else {
-            mySelector = '#hedge';
         }
 
-        if (!!myElement) {
-            this._currentView = this._lazyInitView(myElement);
-            myOffset = !!this._currentView ? this._currentView.jumpOffset : 0;
+        this.scrollToElement(myElement, animate);
+    }
+
+    /**
+     * Jumps to a view on the page
+     */
+    scrollToElement(element, animate = false) {
+        if (!element) {
+            return;
         }
+
+        this._currentView = this._lazyInitView(element);
+        let myOffset = !!this._currentView ? this._currentView.jumpOffset : 0;
 
         if (!animate) {
-            myOffset -= myElement.offsetTop;
-            window.scrollBy(0, Math.abs(myOffset));
+            myOffset = Math.abs(myOffset + element.offsetTop);
+            window.scrollBy(0, myOffset);
         } else {
             const Scroller = new Jump();
-            Scroller.jump(mySelector, {
+            Scroller.jump(element, {
                 duration: 500,
                 easing: (t, b, c, d) => c * ((t = t / d - 1) * t * t + 1) + b,
                 offset: myOffset,
             });
         }
+    }
+
+    scrollToPreviousElement() {
+        let myElement = this._currentView.el.previousElementSibling;
+        this.scrollToElement(myElement, true);
+    }
+
+    scrollToNextElement() {
+        let myElement = this._currentView.el.nextElementSibling;
+        this.scrollToElement(myElement, true);
     }
 
     showNotification(ref) {
@@ -201,7 +211,23 @@ export default class Controller {
         this._replaceState();
     }
 
+    _onKeyDown(event) {
+        switch (event.keyCode) {
+            case 38:
+                this.scrollToPreviousElement();
+                event.preventDefault();
+                break;
+
+            case 40:
+                this.scrollToNextElement();
+                event.preventDefault();
+                break;
+        }
+    }
+
     enable() {
+        window.on('keydown', this._onKeyDown.bind(this));
+
         window.on(`scroll`, this._onScrollStart.bind(this));
         window.on(`scroll`, this._onScroll.bind(this));
         window.on(`scroll`, this._onScrollEnd.bind(this));

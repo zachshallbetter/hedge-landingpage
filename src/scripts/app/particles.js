@@ -5,40 +5,32 @@ import { readonly } from 'core-decorators';
 import { remove, sample } from 'lodash';
 
 export class ParticleEmitter {
-    constructor(root, Particle, options = {}) {
+    constructor(root, Particle) {
         this.root = root;
         this.Particle = Particle;
-
-        this.initialize(options);
-    }
-
-    initialize(options) {
-        this._particles = [];
 
         this.destroyed = false;
         this.running = false;
 
-        this.emitInterval = options.emitInterval || 100;
-        this.maxParticleCount = options.maxParticleCount || 10;
+        this._particles = [];
     }
 
-    emit(continuously = true) {
-        if (this._particles.length >= this.maxParticleCount) {
-            return;
+    emit(interval = 250, maxParticleCount = 10, options ={}) {
+        if (this._particles.length < maxParticleCount) {
+            this._createParticle(options);
+
+            if (!this.running) {
+                this._update();
+            }
         }
 
-        this._createParticle();
-
-        if (!this.running) {
-            this._update();
-        }
-
-        if (continuously) {
-            this._emitId = setTimeout(() => this.emit(continuously), this.emitInterval);
-        }
+        this._emitId = setTimeout(() => this.emit(interval, maxParticleCount, options), interval);
     }
 
-    burst(numberOfParticles = 10) {
+    burst(numberOfParticles = 10, options = {}) {
+        for (let i = 0; i < numberOfParticles; i++) {
+            this._createParticle(options);
+        }
     }
 
     stop() {
@@ -61,8 +53,8 @@ export class ParticleEmitter {
         this._updateId = raf(() => this._update());
     }
 
-    _createParticle() {
-        let myParticle = new this.Particle();
+    _createParticle(options) {
+        let myParticle = new this.Particle(options);
 
         this._particles.push(myParticle);
         this.root.insertBefore(myParticle.el, this.root.firstChild);
@@ -71,7 +63,7 @@ export class ParticleEmitter {
     }
 
     _removeAll() {
-
+        this._particles.forEach(this._destroyParticle.bind(this));
     }
 
     _destroyParticle(particle) {

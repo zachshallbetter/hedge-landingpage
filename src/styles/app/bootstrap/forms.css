@@ -20,7 +20,7 @@
             transition: color 200ms;
         }
 
-        &:focus {
+        &:focus, &:hover {
             transition: none;
             border-color: #fff;
 

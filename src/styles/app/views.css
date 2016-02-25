@@ -22,7 +22,7 @@ main {
     position: relative;
     opacity: 0.0;
     transition: opacity 500ms;
-    overflow-x: hidden;
+    overflow: hidden;
 
     @nest body.ready & {
         opacity: 1.0;

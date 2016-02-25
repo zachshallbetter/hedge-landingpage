@@ -6,57 +6,29 @@ button {
 }
 
 .primary-button {
-    width: 165px;
-    padding: 9px 13px 13px 13px;
+    padding: 16px 53px 20px 53px;
 
     border: 1px solid;
     border-radius: 3px;
     transition: border 200ms;
+    border-color: var(--highlightColorGreen);
 
     &__label {
-        @mixin font var(--whitney), #fff;
+        @mixin font var(--whitney), var(--highlightColorGreen), 2.0rem;
+        @mixin antialiased;
+
         display: block;
         text-align: left;
         transition: color 200ms;
-
-        &--bigger {
-            margin-bottom: 3px;
-            font-size: 2.0rem;
-        }
-
-        &--smaller {
-            font-size: 1.3rem;
-        }
     }
 
     &:hover {
         transition: none;
-        border-color: #fff;
-    }
-
-    @nest &:hover &__label--bigger {
-        transition: none;
-        color: #fff;
-    }
-
-    @nest &:hover &__label--smaller {
-        transition: none;
-        color: var(--defaultBodyColor);
-    }
-
-    &--download {
-        border-color: var(--highlightColorGreen);
-    }
-
-    &--buy {
         border-color: var(--highlightColorBlue);
     }
 
-    @nest &--download &__label--bigger {
-        color: var(--highlightColorGreen);
-    }
-
-    @nest &--buy &__label--bigger {
+    @nest &:hover &__label {
+        transition: none;
         color: var(--highlightColorBlue);
     }
 }

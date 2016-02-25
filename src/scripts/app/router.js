@@ -30,7 +30,7 @@ class Router {
 
         // Set initial view
         let myUrl = Url.parse(first(window.location.href.split(/[?#]/)));
-        this.controller.showElement(myUrl.path, false);
+        this.controller.scrollToElementAtPath(myUrl.path);
 
         let myQueryString = QueryString.parse(window.location.search);
         if (!!myQueryString.ref) {
@@ -71,7 +71,7 @@ class Router {
      */
     _onPushstate(event) {
         let myPath = trim(event.detail, '/');
-        this.controller.showElement(myPath, true);
+        this.controller.scrollToElementAtPath(myPath, true);
     }
 
     enable() {

@@ -15,13 +15,13 @@
 }
 
 ::-moz-selection {
-    background-color: var(--highlightColorGreen);
+    background-color: var(--highlightColorBlue);
     color: #fff;
     text-shadow: none;
 }
 
 ::selection {
-    background-color: var(--highlightColorGreen);
+    background-color: var(--highlightColorBlue);
     color: #fff;
     text-shadow: none;
 }

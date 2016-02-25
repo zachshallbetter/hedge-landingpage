@@ -34,7 +34,7 @@
     }
 
     &__item {
-        @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
+        @mixin font var(--whitney), var(--defaultBodyColor), 1.5rem;
 
         &:not(:first-child) {
             @media (--small) { margin-top: 13px; }
@@ -70,6 +70,7 @@
 
 .newsletter-form {
     &__label {
+        font-size: 1.5rem;
         @media (--small) {
             display: block;
             text-align: center;

@@ -10,7 +10,7 @@ import { mixin, throttle } from 'core-decorators';
 export default class HeaderView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
-        this.initBackgroundAnimation();
+        this.initBackgroundAnimMixin();
 
         this.homeLink = this.$('a.header__home-link');
     }
@@ -39,6 +39,15 @@ export default class HeaderView extends AbstractView {
         if (!this.enabled) {
             super.enable();
             window.on('scroll', this._onScroll.bind(this));
+        }
+    }
+
+    destroy() {
+        if (!this.destroyed) {
+            super.destroy();
+
+            this.destroyBackgroundAnimMixin();
+            this.homeLink = null;
         }
     }
 }
