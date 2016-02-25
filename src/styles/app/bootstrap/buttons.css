@@ -7,11 +7,14 @@ button {
 
 .primary-button {
     padding: 16px 53px 20px 53px;
-
     border: 1px solid;
     border-radius: 3px;
-    transition: border 200ms;
     border-color: var(--highlightColorGreen);
+    transition: border 200ms;
+
+    &--disabled {
+        cursor: default;
+    }
 
     &__label {
         @mixin font var(--whitney), var(--highlightColorGreen), 2.0rem;
@@ -22,12 +25,12 @@ button {
         transition: color 200ms;
     }
 
-    &:hover {
+    @nest &:hover:not(&--disabled) {
         transition: none;
         border-color: var(--highlightColorBlue);
     }
 
-    @nest &:hover &__label {
+    @nest &:hover:not(&--disabled) &__label {
         transition: none;
         color: var(--highlightColorBlue);
     }

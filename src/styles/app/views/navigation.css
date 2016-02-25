@@ -37,10 +37,14 @@
         margin-left: 28px;
     }
 
-    @nest &__shortcut:not(&__shortcut--highlight) {
+    @nest &__shortcut:not(&__shortcut--highlighted) {
         @media (--normal), (--wide) {
             display: none;
         }
+    }
+
+    &__shortcut--highlighted {
+        display: none;
     }
 
     &__link {
