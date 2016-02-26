@@ -31,6 +31,7 @@ export default class Controller {
         this._subviews = new Map();
 
         this._lazyInitView($$('.navigation'));
+        this._lazyInitView($$('.footer'));
         this._setCurrentView();
     }
 

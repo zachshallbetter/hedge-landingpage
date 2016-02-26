@@ -1,6 +1,10 @@
 .form {
     &__label {
         @mixin font var(--whitney), var(--defaultBodyColor), 1.7rem;
+
+        &--small {
+            font-size: 1.5rem;
+        }
     }
 
     &__input {
@@ -20,6 +24,10 @@
             transition: color 200ms;
         }
 
+        &--attention {
+            animation: animate-attenation-input 500ms;
+        }
+
         &:focus, &:hover {
             transition: none;
             border-color: #fff;
@@ -30,4 +38,33 @@
             }
         }
     }
+
+    &__input-container {
+        position: relative;
+        overflow: visible;
+    }
+
+    &__input-icon {
+        opacity: 0;
+        transition: opacity 200ms;
+    }
+
+    @nest & input:valid + &__input-icon {
+        opacity: 1;
+    }
+}
+
+
+@keyframes animate-attenation-input {
+	0%, 100% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	20%, 60% {
+    	transform: translate3d(-8px, 0, 0);
+  	}
+
+	40%, 80% {
+    	transform: translate3d(8px, 0, 0);
+	}
 }

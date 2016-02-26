@@ -2,17 +2,20 @@
 
 import AbstractView from 'app/views/abstract-view';
 import BackgroundAnimMixin from 'app/mixins/background-animation-mixin';
-import QueryMixin from 'app/mixins/query-mixin';
+import FormMixin from 'app/mixins/form-mixin';
 
 import { mixin, throttle } from 'core-decorators';
 
-@mixin(BackgroundAnimMixin)
+@mixin(BackgroundAnimMixin, FormMixin)
 export default class HeaderView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
-        this.initBackgroundAnimMixin();
 
+        this.form = this.$('.header__newsletter-form');
         this.homeLink = this.$('a.header__home-link');
+
+        this.initBackgroundAnimMixin();
+        this.initFormMixin(this.form);
     }
 
     _invalidate() {
@@ -47,7 +50,10 @@ export default class HeaderView extends AbstractView {
             super.destroy();
 
             this.destroyBackgroundAnimMixin();
+            this.destroyFormMixin();
+
             this.homeLink = null;
+            this.form = null;
         }
     }
 }

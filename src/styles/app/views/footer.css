@@ -52,32 +52,31 @@
             color: #fff;
         }
     }
-
-    &__newsletter {
-        flex: 0 0 auto;
-
-        @media (--normal), (--wide), (--wider) {
-            margin-top: 10px;
-            order: 2;
-        }
-
-        @media (--widest) {
-            display: block;
-            order: 1;
-        }
-    }
 }
 
-.newsletter-form {
-    &__label {
+.footer__newsletter-form {
+    flex: 0 0 auto;
+
+    @media (--normal), (--wide), (--wider) {
+        margin-top: 10px;
+        order: 2;
+    }
+
+    @media (--widest) {
+        display: block;
+        order: 1;
+    }
+
+    & .newsletter-form__label--email {
         font-size: 1.5rem;
+
         @media (--small) {
             display: block;
             text-align: center;
         }
     }
 
-    &__input {
+    & .newsletter-form__input--email {
         margin-left: 13px;
         width: 250px;
 

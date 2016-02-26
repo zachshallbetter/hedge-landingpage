@@ -111,7 +111,7 @@
         @media (--normal), (--wide), (--wider), (--widest) { max-width: 554px; }
     }
 
-    @nest &--safety-in-numbers &__animation img {
+    @nest &--extendable-workflows &__animation img {
         @media (--small) { max-width: 120px; }
         @media (--normal), (--wide), (--wider), (--widest) { max-width: 554px; }
     }

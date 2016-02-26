@@ -43,20 +43,20 @@
 
             <nav class='navigation'>
                 <ol class='navigation__shortcuts'>
-                    <li class='navigation__shortcut'><a href='/how-it-works' class='navigation__link'>See it work</a></li>
-                    <li class='navigation__shortcut'><a href='/features' class='navigation__link'>Features</a></li>
-                    <li class='navigation__shortcut'><a href='/case' class='navigation__link'>Hedge in action</a></li>
-                    <li class='navigation__shortcut'><a href='/pricing' class='navigation__link'>Pricing</a></li>
+                    <li class='navigation__shortcut'><a href='/how-it-works' tabindex='-1' class='navigation__link'>See it work</a></li>
+                    <li class='navigation__shortcut'><a href='/features' tabindex='-1' class='navigation__link'>Features</a></li>
+                    <li class='navigation__shortcut'><a href='/case' tabindex='-1' class='navigation__link'>Hedge in action</a></li>
+                    <li class='navigation__shortcut'><a href='/pricing' tabindex='-1' class='navigation__link'>Pricing</a></li>
 
-                    <li class='navigation__shortcut navigation__shortcut--highlighted'><a href='#' class='navigation__link navigation__link--download'>Get Hedge</a></li>
-                    <li class='navigation__shortcut navigation__shortcut--highlighted'><a href='#' class='navigation__link navigation__link--buy'>Buy $15/mo</a></li>
+                    <!-- <li class='navigation__shortcut navigation__shortcut--highlighted'><a href='#' tabindex='-1' class='navigation__link navigation__link--download'>Get Hedge</a></li>
+                    <li class='navigation__shortcut navigation__shortcut--highlighted'><a href='#' tabindex='-1' class='navigation__link navigation__link--buy'>Buy $15/mo</a></li> -->
                 <ol>
             </nav>
 
             <header class='header'>
                 <div class='header__content'>
                     <hgroup>
-                        <a href='/' class='header__home-link'>
+                        <a href='/' class='header__home-link' tabindex='-1' >
                             <h1 class='header__title'>Hedge for Mac</h1>
 
                             <picture class='header__logo'>
@@ -78,11 +78,20 @@
                         <span class='no-br'>important things—like crafting great shots.</span>
                     </p>
 
-                    <div class='header__button-group'>
-                        <button class='header__download-button primary-button primary-button--download primary-button--disabled'>
+                    <form action='//syncfactory.us10.list-manage.com/subscribe/post?u=53483f74a891f04be290ef988&amp;id=90c42e69d6' method='post' class='form header__newsletter-form newsletter-form'>
+                        <label for='emailInput' class='form__label newsletter-form__label newsletter-form__label--email'>Get notified when Hedge launches!</label>
+
+                        <div class='form__input-container'>
+                            <input id='emailInput' name='EMAIL' type='email' placeholder='E-mail' autocomplete='off' required='required' class='form__input newsletter-form__input newsletter-form__input--email'>
+                            <svg class='form__input-icon newsletter-form__input-icon--email'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#validated__icon'></use></svg>
+                        </div>
+                    </form>
+
+                    <!-- <div class='header__button-group'>
+                        <button class='header__download-button primary-button primary-button--download primary-button--disabled' tabindex='-1'>
                             <span class='primary-button__label'>Coming soon</span>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </header>
 
@@ -167,7 +176,7 @@
                             </picture>
                         </article>
 
-                        <article class='features__feature feature feature--safety-in-numbers'>
+                        <article class='features__feature feature feature--extendable-workflows'>
                             <div class='feature__content'>
                                 <h1 class='feature__title'>Extendable workflows</h1>
                                 <p class='feature__description'>
@@ -176,8 +185,8 @@
                             </div>
 
                             <picture class='feature__animation'>
-                                <source srcset='images/safety-in-number__animation.png 1x, images/safety-in-number__animation@2x.png 2x' media="(min-width: 30.01em)">
-                                <img srcset='images/safety-in-number__animation--mobile.png 1x, images/safety-in-number__animation--mobile@2x.png 2x' alt='Safety in numbers'>
+                                <source srcset='images/extendable-workflows__animation.png 1x, images/extendable-workflows__animation@2x.png 2x' media="(min-width: 30.01em)">
+                                <img srcset='images/extendable-workflows__animation--mobile.png 1x, images/extendable-workflows__animation--mobile@2x.png 2x' alt='Extendable workflows'>
                             </picture>
                         </article>
                     </div>
@@ -185,39 +194,39 @@
             </section>
 
             <section id='case' class='case'>
-                    <header class='case__header'>
-                        <h1 class='case__title'><strong>Hedge</strong> in action</h1>
-                        <p class='case__description'>
-                            Over the course of two weeks, Dutch TV show <a href='http://www.challengeday.org/overdestreep/s4-episodes.php' target='_blank'><em>Als Je Me Echt Zou Kennen...</em></a> shot 9 new episodes with 13 cams and 50 audio channels.
-                            The crew used <strong>Hedge</strong> to import, backup, sync and transcode over 65 terabytes of footage.
+                <header class='case__header'>
+                    <h1 class='case__title'><strong>Hedge</strong> in action</h1>
+                    <p class='case__description'>
+                        Over the course of two weeks, Dutch TV show <a href='http://www.challengeday.org/overdestreep/s4-episodes.php' target='_blank' tabindex='-1'>Als Je Me Echt Zou Kennen...</a> shot 9 new episodes with 13 cams and 50 audio channels.
+                        The crew used <strong>Hedge</strong> to import, backup, sync and transcode over 65 terabytes of footage.
+                    </p>
+                </header>
+
+                <div class='case__testimonal-container'>
+                    <article class='case__testimonial testimonial testimonial--ties'>
+                        <div class='testimonial__background'></div>
+                        <h1 class='testimonial__title'>Ties Versteegh — Camera</h1>
+                        <p class='testimonial__description'>
+                            “With <strong>Hedge</strong>, there were no more excuses not to make enough backups. It gave me a very safe feeling, and I continue to use it for every shoot since.”
                         </p>
-                    </header>
+                    </article>
 
-                    <div class='case__testimonal-container'>
-                        <article class='case__testimonial testimonial testimonial--ties'>
-                            <div class='testimonial__background'></div>
-                            <h1 class='testimonial__title'>Ties Versteegh — Camera</h1>
-                            <p class='testimonial__description'>
-                                “With <strong>Hedge</strong>, there were no more excuses not to make enough backups. It gave me a very safe feeling, and I continue to use it for every shoot since.”
-                            </p>
-                        </article>
+                    <article class='case__testimonial testimonial testimonial--mark'>
+                        <div class='testimonial__background'></div>
+                        <h1 class='testimonial__title'>Mark IJkelenstam — Editor</h1>
+                        <p class='testimonial__description'>
+                            “Whenever I get footage imported with <strong>Hedge</strong>, I know it’s all there and verified. It doesn’t matter how many disks, reel or cams: everything is accounted for.”
+                        </p>
+                    </article>
 
-                        <article class='case__testimonial testimonial testimonial--mark'>
-                            <div class='testimonial__background'></div>
-                            <h1 class='testimonial__title'>Mark IJkelenstam — Editor</h1>
-                            <p class='testimonial__description'>
-                                “Whenever I get footage imported with <strong>Hedge</strong>, I know it’s all there and verified. It doesn’t matter how many disks, reel or cams: everything is accounted for.”
-                            </p>
-                        </article>
-
-                        <article class='case__testimonial testimonial testimonial--niek'>
-                            <div class='testimonial__background'></div>
-                            <h1 class='testimonial__title'>Eussein Oukoums - Producer</h1>
-                            <p class='testimonial__description'>
-                                “When we started using <strong>Hedge</strong> to handle data I was amazed at how relaxed everyone suddenly became. <strong>Hedge</strong> and the team behind it really brought peace of mind to the set.”
-                            </p>
-                        </article>
-                    </div>
+                    <article class='case__testimonial testimonial testimonial--niek'>
+                        <div class='testimonial__background'></div>
+                        <h1 class='testimonial__title'>Eussein Oukoums - Producer</h1>
+                        <p class='testimonial__description'>
+                            “When we started using <strong>Hedge</strong> to handle data I was amazed at how relaxed everyone suddenly became. <strong>Hedge</strong> and the team behind it really brought peace of mind to the set.”
+                        </p>
+                    </article>
+                </div>
             </section>
 
             <section id='pricing' class='pricing'>
@@ -261,7 +270,7 @@
                     </hgroup>
 
                     <div class='reminder__button-group'>
-                        <button class='reminder__download-button primary-button primary-button--download primary-button--disabled'>
+                        <button class='reminder__download-button primary-button primary-button--download primary-button--disabled' tabindex='-1'>
                             <span class='primary-button__label primary-button__label--bigger'>Coming soon</span>
                         </button>
                     </div>
@@ -269,16 +278,16 @@
             </section>
 
             <footer class='footer'>
-                <form action='//syncfactory.us10.list-manage.com/subscribe/post?u=53483f74a891f04be290ef988&amp;id=90c42e69d6' method='post' class='form footer__newsletter newsletter-form'>
-                    <label for='emailInput' class='form__label newsletter-form__label'>Get notified when Hedge launches!</label>
-                    <input id='emailInput' name='EMAIL' type='email' placeholder='E-mail' autocomplete='off' class='form__input newsletter-form__input'>
+                <form action='//syncfactory.us10.list-manage.com/subscribe/post?u=53483f74a891f04be290ef988&amp;id=90c42e69d6' method='post' class='form footer__newsletter-form newsletter-form'>
+                    <label for='emailInput' class='form__label newsletter-form__label newsletter-form__label--email'>Get notified when Hedge launches!</label>
+                    <input id='emailInput' name='EMAIL' type='email' placeholder='E-mail' autocomplete='off' required='required' class='form__input newsletter-form__input newsletter-form__input--email'>
                 </form>
 
                 <ul class='footer__items'>
-                    <li class='footer__item'><a href='#' target='_blank' class='footer__link'>hello@hedgeformac.com</a></li>
-                    <li class='footer__item'><a href='http://bit.ly/cruq109a' target='_blank' class='footer__link'>Amsterdam</a></li>
-                    <li class='footer__item'><a href='http://www.facebook.com/hedgeformac' target='_blank' class='footer__link'>Facebook</a></li>
-                    <li class='footer__item'><a href='http://www.twitter.com/hedgeformac' target='_blank' class='footer__link'>Twitter</a></li>
+                    <li class='footer__item'><a href='#' target='_blank' tabindex='-1' class='footer__link'>hello@hedgeformac.com</a></li>
+                    <li class='footer__item'><a href='http://bit.ly/cruq109a' target='_blank' tabindex='-1' class='footer__link'>Amsterdam</a></li>
+                    <li class='footer__item'><a href='http://www.facebook.com/hedgeformac' target='_blank' tabindex='-1' class='footer__link'>Facebook</a></li>
+                    <li class='footer__item'><a href='http://www.twitter.com/hedgeformac' target='_blank' tabindex='-1' class='footer__link'>Twitter</a></li>
                     <li class='footer__item'>&copy; 2016 The Sync Factory</li>
                 </ul>
             </footer>

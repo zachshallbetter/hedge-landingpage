@@ -16,15 +16,17 @@
         max-width: 960px;
 
         @media (--small) { padding: 58px 10px; }
-        @media (--normal), (--wide), (--wider), (--widest) { padding: 128px 20px; }
+        @media (--normal), (--wide), (--wider), (--widest) { padding: 26px 20px 128px 20px; }
     }
 
     &__title {
         @mixin font var(--whitney), var(--lightBodyColor), 1.7rem;
         @mixin antialiased;
-
-        display: none;
         text-align: center;
+        font-style: italic;
+
+        padding-bottom: 13px;
+        border-bottom: 1px solid color(var(--lightBodyColor) alpha(25%));
     }
 
     &__description {
@@ -47,7 +49,7 @@
         @media (--normal), (--wide), (--wider), (--widest) {
             @mixin font var(--whitney), var(--lightHeaderColor), 3.0rem, 100;
 
-            margin-top: 20px;
+            margin-top: 128px;
             line-height: 4.2rem;
         }
     }
