@@ -82,6 +82,7 @@
     "query-string": "^3.0.0",
     "raf": "^3.1.0",
     "selectjs": "^1.0.2",
+    "svg4everybody": "^2.0.3",
     "viewport-units-buggyfill": "^0.5.5",
     "visiblejs": "^1.0.1"
   }

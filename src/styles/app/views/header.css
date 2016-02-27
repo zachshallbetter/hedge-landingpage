@@ -95,6 +95,11 @@
     margin-top: 55px;
 
     & .newsletter-form__label--email {
+        text-align: center;
+        line-height: 2.2rem;
+    }
+
+    & .newsletter-form__label--email {
         color: var(--highlightColorGreen);
     }
 
