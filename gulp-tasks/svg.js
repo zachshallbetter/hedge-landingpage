@@ -14,12 +14,19 @@ gulp.task('svg', () => {
         myDestination = './dist/images';
 
     let myOptions = {
+        svg: {
+            xmlDeclaration: false,
+            rootAttributes: {
+                width: 0,
+                height: 0,
+                style: 'position:absolute',
+            },
+        },
         mode: {
             symbol: {
                 dest: '.',
                 sprite: 'spritesheet.svg',
                 example: false,
-                inline: true,
             },
         },
     };
