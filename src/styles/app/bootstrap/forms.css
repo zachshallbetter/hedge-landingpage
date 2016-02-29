@@ -30,7 +30,7 @@
 
         &:focus, &:hover {
             transition: none;
-            border-color: #fff;
+            border-color: var(--highlightColorGreen);
 
             &::placeholder {
                 color: #fff;
@@ -51,6 +51,27 @@
 
     @nest & input:valid + &__input-icon {
         opacity: 1;
+    }
+
+    &__submit-button {
+        & .submit__icon {
+            width: 15px;
+            height: 15px;
+            fill: var(--defaultIconColor);
+            opacity: 0.25;
+            transition: fill 200ms, opacity 200ms;
+        }
+    }
+
+    @nest &--validated &__submit-button {
+        & .submit__icon {
+            fill: var(--highlightColorGreen);
+            opacity: 1.0;
+        }
+
+        &:hover .submit__icon {
+            fill: #fff;
+        }
     }
 }
 

@@ -35,6 +35,7 @@
 
     &__item {
         @mixin font var(--whitney), var(--defaultBodyColor), 1.5rem;
+        flex: 0 0 auto;
 
         &:not(:first-child) {
             @media (--small) { margin-top: 13px; }
@@ -55,6 +56,9 @@
 }
 
 .footer__newsletter-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     flex: 0 0 auto;
 
     @media (--normal), (--wide), (--wider) {
@@ -63,7 +67,7 @@
     }
 
     @media (--widest) {
-        display: block;
+        /*display: block;*/
         order: 1;
     }
 

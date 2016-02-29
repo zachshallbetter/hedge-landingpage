@@ -20,6 +20,12 @@ class Form {
 
         myInput.on('keydown', (event) => {
             event.target.classList.remove('form__input--attention');
+            if (myInput.validity.valid) {
+                this.form.classList.add('form--validated');
+            } else {
+
+                this.form.classList.remove('form--validated');
+            }
         });
     }
 }
