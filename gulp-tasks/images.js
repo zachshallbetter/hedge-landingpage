@@ -13,12 +13,12 @@ gulp.task('images', () => {
     let myDestination = 'dist/images',
         mySource = ['src/images/*.png'];
 
-    const mySecret = 'A-AVymCOwXuxvG1aWrjQL6MzuAkM99TG';
+    const mySecret = 'vLx9ievsTmflo1rPTDP5B3MCmK8atjw8';
 
     return gulp.src(mySource)
         .pipe(plumber())
         // .pipe(changed(myDestination)) // Only apply to new files
-        // .pipe(gulpif(myProduction, tinypng(mySecret))) // Run through tinypng for small filesizes
+        .pipe(gulpif(myProduction, tinypng(mySecret))) // Run through tinypng for small filesizes
         .pipe(gulp.dest(myDestination))
         .pipe(livereload());
 });

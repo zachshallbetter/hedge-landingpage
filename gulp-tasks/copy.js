@@ -15,6 +15,7 @@ gulp.task('copy', () => {
         'src/.htaccess',
         '!src/config.yml',
         '!src/config-example.yml',
+        '!src/images/*.svg',
         '!src/scripts/index.js',
         '!src/scripts/app/**/*',
         '!src/styles/**/*',

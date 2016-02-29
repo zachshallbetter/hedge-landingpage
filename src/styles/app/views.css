@@ -28,3 +28,7 @@ main {
         opacity: 1.0;
     }
 }
+
+.emoticon {
+    font-family: var(--helvetica);
+}

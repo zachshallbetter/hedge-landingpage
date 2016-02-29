@@ -96,11 +96,11 @@
     }
 
     @nest &--mark &__background {
-        background-image: linear-gradient(color(var(--backgroundColor) alpha(0)) 50%, var(--backgroundColor)), url('../images/case__photo-01.jpg');
+        background-image: linear-gradient(color(var(--backgroundColor) alpha(0)) 50%, var(--backgroundColor)), url('../images/case__photo-02.jpg');
     }
 
     @nest &--ties &__background {
-        background-image: linear-gradient(color(var(--backgroundColor) alpha(0)), var(--backgroundColor)), url('../images/case__photo-02.jpg');
+        background-image: linear-gradient(color(var(--backgroundColor) alpha(0)), var(--backgroundColor)), url('../images/case__photo-01.jpg');
     }
 
     @nest &--niek &__background {
