@@ -3,23 +3,25 @@
     position: relative;
 
     @media (--small) {
-        margin-top: -277px;
-        padding: 0 10px 34px 10px;
+        margin-top: -301px;
     }
 
     @media (--normal), (--wide), (--wider) {
-        margin-top: -102px;
-        padding: 0 75px 34px 75px;
+        margin-top: -105px;
+    }
+
+    @media (--widest) {
+        margin-top: -75px;
     }
 
     @media (--small), (--normal), (--wide), (--wider) {
         flex-direction: column;
         align-items: center;
+        padding: 0 10px 34px 10px;
     }
 
     @media (--widest) {
         justify-content: space-between;
-        margin-top: -75px;
         padding: 0 75px 34px 75px;
     }
 
@@ -39,7 +41,12 @@
 
         &:not(:first-child) {
             @media (--small) { margin-top: 13px; }
-            @media (--normal), (--wide), (--wider), (--widest) { margin-left: 23px; }
+            @media (--normal), (--wide), (--wider), (--widest) { margin-left: 20px; }
+        }
+
+        &:last-child {
+            @media (--small), (--normal) { display: none; }
+
         }
     }
 
@@ -57,35 +64,45 @@
 
 .footer__newsletter-form {
     display: flex;
-    flex-direction: row;
     align-items: center;
     flex: 0 0 auto;
+    order: 2;
 
-    @media (--normal), (--wide), (--wider) {
-        margin-top: 10px;
-        order: 2;
+    @media (--small) {
+        flex-direction: column;
+        margin-top: 30px;
     }
 
-    @media (--widest) {
-        /*display: block;*/
-        order: 1;
+    @media (--normal), (--wide), (--wider) {
+        margin-top: 15px;
     }
 
     & .newsletter-form__label--email {
+        flex: 0 0 auto;
         font-size: 1.5rem;
 
         @media (--small) {
-            display: block;
             text-align: center;
         }
     }
 
     & .newsletter-form__input--email {
+        flex: 0 0 auto;
         margin-left: 13px;
         width: 250px;
 
         @media (--small) {
             margin-top: 15px;
+        }
+    }
+
+    & .newsletter-form__submit-button {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(100% + 5px);
+
+        @media (--small) {
+            display: none;
         }
     }
 }
