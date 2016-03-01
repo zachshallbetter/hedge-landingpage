@@ -53,6 +53,7 @@
     &__link {
         text-decoration: none;
         color: inherit;
+        outline: none;
         transition: color 200ms;
 
         &:hover {

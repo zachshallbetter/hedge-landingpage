@@ -23,6 +23,7 @@
 
     & a {
         color: inherit;
+        outline: none;
         text-decoration: none;
         transition: color 200ms, border 200ms;
         border-bottom: 1px solid;
