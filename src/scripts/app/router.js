@@ -34,7 +34,6 @@ class Router {
 
         let myQueryString = QueryString.parse(window.location.search);
         if (!!myQueryString.ref) {
-            console.log('test');
             this.controller.showNotification(myQueryString.ref);
         }
     }

@@ -11,8 +11,6 @@ import { extend, uniqueId, defaults, pick } from 'lodash';
 @mixin(QueryMixin)
 export default class AbstractView {
     constructor(el, options = {}) {
-        assert(el instanceof Node, `Required argument \`el\` is not a Node or undefined`);
-
         if (el instanceof Node) {
             this.el = el;
         }

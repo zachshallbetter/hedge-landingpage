@@ -145,15 +145,10 @@ export default class Controller {
     showNotification(ref) {
         document.body.classList.add('has-notification');
 
-        let myElement = $$('.notification', this.root);
-        if (!myElement) {
-            return;
-        }
-
         const View = Views['notification-view'];
-        let myView = new View.default(myElement, { ref: ref });
+        let myView = new View.default(null, { ref: ref });
 
-        this._subviews.set(myElement, myView);
+        this._subviews.set(myView.el, myView);
     }
 
     /**
