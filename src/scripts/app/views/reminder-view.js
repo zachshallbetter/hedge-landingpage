@@ -12,12 +12,28 @@ export default class ReminderView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
         this.initBackgroundAnimMixin();
+
+        this.downloadLink = this.$('.reminder__download-link');
+    }
+
+    _onDownloadClick(event) {
+        event.preventDefault();
+        this.presentDownloadModal();
+    }
+
+    enable() {
+        if (!this.enabled) {
+            super.enable();
+            this.downloadLink.on('click', this._onDownloadClick.bind(this));
+        }
     }
 
     destroy() {
         if (!this.destroyed) {
             super.destroy();
             this.destroyBackgroundAnimMixin();
+
+            this.downloadLink = null;
         }
     }
 }

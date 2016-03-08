@@ -17,7 +17,7 @@ button {
     }
 
     &__label {
-        @mixin font var(--whitney), var(--highlightColorGreen), 2.0rem;
+        @mixin font var(--whitney), #fff, 2.0rem;
         @mixin antialiased;
 
         display: block;
@@ -27,11 +27,10 @@ button {
 
     @nest &:hover:not(&--disabled) {
         transition: none;
-        border-color: var(--highlightColorBlue);
     }
 
     @nest &:hover:not(&--disabled) &__label {
         transition: none;
-        color: var(--highlightColorBlue);
+        color: var(--highlightColorGreen);
     }
 }

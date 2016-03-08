@@ -28,8 +28,6 @@ class Modals {
             return;
         }
 
-        this.logger.log(`Presenting ModalType \`${type}\``);
-
         switch (type) {
             case ModalTypes.DOWNLOAD:
                 this._currentModal = new DownloadModalView(options);

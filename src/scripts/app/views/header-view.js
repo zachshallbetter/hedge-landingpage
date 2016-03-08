@@ -14,7 +14,8 @@ export default class HeaderView extends AbstractView {
         super.initialize(options);
 
         this.form = this.$('.header__newsletter-form');
-        this.homeLink = this.$('a.header__home-link');
+        this.homeLink = this.$('.header__home-link');
+        this.downloadLink = this.$('.header__download-link');
 
         this.initBackgroundAnimMixin();
         this.initFormMixin(this.form);
@@ -31,6 +32,11 @@ export default class HeaderView extends AbstractView {
         }
     }
 
+    _onDownloadLink(event) {
+        event.preventDefault();
+        this.presentDownloadModal();
+    }
+
     /**
      * Executes while the user scrolls the pages
      * @param  {event} event Event which triggers the handler
@@ -43,6 +49,8 @@ export default class HeaderView extends AbstractView {
     enable() {
         if (!this.enabled) {
             super.enable();
+
+            this.downloadLink.on('click', this._onDownloadLink.bind(this));
             window.on('scroll', this._onScroll.bind(this));
         }
     }
@@ -54,6 +62,7 @@ export default class HeaderView extends AbstractView {
             this.destroyBackgroundAnimMixin();
             this.destroyFormMixin();
 
+            this.downloadLink = null;
             this.homeLink = null;
             this.form = null;
         }
