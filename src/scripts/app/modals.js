@@ -24,6 +24,7 @@ class Modals {
         }
 
         this.logger.log(`Presenting ModalType \`${type}\``);
+        document.body.classList.add('has-popup');
 
         this._currentModal = new ModalView();
         this._currentModal.on('dismiss', () => this.dismissCurrentModal());
@@ -31,6 +32,8 @@ class Modals {
 
     dismissCurrentModal() {
         if (!!this._currentModal) {
+            document.body.classList.remove('has-popup');
+
             this._currentModal.destroy();
             this._currentModal = null;
         }

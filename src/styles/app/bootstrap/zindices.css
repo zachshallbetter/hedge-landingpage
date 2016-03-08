@@ -1,5 +1,6 @@
 :root {
-    --navigationIndex: 9990;
-    --homeLinkIndex: 9995;
-    --notificationIndex: 9999;
+    --navigationIndex: 9960;
+    --homeLinkIndex: 9970;
+    --notificationIndex: 9980;
+    --modalsIndex: 9990;
 }
