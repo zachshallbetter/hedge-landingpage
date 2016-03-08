@@ -1,12 +1,14 @@
 'use strict';
 
 import AbstractView from 'app/views/abstract-view';
+
 import BackgroundAnimMixin from 'app/mixins/background-animation-mixin';
 import FormMixin from 'app/mixins/form-mixin';
+import ModalMixin from 'app/mixins/modal-mixin';
 
 import { mixin, throttle } from 'core-decorators';
 
-@mixin(BackgroundAnimMixin, FormMixin)
+@mixin(BackgroundAnimMixin, FormMixin, ModalMixin)
 export default class HeaderView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);

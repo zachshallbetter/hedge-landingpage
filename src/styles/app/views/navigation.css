@@ -43,10 +43,6 @@
         }
     }
 
-    &__shortcut--highlighted {
-        display: none;
-    }
-
     &__link {
         @mixin font var(--whitney), var(--defaultHeaderColor), 1.7rem, 100;
         text-decoration: none;

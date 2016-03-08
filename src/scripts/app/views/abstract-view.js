@@ -1,16 +1,20 @@
 'use strict';
 
+import assert from 'assert';
+import events from 'events';
+
 import Logdown from 'logdown';
 import QueryMixin from 'app/mixins/query-mixin';
 import isVisible from 'visiblejs';
 
-import assert from 'assert';
 import { mixin } from 'core-decorators';
 import { extend, uniqueId, defaults, pick } from 'lodash';
 
 @mixin(QueryMixin)
-export default class AbstractView {
+export default class AbstractView extends events.EventEmitter {
     constructor(el, options = {}) {
+        super();
+
         if (el instanceof Node) {
             this.el = el;
         }
