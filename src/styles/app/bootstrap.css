@@ -8,7 +8,6 @@
 
 @import "bootstrap/buttons";
 @import "bootstrap/forms";
-@import "bootstrap/modals";
 
 *, *:before, *:after {
     box-sizing: border-box;
