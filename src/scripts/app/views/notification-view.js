@@ -1,16 +1,11 @@
 'use strict';
 
-import $$ from 'selectjs';
 import AbstractView from 'app/views/abstract-view';
-
-import createElementFromString from 'app/support/createElementFromString';
-import { trim } from 'lodash';
+import renderTemplate from 'app/support/renderTemplate';
 
 export default class NotificationView extends AbstractView {
     constructor(el, options = {}) {
-        let myTemplate = $$('#notification-template').innerHTML,
-            myElement = createElementFromString(trim(myTemplate));
-
+        let myElement = renderTemplate('#notification-template');
         super(myElement, options);
     }
 
