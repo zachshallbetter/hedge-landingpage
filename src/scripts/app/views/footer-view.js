@@ -10,8 +10,8 @@ export default class FooterView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
 
-        this.form = this.$('.footer__newsletter-form');
-        this.initFormMixin(this.form);
+        this.newsletterForm = this.$('.footer__newsletter-form');
+        this.initFormMixin(this.newsletterForm);
     }
 
     destroy() {
@@ -19,7 +19,7 @@ export default class FooterView extends AbstractView {
             super.destroy();
 
             this.destroyFormMixin();
-            this.form = null;
+            this.newsletterForm = null;
         }
     }
 }

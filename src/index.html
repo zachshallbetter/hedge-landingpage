@@ -269,7 +269,7 @@
             </section>
 
             <footer class='footer'>
-                <form action='//syncfactory.us10.list-manage.com/subscribe/post?u=53483f74a891f04be290ef988&amp;id=90c42e69d6' method='post' class='form footer__newsletter-form newsletter-form'>
+                <form action='//syncfactory.us10.list-manage.com/subscribe/post?u=53483f74a891f04be290ef988&amp;id=90c42e69d6' method='post' class='form form--dark-color-scheme footer__newsletter-form newsletter-form'>
                     <label for='emailInput' class='form__label newsletter-form__label newsletter-form__label--email'>Coming soon! Get notified:</label>
 
                     <div class='form__input-container'>
@@ -292,16 +292,44 @@
 
         <script id='notification-template' type='text/x-handlebars-template'>
             <aside class='notification'>
-                <p class='notification__body-text' data-ref='beta'>Thanks for checking out Hedge for Mac <span class='emoticon'>🙌</span> <a href='https://dl.devmate.com/nl.syncfactory.Hedge.Mac/HedgeforMac.dmg'>Download the pre-release now.</a></p>
+                <p class='notification__body-text' data-ref='betalist'>We’d like to thank the Betalist community for all the feedback. Use this coupon code to get free 3 months: <a href='#' target='_blank'>BETALIST10.</a></p>
+                <p class='notification__body-text' data-ref='beta'>Thanks for checking out Hedge for Mac <span class='emoticon'>🙌</span> <a href='https://dl.devmate.com/nl.syncfactory.Hedge.Mac/HedgeforMac.dmg' target='_blank'>Download the pre-release now.</a></p>
                 <p class='notification__body-text' data-ref='subscription'>Thanks for signing up for the newsletter <span class='emoticon'>🙌</span> You'll receive a confirmation shortly!</p>
-                <p class='notification__body-text' data-ref='subscribed'>Welcome aboard!<span class='emoticon'></span> <a href='https://dl.devmate.com/nl.syncfactory.Hedge.Mac/HedgeforMac.dmg'>Download the pre-release now.</a></p>
+                <p class='notification__body-text' data-ref='subscribed'>Welcome aboard!<span class='emoticon'></span> <a href='https://dl.devmate.com/nl.syncfactory.Hedge.Mac/HedgeforMac.dmg' target='_blank'>Download the pre-release now.</a></p>
             </aside>
         </script>
 
         <script id='download-modal-template' type='text/x-handlebars-template'>
             <div class='modal download-modal'>
-                <div role='dialog' class='modal__dialog'>
-                </div>
+                <article role='dialog' class='modal__dialog download-modal__dialog'>
+                    <h1 class='download-modal__title'>Thanks for checking out Hedge</h1>
+
+                    <p class='download-modal__instructions'>
+                        <span class='no-br'>Your download should start any second now.</span>
+                        <span class='no-br'>If not, try this <a href='https://www.hedgeformac.com/download/latest' target='_blank'>direct download link.</a></span>
+                    </p>
+
+                    <a href='https://www.hedgeformac.com/download/latest' target='_blank' class='download-modal__download-link'>
+                        <figure class='download-modal__logo'>
+                            <img srcset='images/hedge__logo-big.png 1x, images/hedge__logo-big@2x.png 2x' alt='Hedge for Mac app'>
+                        </figure>
+                    </a>
+
+                    <p class='download-modal__requirements'>Hedge requires Mac OS X 10.10+</p>
+
+                    <form action='//syncfactory.us10.list-manage.com/subscribe/post?u=53483f74a891f04be290ef988&amp;id=90c42e69d6' method='post' class='form form--light-color-scheme download-modal__newsletter-form newsletter-form'>
+                        <label for='emailInput' class='form__label newsletter-form__label newsletter-form__label--email'><span class='newsletter-form__coming-soon'>Don't forget to sign up to receive news, updates and more:</span></label>
+
+                        <div class='form__input-container'>
+                            <input id='emailInput' name='EMAIL' type='email' placeholder='E-mail' autocomplete='off' required='required' class='form__input newsletter-form__input newsletter-form__input--email'>
+                            <button type='submit' class='form__submit-button newsletter-form__submit-button'>
+                                <svg class='submit__icon'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='images/spritesheet.svg#submit__icon'></use></svg>
+                            </button>
+                        </div>
+                    </form>
+
+                    <iframe src='https://www.hedgeformac.com/download/latest' width='0' height='0' frameborder='0'>
+                </article>
             </div>
         </script>
 

@@ -1,33 +1,36 @@
 .notification {
     display: none;
     width: 100%;
-    height: 70px;
+    padding: 25px 20px;
 
     background-color: white;
     transform: rotateZ(0);
     z-index: var(--notificationIndex);
 
     @nest body.has-notification & {
-        display: flex;
+        display: block;
     }
 
     &__body-text {
         @mixin font var(--whitney), var(--lightBodyColor), 1.7rem;
+        @mixin truncate-tail;
+
         display: none;
-        margin: auto;
+        line-height: 2rem;
+        text-align: center;
 
         &--visible {
-            display: inline;
+            display: block;
         }
 
         & a {
-            color: #000;
+            color: var(--highlightColorBlue);
             transition: color 200ms;
             text-decoration: none;
 
             &:hover {
                 transition: none;
-                color: var(--lightBodyColor);
+                color: #000;
             }
         }
     }

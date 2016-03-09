@@ -75,36 +75,34 @@
     }
 
     &__icon {
-        width: 50px;
-        height: 50px;
+        size: 50px 50px;
         fill: var(--defaultIconColor);
         order: 1;
     }
 }
 
 .benefit-bullet {
-    position: absolute;
-    width: 20px; height: 20px;
+    size: 20px 20px;
 
     border: 1px solid var(--highlightColorGreen);
     border-radius: 50%;
     cursor: pointer;
 
     &--instant-transfer {
-        top: 10%; left: 8%;
+        position: absolute 10% auto auto 8%;
     }
 
     &--hedge-recognizes {
-        top: 56.5%; left: 44%;
+        position: absolute 56.5% auto auto 44%;
     }
 
     &--multiple-destinations {
-        top: 32%; right: 9%;
+        position: absolute 32% 9% auto auto;
     }
 
     &:before {
         position: absolute;
-        width: 20px; height: 20px;
+        size: 20px 20px;
         margin: -1px 0 0 -1px;
 
         background-color: color(#fff alpha(10%));
@@ -141,10 +139,9 @@
         visibility: hidden;
         opacity: 0;
 
-
         &:after {
             position: absolute;
-            height: 0; width: 0;
+            size: 0 0;
         	border: solid transparent;
         	content: '';
         }

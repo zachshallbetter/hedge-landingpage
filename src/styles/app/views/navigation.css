@@ -2,8 +2,7 @@
     display: flex;
     justify-content: flex-end;
 
-    position: fixed;
-    top: 0; left: 0;
+    position: fixed 0 auto auto 0;
     width: 100%;
     padding: 34px 75px;
 
@@ -16,13 +15,11 @@
     }
 
     @nest body.has-notification & {
-        position: absolute;
-        top: 70px;
+        position: absolute 70px auto auto auto;
     }
 
     @nest body.has-notification &--fixed {
-        position: fixed;
-        top: 0;
+        position: fixed 0 auto auto auto;
     }
 
     @media (--small) {

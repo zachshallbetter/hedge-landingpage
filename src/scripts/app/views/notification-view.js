@@ -1,5 +1,6 @@
 'use strict';
 
+import $$ from 'selectjs';
 import AbstractView from 'app/views/abstract-view';
 import renderTemplate from 'app/support/renderTemplate';
 

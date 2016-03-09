@@ -1,0 +1,36 @@
+button {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.primary-button {
+    padding: 16px 53px 20px 53px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--highlightColorGreen);
+    transition: border 200ms;
+
+    &--disabled {
+        cursor: default;
+    }
+
+    &__label {
+        @mixin font var(--whitney), #fff, 2.0rem;
+        @mixin antialiased;
+
+        display: block;
+        text-align: left;
+        transition: color 200ms;
+    }
+
+    @nest &:hover:not(&--disabled) {
+        transition: none;
+    }
+
+    @nest &:hover:not(&--disabled) &__label {
+        transition: none;
+        color: var(--highlightColorGreen);
+    }
+}

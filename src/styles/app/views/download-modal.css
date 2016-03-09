@@ -1,0 +1,48 @@
+.download-modal {
+    &__dialog {
+        text-align: center;
+    }
+
+    &__title {
+        @mixin small-header;
+        color: #000;
+    }
+
+    &__instructions {
+        @mixin default-body-text;
+        margin-top: 26px;
+
+        & a {
+            color: var(--highlightColorBlue);
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+
+    &__download-link {
+        display: inline-block;
+        margin-top: 40px;
+    }
+
+    &__requirements {
+        @mixin default-body-text;
+        margin-top: 32px;
+    }
+}
+
+.download-modal__newsletter-form {
+    /*margin-top: 28px;*/
+
+    & .form__input-container {
+        display: inline-block;
+        margin-top: 18px;
+    }
+
+    & .form__submit-button {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(100% + 5px);
+    }
+}
