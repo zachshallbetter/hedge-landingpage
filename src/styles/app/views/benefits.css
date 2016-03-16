@@ -88,6 +88,7 @@
 }
 
 .benefit-annotation {
+    position: absolute;
     size: 20px 20px;
 
     opacity: 0.001;
@@ -99,18 +100,6 @@
 
     &--visible {
         opacity: 1;
-    }
-
-    &--instant-transfer {
-        position: absolute 10% auto auto 8%;
-    }
-
-    &--hedge-recognizes {
-        position: absolute 56.5% auto auto 44%;
-    }
-
-    &--multiple-destinations {
-        position: absolute 32% 9% auto auto;
     }
 
     &:before {
