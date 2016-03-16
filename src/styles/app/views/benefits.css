@@ -87,11 +87,11 @@
     }
 }
 
-.benefit-bullet {
+.benefit-annotation {
     size: 20px 20px;
 
-    opacity: 0;
-    transition: opacity 100ms;
+    opacity: 0.001;
+    transition: opacity 200ms;
 
     border: 1px solid var(--highlightColorGreen);
     border-radius: 50%;
@@ -118,8 +118,8 @@
         size: 20px 20px;
         margin: -1px 0 0 -1px;
 
-        background-color: color(#fff alpha(10%));
-        border: 1px solid #fff;
+        background-color: color(var(--highlightColorGreen) alpha(10%));
+        border: 1px solid var(--highlightColorGreen);
         border-radius: 50%;
         content: '';
 
@@ -136,13 +136,6 @@
         line-height: 2.2rem;
         background-color: #fff;
 
-<<<<<<< HEAD
-        transition: opacity 200ms;
-        visibility: hidden;
-        opacity: 0;
-
-=======
->>>>>>> animation
         &:after {
             position: absolute;
             size: 0 0;

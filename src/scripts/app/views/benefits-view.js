@@ -7,7 +7,7 @@ export default class BenefitsView extends AbstractView {
         options.jumpOffset = -175;
         super.initialize(options);
 
-        this.bullets = this.$('.benefit-bullet');
+        this.annotations = this.$('.benefit-annotation');
         this.screenshot = this.$('#benefits__animation-container');
         this.posterImage = this.$('#benefits__poster-image');
 
@@ -28,14 +28,14 @@ export default class BenefitsView extends AbstractView {
 
     _invalidateBullets() {
         let myTime = this.player.currentTime;
-        Array.prototype.forEach.call(this.bullets, (bullet) => {
-            let [startsAt, endsAt] = bullet.getAttribute('data-time').split(/\s*->\s*/ig),
+        Array.prototype.forEach.call(this.annotations, (annotation) => {
+            let [startsAt, endsAt] = annotation.getAttribute('data-time').split(/\s*->\s*/ig),
                 isVisible = myTime >= startsAt && myTime <= endsAt;
 
             if (isVisible) {
-                bullet.classList.add('benefit-bullet--visible');
+                annotation.classList.add('benefit-annotation--visible');
             } else {
-                bullet.classList.remove('benefit-bullet--visible');
+                annotation.classList.remove('benefit-annotation--visible');
             }
         });
     }
