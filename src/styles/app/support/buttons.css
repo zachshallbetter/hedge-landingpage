@@ -40,12 +40,8 @@ button {
         transition: none;
     }
 
-    @nest &--green:hover:not(&--disabled) {
-        color: #fff;
-    }
-
-    @nest &--blue:hover:not(&--disabled) {
-        color: #000;
+    @nest &:hover:not(&--disabled) {
+        color: var(--defaultBodyColor);
     }
 
     @nest &:hover:not(&--disabled) &__label {
