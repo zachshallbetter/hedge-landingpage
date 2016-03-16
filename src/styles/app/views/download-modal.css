@@ -10,6 +10,7 @@
 
     &__instructions {
         @mixin default-body-text;
+        @mixin antialiased;
         margin-top: 26px;
 
         & a {
@@ -28,13 +29,17 @@
 
     &__requirements {
         @mixin default-body-text;
-        margin-top: 32px;
+        @mixin antialiased;
     }
 }
 
 .download-modal__newsletter-form {
-    /*margin-top: 28px;*/
+    margin-top: 32px;
 
+    & .form__label {
+        @mixin antialiased;
+    }
+    
     & .form__input-container {
         display: inline-block;
         margin-top: 18px;
