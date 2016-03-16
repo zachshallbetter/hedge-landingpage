@@ -17,7 +17,7 @@ export default class BenefitsView extends AbstractView {
     _loadVideo() {
         this.player = document.createElement('video');
         this.player.loop = true;
-        this.player.src = 'videos/animation.mov';
+        this.player.src = 'videos/hedge-animation-01.mp4';
 
         this.player.on('timeupdate', (event) => this._invalidateBullets());
         this.player.on('canplay', (event) => {
