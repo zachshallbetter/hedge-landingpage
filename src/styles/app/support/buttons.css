@@ -9,7 +9,6 @@ button {
     padding: 16px 53px 20px 53px;
     border: 1px solid;
     border-radius: 3px;
-    border-color: var(--highlightColorGreen);
     transition: border 200ms;
 
     &--disabled {
@@ -17,20 +16,39 @@ button {
     }
 
     &__label {
-        @mixin font var(--whitney), #fff, 2.0rem;
         @mixin antialiased;
+        font-family: var(--whitney);
+        font-size: 2.0rem;
 
         display: block;
         text-align: left;
         transition: color 200ms;
     }
 
+    &--blue {
+        border-color: var(--highlightColorBlue);
+        color: var(--highlightColorBlue);
+    }
+
+    &--green {
+        border-color: var(--highlightColorGreen);
+        color: var(--highlightColorGreen);
+
+    }
+
     @nest &:hover:not(&--disabled) {
         transition: none;
     }
 
+    @nest &--green:hover:not(&--disabled) {
+        color: #fff;
+    }
+
+    @nest &--blue:hover:not(&--disabled) {
+        color: #000;
+    }
+
     @nest &:hover:not(&--disabled) &__label {
         transition: none;
-        color: var(--highlightColorGreen);
     }
 }

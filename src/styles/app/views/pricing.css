@@ -73,6 +73,18 @@
             margin-top: 82px;
         }
     }
+
+    &__footer {
+        margin-top: 95px;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__lifetime-license {
+        @mixin default-body-text;
+        @mixin antialiased;
+        margin-top: 25px;
+    }
 }
 
 .price-option {

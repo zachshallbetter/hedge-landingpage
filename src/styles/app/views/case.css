@@ -79,7 +79,7 @@
 
         background-color: var(--defaultPlaceholderColor);
         background-size: cover;
-        transition: transform 5s linear;
+        transition: transform 4s linear;
 
         @media (--normal), (--wide) {
             background-position: center 25%;
