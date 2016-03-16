@@ -1,12 +1,10 @@
 'use strict';
 
-var atImport = require('postcss-import'),
-    cssnano = require('gulp-cssnano'),
+var cssnano = require('gulp-cssnano'),
     cssnext = require('postcss-cssnext'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
     livereload = require('gulp-livereload'),
-    mixins = require('postcss-mixins'),
     plumber = require('gulp-plumber'),
     postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -19,8 +17,11 @@ gulp.task('styles', () => {
         myDestination = 'dist/styles';
 
     let myProcessors = [
-        atImport,
-        mixins,
+        require('postcss-import'),
+        require('postcss-mixins'),
+        require('postcss-position'),
+        require('postcss-size'),
+        require('postcss-easings'),
         cssnext({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'] }),
     ];
 

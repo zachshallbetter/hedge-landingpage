@@ -1,16 +1,21 @@
 'use strict';
 
-import AbstractView from 'app/views/abstract-view';
+import AbstractModalView from 'app/views/abstract-modal-view';
 import FormMixin from 'app/mixins/form-mixin';
 
 import { mixin } from 'core-decorators';
 
 @mixin(FormMixin)
-export default class FooterView extends AbstractView {
-    initialize(options = {}) {
+export default class DownloadModalView extends AbstractModalView {
+    constructor(options = {}) {
+        options.template = '#download-modal-template';
+        super(options);
+    }
+
+    initialize(options) {
         super.initialize(options);
 
-        this.newsletterForm = this.$('.footer__newsletter-form');
+        this.newsletterForm = this.$('.download-modal__newsletter-form');
         this.initFormMixin(this.newsletterForm);
     }
 

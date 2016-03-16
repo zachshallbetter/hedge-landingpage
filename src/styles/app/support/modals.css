@@ -1,0 +1,43 @@
+.modal {
+    display: flex;
+    position: fixed 0 0 0 0;
+
+    background-color: color(#000 alpha(50%));
+    opacity: 0.01;
+
+    transform: translate3d(0, 0, 0);
+	animation: fade-in-modal 100ms linear forwards;
+	will-change: opacity, transform;
+
+    overflow: hidden;
+    z-index: var(--modalsIndex);
+
+	&__dialog {
+		position: relative;
+		margin: auto;
+        padding: 56px;
+		backface-visibility: hidden;
+
+        border-radius: 5px;
+        width: 100%;
+        max-width: 570px;
+        min-height: 520px;
+        background-color: #fff;
+
+		transform: scale3d(0.87, 0.87, 1);
+		animation: present-modal-dialog 280ms ease-out-back forwards;
+		will-change: transform;
+	}
+}
+
+@keyframes present-modal-dialog {
+	to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes fade-in-modal {
+	to {
+        opacity: 1.0;
+    }
+}

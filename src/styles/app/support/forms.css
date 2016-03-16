@@ -8,12 +8,8 @@
     }
 
     &__input {
-        @mixin font var(--whitney), #fff, 1.7rem;
-        @mixin antialiased;
         padding: 10px;
-
         background: none;
-        border: 1px solid #5c6272;
         border-radius: 4px;
         outline: 0;
 
@@ -30,11 +26,36 @@
 
         &:focus, &:hover {
             transition: none;
-            border-color: var(--highlightColorGreen);
+            border-color: var(--highlightColorGreen) !important;
 
             &::placeholder {
-                color: #fff;
                 transition: none;
+            }
+        }
+    }
+
+    @nest &--dark-color-scheme &__input {
+        @mixin font var(--whitney), #fff, 1.7rem;
+        @mixin antialiased;
+
+        border: 1px solid #5c6272;
+
+        &:focus, &:hover {
+            &::placeholder {
+                color: #fff;
+            }
+        }
+    }
+
+    @nest &--light-color-scheme &__input {
+        @mixin font var(--whitney), #000, 1.7rem;
+        @mixin antialiased;
+
+        border: 1px solid #c3c8d3;
+
+        &:focus, &:hover {
+            &::placeholder {
+                color: #000;
             }
         }
     }

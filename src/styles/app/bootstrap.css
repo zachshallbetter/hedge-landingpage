@@ -1,13 +1,13 @@
-@import "bootstrap/reset";
-@import "bootstrap/colors";
-@import "bootstrap/fonts";
-@import "bootstrap/mixins";
-@import "bootstrap/mq";
-@import "bootstrap/styles";
-@import "bootstrap/zindices";
-
-@import "bootstrap/buttons";
-@import "bootstrap/forms";
+@import "support/reset";
+@import "support/colors";
+@import "support/fonts";
+@import "support/mixins";
+@import "support/mq";
+@import "support/styles";
+@import "support/zindices";
+@import "support/buttons";
+@import "support/forms";
+@import "support/modals";
 
 *, *:before, *:after {
     box-sizing: border-box;
