@@ -1,11 +1,11 @@
 development:
-    baseUrl: 'http://hedgeformac.dev'
+    baseUrl: 'https://hedgeformac.dev'
     debug: true
 
 staging:
-    baseUrl: 'http://staging.hedgeformac.com'
+    baseUrl: 'https://staging.hedgeformac.com'
     debug: true
 
 production:
-    baseUrl: 'http://www.hedgeformac.com'
+    baseUrl: 'https://www.hedgeformac.com'
     debug: false
