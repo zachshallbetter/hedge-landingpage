@@ -11,9 +11,9 @@ export default class PricingView extends AbstractView {
     }
 
     getCountryCode(ip) {
-        fetch('http://ip-api.com/json')
+        fetch('https://geoip.nekudo.com/api')
           .then((response) => response.json())
-          .then((json) => this.setCountryCode(json.countryCode));
+          .then((json) => this.setCountryCode(json.country.code));
     }
 
     setCountryCode(code) {
