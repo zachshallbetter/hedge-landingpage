@@ -1,6 +1,7 @@
 'use strict';
 
 // Polyfills
+require('whatwg-fetch');
 import ViewportUnits from 'viewport-units-buggyfill';
 import SVGFill from 'svg4everybody';
 import Picturefill from 'picturefill';
