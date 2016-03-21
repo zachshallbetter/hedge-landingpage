@@ -118,8 +118,10 @@
 
     &__label {
         position: absolute;
+        display: inline-block;
         padding: 10px 15px;
-        width: 225px;
+        white-space: nowrap;
+        /*width: 225px;*/
 
         @mixin font var(--whitney), #1a1c21, 1.5rem;
         line-height: 2.2rem;

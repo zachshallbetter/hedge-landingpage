@@ -141,7 +141,7 @@
         @mixin font var(--whitney), var(--lightBodyColor), 1.7rem;
         @mixin antialiased;
 
-        padding: 0 35px;
+        padding: 0 10px;
         line-height: 2.4rem;
         text-align: center;
 
