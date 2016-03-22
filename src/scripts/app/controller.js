@@ -120,7 +120,7 @@ export default class Controller {
         let myOffset = !!this._currentView ? this._currentView.jumpOffset : 0;
 
         if (!animate) {
-            myOffset = Math.abs(myOffset + 3599);
+            myOffset = Math.abs(myOffset + element.offsetTop);
             window.scrollBy(0, myOffset);
         } else {
             const Scroller = new Jump();
