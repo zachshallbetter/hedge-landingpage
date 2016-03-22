@@ -8,7 +8,7 @@ var changed = require('gulp-changed'),
     plumber = require('gulp-plumber');
 
 gulp.task('images', () => {
-    let myProduction = process.env.NODE_ENV !== 'development';
+    let myProduction = process.env.NODE_ENV === 'production';
 
     let myDestination = 'dist/images',
         mySource = ['src/images/*.png'];
