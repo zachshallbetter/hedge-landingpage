@@ -1,17 +1,16 @@
 'use strict';
 
-// Polyfills
-require('whatwg-fetch');
-import ViewportUnits from 'viewport-units-buggyfill';
-import SVGFill from 'svg4everybody';
-import Picturefill from 'picturefill';
+// Global imports
 import Array from 'arrayjs';
 import Listen from 'listenjs';
 
-SVGFill();
-
-// Initialize Router
-import Router from 'app/router';
+// Polyfills
+require('viewport-units-buggyfill');
+require('svg4everybody')();
+require('picturefill');
 
 // Make the website visible
-document.body.classList.add('ready');
+window.on('load', (event) => {
+    require('app/router');
+    document.body.classList.add('ready');
+});

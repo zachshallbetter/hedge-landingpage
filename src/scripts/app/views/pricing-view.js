@@ -1,5 +1,6 @@
 'use strict';
 
+import fetch from 'node-fetch';
 import AbstractView from 'app/views/abstract-view';
 
 export default class PricingView extends AbstractView {

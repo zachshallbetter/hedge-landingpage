@@ -83,13 +83,13 @@
     "listenjs": "^1.0.1",
     "lodash": "^4.6.1",
     "logdown": "^1.2.4",
+    "node-fetch": "^1.4.0",
     "picturefill": "^3.0.2",
     "query-string": "^3.0.3",
     "raf": "^3.2.0",
     "selectjs": "^1.0.2",
     "svg4everybody": "^2.0.3",
     "viewport-units-buggyfill": "^0.6.0",
-    "visiblejs": "^1.0.2",
-    "whatwg-fetch": "^0.11.0"
+    "visiblejs": "^1.0.2"
   }
 }
