@@ -19,7 +19,6 @@ export default class PricingView extends AbstractView {
     setCountryCode(code) {
         let myEuroCountries = ['AT', 'BE', 'CY', 'EE', 'FI', 'FR', 'DE', 'GR', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PT', 'SK', 'SI', 'ES'];
         if (~myEuroCountries.indexOf(code)) {
-
             [].forEach.call(this.currencySymbols, (element) => {
                 element.innerHTML = '&euro;';
             });

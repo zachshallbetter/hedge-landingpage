@@ -143,8 +143,6 @@ export default class Controller {
     }
 
     showNotification(ref) {
-        document.body.classList.add('has-notification');
-
         const View = Views['notification-view'];
         let myView = new View.default(null, { ref: ref });
 

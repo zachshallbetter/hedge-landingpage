@@ -12,9 +12,15 @@ export default class NotificationView extends AbstractView {
 
     initialize(options = {}) {
         super.initialize(options);
-        this.$(`[data-ref='${options.ref}']`).classList.add('notification__body-text--visible');
 
-        let myParent = $$('main');
-        myParent.insertBefore(this.el, myParent.firstChild);
+        let myParent = $$('main'),
+            myElement = this.$(`[data-ref='${options.ref}']`);
+
+        if (!!myElement) {
+            document.body.classList.add('has-notification');
+            myElement.classList.add('notification__body-text--visible');
+
+            myParent.insertBefore(this.el, myParent.firstChild);
+        }
     }
 }
