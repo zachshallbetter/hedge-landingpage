@@ -31,6 +31,8 @@ export default class HeaderView extends AbstractView {
 
     _onDownloadLink(event) {
         event.preventDefault();
+        window.ga('send', 'pageview', event.currentTarget.getAttribute('href'));
+
         this.presentDownloadModal();
     }
 

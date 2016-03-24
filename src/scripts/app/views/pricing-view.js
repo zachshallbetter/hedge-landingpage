@@ -20,11 +20,13 @@ export default class PricingView extends AbstractView {
 
     _onDownloadLink(event) {
         event.preventDefault();
+        window.ga('send', 'pageview', event.currentTarget.getAttribute('href'));
+
         this.presentDownloadModal();
     }
 
     _onLicenseLink(event) {
-
+        window.ga('send', 'pageview', event.currentTarget.getAttribute('href'));
     }
 
     getCountryCode(ip) {
@@ -49,7 +51,7 @@ export default class PricingView extends AbstractView {
             super.enable();
 
             this.downloadLink.on('click', this._onDownloadLink.bind(this));
-            this.licenseLink.on('click', this._onDownloadLink.bind(this));
+            this.licenseLink.on('click', this._onLicenseLink.bind(this));
         }
     }
 

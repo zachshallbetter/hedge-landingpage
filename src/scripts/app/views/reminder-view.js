@@ -18,6 +18,8 @@ export default class ReminderView extends AbstractView {
 
     _onDownloadClick(event) {
         event.preventDefault();
+        window.ga('send', 'pageview', event.currentTarget.getAttribute('href'));
+
         this.presentDownloadModal();
     }
 

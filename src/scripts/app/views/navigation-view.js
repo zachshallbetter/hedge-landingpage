@@ -11,7 +11,7 @@ export default class NavigationView extends AbstractView {
         super.initialize(options);
 
         this.downloadLink = this.$('#navDownloadLink');
-        this.licenseLink = this.$('navLicenseLink');
+        this.licenseLink = this.$('#navLicenseLink');
     }
 
     _invalidate() {
@@ -35,7 +35,13 @@ export default class NavigationView extends AbstractView {
 
     _onDownloadLink(event) {
         event.preventDefault();
+        window.ga('send', 'pageview', event.currentTarget.getAttribute('href'));
+
         this.presentDownloadModal();
+    }
+
+    _onLicenseLink(event) {
+        window.ga('send', 'pageview', event.currentTarget.getAttribute('href'));
     }
 
     /**
@@ -53,6 +59,7 @@ export default class NavigationView extends AbstractView {
 
             window.on('scroll', this._onScroll.bind(this));
             this.downloadLink.on('click', this._onDownloadLink.bind(this));
+            this.licenseLink.on('click', this._onLicenseLink.bind(this));
         }
     }
 
