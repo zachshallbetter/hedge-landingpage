@@ -137,17 +137,7 @@
         }
     }
     &--discounted {
-        @media (--small) {
-            padding: 11px 0 12px 0;
-        }
-
-        @media (--normal), (--wide), (--wider), (--widest) {
-            padding: 14px 0 25px 0;
-        }
-    }
-    &--discounted-strike {
         text-decoration: line-through;
-        font-size: 2.7rem;
     }
 
 
@@ -164,13 +154,17 @@
             font-style: italic;
         }
     }
+    &__button {
+        margin-top: 1rem;
+        text-align: center;
+    }
 
     @nest &--trial &__title {
         color: var(--defaultBodyColor);
     }
 
     @nest &--per-month &__title {
-        color: var(--highlightColorGreen);
+        color: var(--highlightColorBlue);
     }
 
     @nest &--per-year &__title {
