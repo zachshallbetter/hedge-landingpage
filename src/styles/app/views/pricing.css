@@ -90,6 +90,7 @@
 .price-option {
     width: 100%;
     max-width: 280px;
+    text-align: center;
 
     &:not(:first-child) {
         @media (--small), (--normal), (--wide) {
@@ -103,22 +104,27 @@
 
     &__title {
         @mixin font var(--whitney), var(--lightHeaderColor), 1.7rem;
-        text-align: center;
-
         padding-bottom: 12px;
         border-bottom: 2px solid;
-
-        &--discount {
-            @mixin antialiased;
-            color: var(--lightBodyColor);
-        }
     }
 
     &__pricing {
         @mixin font var(--whitney), var(--lightHeaderColor), 5.0rem, 100;
         display: block;
-        text-align: center;
         line-height: 4.2rem;
+
+        & s {
+            position: relative;
+            text-decoration: none;
+
+            &:after {
+                position: absolute 50% 0 0 -10%;
+                size: 120% 2px;
+                content: '';
+                background-color: #000;
+                transform: rotate(-20deg);
+            }
+        }
 
         @media (--small) {
             padding: 33px 0 12px 0;
@@ -129,17 +135,12 @@
         }
 
         &--per-month {
-            @mixin antialiased;
             display: block;
             color: var(--lightBodyColor);
             font-size: 1.7rem;
             font-weight: 400;
         }
     }
-    &--discounted {
-        text-decoration: line-through;
-    }
-
 
     &__description {
         @mixin font var(--whitney), var(--lightBodyColor), 1.7rem;
@@ -154,10 +155,13 @@
             font-style: italic;
         }
     }
-    &__button {
-        margin-top: 1rem;
-        text-align: center;
+
+    &__license-link,
+    &__download-link {
+        display: inline-block;
+        margin-top: 40px;
     }
+
 
     @nest &--trial &__title {
         color: var(--defaultBodyColor);

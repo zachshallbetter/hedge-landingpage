@@ -42,7 +42,7 @@ export default class PricingView extends AbstractView {
         if (!this.enabled) {
             super.enable();
 
-            this.downloadLink.on('click', this._onDownloadLink.bind(this));
+            // this.downloadLink.on('click', this._onDownloadLink.bind(this));
         }
     }
 
