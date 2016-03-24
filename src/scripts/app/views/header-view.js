@@ -12,8 +12,8 @@ export default class HeaderView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
 
-        this.homeLink = this.$('.header__home-link');
-        this.downloadLink = this.$('.header__download-link');
+        this.homeLink = this.$('#headerHomeLink');
+        this.downloadLink = this.$('#headerDownloadLink');
 
         this.initBackgroundAnimMixin();
     }

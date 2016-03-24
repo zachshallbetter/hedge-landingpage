@@ -6,7 +6,7 @@ import renderTemplate from 'app/support/renderTemplate';
 
 export default class NotificationView extends AbstractView {
     constructor(el, options = {}) {
-        let myElement = renderTemplate('#notification-template');
+        let myElement = renderTemplate('#notificationTemplate');
         super(myElement, options);
     }
 

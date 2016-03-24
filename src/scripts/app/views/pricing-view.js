@@ -11,14 +11,20 @@ export default class PricingView extends AbstractView {
     initialize(options) {
         super.initialize(options);
 
+        this.licenseLink = this.$('#pricingLicenseLink');
+        this.downloadLink = this.$('#pricingDownloadLink');
         this.currencySymbols = this.$('.currency-symbols');
-        this.downloadLink = this.$('.pricing__download-link');
+
         this.getCountryCode();
     }
 
     _onDownloadLink(event) {
         event.preventDefault();
         this.presentDownloadModal();
+    }
+
+    _onLicenseLink(event) {
+
     }
 
     getCountryCode(ip) {
@@ -42,7 +48,8 @@ export default class PricingView extends AbstractView {
         if (!this.enabled) {
             super.enable();
 
-            // this.downloadLink.on('click', this._onDownloadLink.bind(this));
+            this.downloadLink.on('click', this._onDownloadLink.bind(this));
+            this.licenseLink.on('click', this._onDownloadLink.bind(this));
         }
     }
 
@@ -51,6 +58,7 @@ export default class PricingView extends AbstractView {
             super.destroy();
 
             this.downloadLink = null;
+            this.licenseLink = null;
             this.currencySymbols = null;
         }
     }

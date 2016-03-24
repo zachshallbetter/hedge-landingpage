@@ -10,7 +10,7 @@ export default class FooterView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
 
-        this.newsletterForm = this.$('.footer__newsletter-form');
+        this.newsletterForm = this.$('#footerNewsletterForm');
         this.initFormMixin(this.newsletterForm);
     }
 

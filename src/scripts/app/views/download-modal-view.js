@@ -8,14 +8,14 @@ import { mixin } from 'core-decorators';
 @mixin(FormMixin)
 export default class DownloadModalView extends AbstractModalView {
     constructor(options = {}) {
-        options.template = '#download-modal-template';
+        options.template = '#downloadModalTemplate';
         super(options);
     }
 
     initialize(options) {
         super.initialize(options);
 
-        this.newsletterForm = this.$('.download-modal__newsletter-form');
+        this.newsletterForm = this.$('#downloadNewsletterForm');
         this.initFormMixin(this.newsletterForm);
     }
 

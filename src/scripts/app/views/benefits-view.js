@@ -8,8 +8,8 @@ export default class BenefitsView extends AbstractView {
         super.initialize(options);
 
         this.annotations = this.$('.benefit-annotation');
-        this.screenshot = this.$('#benefits__animation-container');
-        this.posterImage = this.$('#benefits__poster-image');
+        this.screenshot = this.$('#benefitsAnimationContainer');
+        this.posterImage = this.$('#benefitsPosterImage');
 
         this._loadVideo();
     }
