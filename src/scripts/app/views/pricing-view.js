@@ -8,6 +8,9 @@ export default class PricingView extends AbstractView {
         super.initialize(options);
 
         this.currencySymbols = this.$('.currency-symbols');
+        this.monthlyLink = this.$('.pricing__license-link--monthly');
+        this.yearlyLink = this.$('.pricing__license-link--yearly');
+
         this.getCountryCode();
     }
 
@@ -28,10 +31,30 @@ export default class PricingView extends AbstractView {
         }
     }
 
+    _onMonthlyLink(event) {
+        window.ga('send', 'pageview', '/store/monthly');
+    }
+
+    _onYearlyLink(event) {
+        window.ga('send', 'pageview', '/store/yearly');
+    }
+
+    enable() {
+        if (!this.enabled) {
+            super.enable();
+
+            this.monthlyLink.on('click', this._onMonthlyLink.bind(this));
+            this.yearlyLink.on('click', this._onYearlyLink.bind(this));
+        }
+    }
+
     destroy() {
         if (!this.destroyed) {
             super.destroy();
+
             this.currencySymbols = null;
+            this.monthlyLink = null;
+            this.yearlyLink = null;
         }
     }
 }

@@ -9,6 +9,8 @@ import { mixins, throttle } from 'core-decorators';
 export default class NavigationView extends AbstractView {
     initialize(options = {}) {
         super.initialize(options);
+
+        this.buyLink = this.$('.navigation__link--buy');
         this.downloadLink = this.$('.navigation__link--download');
     }
 
@@ -33,7 +35,13 @@ export default class NavigationView extends AbstractView {
 
     _onDownloadLink(event) {
         event.preventDefault();
+        window.ga('send', 'pageview', '/download/latest');
+
         this.presentDownloadModal();
+    }
+
+    _onBuyLink(event) {
+        window.ga('send', 'pageview', '/download/latest');
     }
 
     /**
@@ -49,14 +57,17 @@ export default class NavigationView extends AbstractView {
         if (!this.enabled) {
             super.enable();
 
-            this.downloadLink.on('click', this._onDownloadLink.bind(this));
             window.on('scroll', this._onScroll.bind(this));
+            this.buyLink.on('click', this._onBuyLink.bind(this));
+            this.downloadLink.on('click', this._onDownloadLink.bind(this));
         }
     }
 
     destroy() {
         if (!this.destroyed) {
             super.destroy();
+
+            this.buyLink = null;
             this.downloadLink = null;
         }
     }

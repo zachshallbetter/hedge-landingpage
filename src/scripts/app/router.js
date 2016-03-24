@@ -43,8 +43,16 @@ class Router {
      * @param  {String} path  String representing the path
      */
     navigate(path, title = document.title) {
-        if (this.pushStateEnabled) {
-            history.replaceState({}, title, path);
+        path = trim(path, '/');
+
+        if (this.currentPath !== path) {
+            this.currentPath = path;
+
+            if (this.pushStateEnabled) {
+                history.replaceState({}, title, path);
+            }
+
+            // window.ga('send', 'pageview', this.currentPath);
         }
     }
 
@@ -60,8 +68,8 @@ class Router {
             let myUrl = Url.parse(event.currentTarget.getAttribute('href')),
                 myEvent = new CustomEvent('pushstate', { detail: myUrl.path });
 
-            window.dispatchEvent(myEvent);
             this.navigate(`${myUrl.path}${window.location.search}`);
+            window.dispatchEvent(myEvent);
         }
     }
 
@@ -70,8 +78,8 @@ class Router {
      * @param  {Event} event Event which triggers the handler
      */
     _onPushstate(event) {
-        let myPath = trim(event.detail, '/');
-        this.controller.scrollToElementAtPath(myPath, true);
+        this.currentPath = trim(event.detail, '/');
+        this.controller.scrollToElementAtPath(this.currentPath, true);
     }
 
     enable() {
