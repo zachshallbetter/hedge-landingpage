@@ -5,6 +5,7 @@
 
 dist
 src/config.yml
+src/fonts/*
 node_modules/*
 !node_modules/app
 
